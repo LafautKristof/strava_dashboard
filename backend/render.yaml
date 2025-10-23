@@ -1,0 +1,13 @@
+services:
+    - type: worker
+      name: strava-daily-fetcher
+      env: python
+      plan: free
+      rootDir: backend
+      buildCommand: "pip install -r requirements.txt"
+      startCommand: "python scripts/fetch_strava.py"
+      schedule: "0 3 * * *" # elke dag om 03:00 UTC
+      disk:
+          name: strava-data
+          mountPath: /opt/render/project/src/backend/data
+          sizeGB: 1
