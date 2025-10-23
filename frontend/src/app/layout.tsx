@@ -7,9 +7,12 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en" suppressHydrationWarning>
-            <body className="bg-gray-100 mx-0 sm:mx-2 md:mx-10 lg:mx-40 xl:mx-80">
-                <NavBar />
-                {children}
+            <body className="bg-gray-100">
+                <div className="mx-auto max-w-7xl px-6">
+                    <NavBar />
+                </div>
+
+                <main className="mx-auto max-w-7xl px-6">{children}</main>
             </body>
         </html>
     );

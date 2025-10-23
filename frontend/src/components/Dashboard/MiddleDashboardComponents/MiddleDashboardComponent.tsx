@@ -19,10 +19,7 @@ const MiddleDashboardComponent = ({
     return (
         <main>
             {activities.activities.map((activity, index) => (
-                <section
-                    key={index}
-                    className=" bg-white rounded-md mb-6 mr-4 p-4"
-                >
+                <section key={index} className="bg-white rounded-md mb-6 p-4">
                     <div className="flex flex-col sm:flex-row items-start gap-6 mb-4">
                         <div className="shrink-0">
                             <Picture picture={athlete.profile_medium} />

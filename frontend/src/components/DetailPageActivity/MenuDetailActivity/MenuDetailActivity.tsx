@@ -20,56 +20,51 @@ const MenuDetailActivity = ({
         <Tabs
             defaultValue="overview"
             orientation="vertical"
-            className="flex flex-col lg:flex-row min-h-[80vh] w-full bg-background"
+            className="flex flex-col lg:flex-row w-full min-h-[80vh] items-start"
         >
+            {/* 🔸 Sidebar links */}
             <TabsList
                 className="
-            flex flex-row lg:flex-col 
-            justify-start lg:justify-start 
-            gap-2 bg-muted/20 p-2 rounded-md
-            overflow-x-auto no-scrollbar
+            flex flex-row lg:flex-col
+            gap-2
+            bg-muted/20
+            p-2
+            rounded-md
+            overflow-x-auto lg:overflow-y-auto no-scrollbar
             whitespace-nowrap
-            w-full lg:min-w-[200px]
+            w-full lg:w-[220px]
+            shrink-0
         "
             >
-                <TabsTrigger
-                    value="overview"
-                    className="flex-shrink-0 justify-center lg:justify-start px-4 py-2 rounded-md 
-                       data-[state=active]:bg-orange-400 data-[state=active]:text-white 
-                       lg:w-full"
-                >
-                    Overview
-                </TabsTrigger>
-
-                <TabsTrigger
-                    value="relative-effort"
-                    className="flex-shrink-0 justify-center lg:justify-start px-4 py-2 rounded-md 
-                       data-[state=active]:bg-orange-400 data-[state=active]:text-white 
-                       lg:w-full"
-                >
-                    Relative Effort
-                </TabsTrigger>
-
-                <TabsTrigger
-                    value="heartrate"
-                    className="flex-shrink-0 justify-center lg:justify-start px-4 py-2 rounded-md 
-                       data-[state=active]:bg-orange-400 data-[state=active]:text-white 
-                       lg:w-full"
-                >
-                    Heart Rate
-                </TabsTrigger>
-
-                <TabsTrigger
-                    value="segments"
-                    className="flex-shrink-0 justify-center lg:justify-start px-4 py-2 rounded-md 
-                       data-[state=active]:bg-orange-400 data-[state=active]:text-white 
-                       lg:w-full"
-                >
-                    Segments
-                </TabsTrigger>
+                {[
+                    { value: "overview", label: "Overview" },
+                    { value: "relative-effort", label: "Relative Effort" },
+                    { value: "heartrate", label: "Heart Rate" },
+                    { value: "segments", label: "Segments" },
+                ].map((tab) => (
+                    <TabsTrigger
+                        key={tab.value}
+                        value={tab.value}
+                        className="
+                    flex items-center justify-center lg:justify-start
+                    px-3 py-2 rounded-md
+                    text-sm sm:text-base
+                    transition-colors
+                    data-[state=active]:bg-orange-400
+                    data-[state=active]:text-white
+                    hover:bg-orange-200/60
+                    w-auto lg:w-full
+                    h-auto
+                    flex-shrink-0
+                "
+                    >
+                        {tab.label}
+                    </TabsTrigger>
+                ))}
             </TabsList>
 
-            <div className="flex-1 p-4 lg:p-6">
+            {/* 🔸 Inhoud rechts */}
+            <div className="flex-1 w-full p-4 lg:p-6 bg-white rounded-md border shadow-sm">
                 <TabsContent value="overview">
                     <OverView
                         activity={activity}

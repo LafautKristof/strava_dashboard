@@ -23,17 +23,19 @@ const LeftDashboardComponent = ({
 
     return (
         <>
-            <div className="flex flex-col gap-6 px-4 sm:px-6 md:ml-0">
+            <div className="flex flex-col gap-6">
                 <Card className="relative bg-white text-black  p-4 rounded-md">
                     <CardContent>
-                        <div className="absolute -top-10 right-1/2 translate-x-1/2">
-                            <Picture picture={athlete.profile_medium} />
-                        </div>
+                        <div className="flex items-center gap-3">
+                            <div>
+                                <Picture picture={athlete.profile_medium} />
+                            </div>
 
-                        <div className="text-center mt-24">
-                            <Name
-                                name={`${athlete.firstname} ${athlete.lastname}`}
-                            />
+                            <div className="text-left">
+                                <Name
+                                    name={`${athlete.firstname} ${athlete.lastname}`}
+                                />
+                            </div>
                         </div>
 
                         <div className="flex flex-col justify-center gap-4 mt-4">

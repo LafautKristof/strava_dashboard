@@ -25,17 +25,21 @@ const page = async () => {
         ]);
 
     return (
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-6 pt-10 px-4 sm:px-6 lg:px-10">
-            <LeftDashboardComponent
-                athlete={dataAthlete}
-                activities={dataActivities}
-                activities8Weeks={dataActivities8Weeks}
-            />
-            <MiddleDashboardComponent
-                athlete={dataAthlete}
-                activities={dataActivities}
-            />
-        </div>
+        <main className="flex flex-col lg:flex-row w-full min-h-[80vh] items-start gap-6">
+            <div className="w-full lg:w-1/3">
+                <LeftDashboardComponent
+                    athlete={dataAthlete}
+                    activities={dataActivities}
+                    activities8Weeks={dataActivities8Weeks}
+                />
+            </div>
+            <div className="w-full lg:flex-1">
+                <MiddleDashboardComponent
+                    athlete={dataAthlete}
+                    activities={dataActivities}
+                />
+            </div>
+        </main>
     );
 };
 export default page;
