@@ -33,9 +33,6 @@ def get_activities():
     else:
         all_activities = data.get("activities", [])
 
-    # -----------------------------
-    # Get count per type
-    # -----------------------------
     summary = {}
     for a in all_activities:
         t = a.get("type", "Unknown")
