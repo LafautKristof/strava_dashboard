@@ -1,5 +1,4 @@
 import NavBar from "@/components/NavBar";
-import { ThemeProvider } from "next-themes";
 import "./globals.css";
 export default function RootLayout({
     children,
@@ -8,11 +7,9 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en" suppressHydrationWarning>
-            <body>
-                <ThemeProvider attribute="class" defaultTheme="light">
-                    <NavBar />
-                    {children}
-                </ThemeProvider>
+            <body className="bg-gray-100 mx-0 sm:mx-2 md:mx-10 lg:mx-40 xl:mx-80">
+                <NavBar />
+                {children}
             </body>
         </html>
     );

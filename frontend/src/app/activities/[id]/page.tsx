@@ -1,84 +1,56 @@
-"use client";
+import MenuDetailActivity from "@/components/DetailPageActivity/MenuDetailActivity/MenuDetailActivity";
+import { notFound } from "next/navigation";
+export default async function ActivityPage({
+    params,
+}: {
+    params: { id: string };
+}) {
+    const { id } = await params;
 
-import { useEffect, useState } from "react";
-import { useParams } from "next/navigation";
-import Link from "next/link";
+    try {
+        const [resAthlete, resActivities, resStreams] = await Promise.all([
+            fetch(`${process.env.NEXT_PUBLIC_API_URL}/athlete`, {
+                cache: "force-cache",
+            }),
+            fetch(`${process.env.NEXT_PUBLIC_API_URL}/activity/${id}`, {
+                cache: "no-store",
+            }),
+            fetch(`${process.env.NEXT_PUBLIC_API_URL}/streams/${id}`, {
+                cache: "no-store",
+            }),
+        ]);
 
-export default function ActivityPage() {
-    const { id } = useParams();
-    console.log(id);
-    const [activity, setActivity] = useState<any>(null);
-    const [loading, setLoading] = useState(true);
+        if (!resAthlete.ok || !resActivities.ok || !resStreams.ok) {
+            return notFound();
+        }
+        const [dataAthlete, dataActivities, dataStreams] = await Promise.all([
+            safeJson(resAthlete),
+            safeJson(resActivities),
+            safeJson(resStreams),
+        ]);
 
-    useEffect(() => {
-        const fetchActivity = async () => {
-            console.log("Fetching activity with ID:", id);
-            console.log(process.env.NEXT_PUBLIC_API_URL);
-            try {
-                const res = await fetch(
-                    `${process.env.NEXT_PUBLIC_API_URL}/activity/${id}`
-                );
-                const data = await res.json();
-                setActivity(data);
-            } catch (err) {
-                console.error("Error fetching activity:", err);
-            } finally {
-                setLoading(false);
-            }
-        };
-        fetchActivity();
-    }, [id]);
+        if (!dataAthlete || !dataActivities || !dataStreams) {
+            return notFound();
+        }
 
-    if (loading) return <p className="text-gray-500">Loading activity...</p>;
-    if (!activity) return <p>Activity not found.</p>;
-
-    const km = (activity.distance / 1000).toFixed(2);
-    const hours = Math.floor(activity.moving_time / 3600);
-    const minutes = Math.floor((activity.moving_time % 3600) / 60);
-    const pace = (
-        activity.moving_time /
-        60 /
-        (activity.distance / 1000)
-    ).toFixed(1);
-
-    return (
-        <div className="max-w-3xl mx-auto space-y-6">
-            <Link href="/" className="text-blue-500 hover:underline">
-                ← Back to Dashboard
-            </Link>
-
-            <h1 className="text-3xl font-bold">{activity.name}</h1>
-
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                <div className="p-4 bg-gray-100 dark:bg-gray-800 rounded-lg text-center">
-                    <p className="text-sm text-gray-500">Distance</p>
-                    <h2 className="text-xl font-bold">{km} km</h2>
-                </div>
-                <div className="p-4 bg-gray-100 dark:bg-gray-800 rounded-lg text-center">
-                    <p className="text-sm text-gray-500">Moving Time</p>
-                    <h2 className="text-xl font-bold">
-                        {hours}h {minutes}m
-                    </h2>
-                </div>
-                <div className="p-4 bg-gray-100 dark:bg-gray-800 rounded-lg text-center">
-                    <p className="text-sm text-gray-500">Avg Pace</p>
-                    <h2 className="text-xl font-bold">{pace} min/km</h2>
-                </div>
-            </div>
-
-            <p className="text-gray-500">Type: {activity.type}</p>
-            {activity.start_date_local && (
-                <p className="text-gray-500">
-                    Date:{" "}
-                    {new Date(activity.start_date_local).toLocaleDateString()}
-                </p>
-            )}
-
-            {activity.map && (
-                <div className="bg-gray-200 dark:bg-gray-800 rounded-lg p-4 text-center">
-                    🗺️ Map data available (polylines can be rendered later)
-                </div>
-            )}
-        </div>
-    );
+        return (
+            <main>
+                <MenuDetailActivity
+                    activity={dataActivities}
+                    athlete={dataAthlete}
+                    streams={dataStreams}
+                />
+            </main>
+        );
+    } catch (error) {
+        console.error("❌ Activity fetch error:", error);
+        return notFound();
+    }
+}
+async function safeJson(res: Response) {
+    try {
+        return await res.json();
+    } catch {
+        return null;
+    }
 }

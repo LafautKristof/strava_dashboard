@@ -1,17 +1,11 @@
 import Link from "next/link";
-import ThemeChanger from "./ThemeChanger";
 
 const NavBar = () => {
     return (
-        <nav className="flex justify-between ">
-            <div className="flex gap-3.5">
+        <nav className="flex justify-between items-center bg-orange-300 px-4 py-3 sm:px-8 text-lg sm:text-xl md:text-2xl">
+            <div className="flex gap-4 sm:gap-6">
                 <Link href="/">Home</Link>
-                <Link href="/about">About</Link>
-                <Link href="/contact">Contact</Link>
-                <Link href="/activities">Activities</Link>
-            </div>
-            <div>
-                <ThemeChanger />
+                <Link href="/dashboard">Dashboard</Link>
             </div>
         </nav>
     );

@@ -14,7 +14,7 @@ const ThemeChanger = () => {
     }, []);
 
     if (!mounted) {
-        return null; // voorkomt hydration mismatch
+        return null;
     }
 
     const toggleTheme = () => {
@@ -24,11 +24,11 @@ const ThemeChanger = () => {
     return (
         <div
             onClick={toggleTheme}
-            className="p-2 pointer background dark:background "
+            className="p-2 pointer background  "
             aria-label="Toggle theme"
         >
             {theme === "dark" ? (
-                <LightModeIcon className="text-yellow-400" />
+                <LightModeIcon className="text-black" />
             ) : (
                 <DarkModeIcon className="text-black" />
             )}
