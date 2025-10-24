@@ -11,6 +11,7 @@ const NavBar = () => {
     const links = [
         { href: "/", label: "Home" },
         { href: "/dashboard", label: "Dashboard" },
+        { href: "/myroutes", label: "My routes" },
     ];
 
     return (
@@ -20,7 +21,6 @@ const NavBar = () => {
                     🏃 Strava Dashboard
                 </h1>
 
-                {/* 📱 Mobielmenu knop */}
                 <button
                     className="sm:hidden text-2xl"
                     onClick={() => setOpen((prev) => !prev)}
@@ -29,7 +29,6 @@ const NavBar = () => {
                     {open ? <X size={24} /> : <Menu size={24} />}
                 </button>
 
-                {/* 💻 Desktop links */}
                 <div className="hidden sm:flex gap-6 text-lg sm:text-xl">
                     {links.map((link) => (
                         <Link
@@ -47,7 +46,6 @@ const NavBar = () => {
                 </div>
             </div>
 
-            {/* 📱 Mobielmenu */}
             {open && (
                 <div className="flex flex-col gap-3 mt-3 sm:hidden text-lg">
                     {links.map((link) => (
