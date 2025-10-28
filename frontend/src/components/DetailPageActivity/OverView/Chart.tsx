@@ -10,7 +10,6 @@ import {
     ReferenceDot,
     Area,
     ComposedChart,
-    ReferenceLine,
 } from "recharts";
 import { ChartContainer } from "@/components/ui/chart";
 import { Activities } from "@/app/types/activities";
@@ -80,7 +79,7 @@ export default function Chart({
                 1000;
             const splitLength = totalDistance / totalSplits;
             const startKm = selectedSplit * splitLength;
-            console.log(startKm);
+            console.log("startKm", startKm);
         }
     }, [
         selectedSplit,

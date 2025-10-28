@@ -1,0 +1,33 @@
+{
+  "id": "88ea9cf8-fd5e-43af-9f53-cec2a09c84a5",
+  "name": "test3",
+  "description": "",
+  "type": "Run",
+  "distance": 4.3435970671552715,
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#f97316"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            4.07186,
+            51.058119
+          ],
+          [
+            4.091098,
+            51.043443
+          ],
+          [
+            4.066192,
+            51.055961
+          ]
+        ]
+      }
+    }
+  ],
+  "date": "2025-10-28T19:04:43.965Z"
+}

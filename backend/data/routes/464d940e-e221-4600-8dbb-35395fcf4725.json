@@ -1,0 +1,52 @@
+{
+  "id": "464d940e-e221-4600-8dbb-35395fcf4725",
+  "name": "test2",
+  "description": "",
+  "type": "Run",
+  "distance": 7.48263891666536,
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#f97316"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            4.073578,
+            51.059846
+          ],
+          [
+            4.113084,
+            51.045062
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "color": "#f97316"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            4.113084,
+            51.045062
+          ],
+          [
+            4.095392,
+            51.05963
+          ],
+          [
+            4.126139,
+            51.054235
+          ]
+        ]
+      }
+    }
+  ],
+  "date": "2025-10-28T19:02:09.466Z"
+}

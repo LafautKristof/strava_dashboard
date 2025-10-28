@@ -14,6 +14,7 @@ from utils.get_location_from_coords import get_location_from_coords
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(BASE_DIR, "data")
 STREAM_DIR = os.path.join(DATA_DIR, "streams")
+ROUTE_DIR = os.path.join(DATA_DIR, "routes")
 def read_json_file(filename):
     print(f"📦 Reading {filename}")
     path = os.path.join(DATA_DIR, filename)
@@ -228,3 +229,55 @@ def get_activities_after_date(date):
     print(f"✅ {len(result)} weken gevonden, totaal {total_found} activiteiten gefilterd")
 
     return result
+
+
+def save_my_route(data):
+
+    os.makedirs(ROUTE_DIR, exist_ok=True)
+
+    id = data.get("id")
+    path = os.path.join(ROUTE_DIR, f"{id}.json")
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)
+
+    print(f"✅ Route opgeslagen als {path}")
+    return data
+
+def get_all_routes():
+    routes = []
+    print("ok")
+    for filename in os.listdir(ROUTE_DIR):
+        if filename.endswith(".json"):
+            path = os.path.join(ROUTE_DIR, filename)
+            with open(path, "r", encoding="utf-8") as f:
+                routes.append(json.load(f))
+    return routes
+
+def delete_route_by_id(id):
+    path = os.path.join(ROUTE_DIR, f"{id}.json")
+    if os.path.exists(path):
+        os.remove(path)
+        return {"message": f"Route met id {id} verwijderd."}
+    else:
+        return {"error": f"Route met id {id} niet gevonden."}
+    
+def update_my_route(id, data):
+    os.makedirs(ROUTE_DIR, exist_ok=True)
+    path = os.path.join(ROUTE_DIR, f"{id}.json")
+
+    if not os.path.exists(path):
+        return {"error": f"Route met id {id} niet gevonden."}
+
+
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)
+
+    print(f"✅ Route met id {id} bijgewerkt.")
+    return data  
+
+def delete_routes():
+    for filename in os.listdir(ROUTE_DIR):
+        if filename.endswith(".json"):
+            path = os.path.join(ROUTE_DIR, filename)
+            os.remove(path)
+    return {"message": "Alle routes verwijderd."}

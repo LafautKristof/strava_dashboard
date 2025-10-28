@@ -8,7 +8,12 @@ from services.strava_services import (
     get_athlete,
     get_athlete_stats,
     get_stream_by_id,
-    get_activities_after_date
+    get_activities_after_date,
+    save_my_route,
+    get_all_routes,
+    delete_route_by_id,
+    delete_routes,
+    update_my_route
 )
 
 app = Flask(__name__)
@@ -51,7 +56,7 @@ def athlete():
 
 @app.route("/stats")
 def athlete_stats():
-    data=get_athlete_stats
+    data=get_athlete_stats()
     return jsonify(data)
 
 @app.route("/streams/<id>")
@@ -59,7 +64,34 @@ def get_stream(id):
     data=get_stream_by_id(id)
     return jsonify(data)
 
+@app.route("/save_route", methods=["POST"])
+def save_route():
+    print("save_route")
+    print(request.get_json())
+    data = request.get_json()
+    
+    result=save_my_route(data)
+   
+    return jsonify(result)
 
+@app.route("/my_routes")
+def get_routes():
+    data=get_all_routes()
+    return jsonify(data)
+@app.route("/my_routes/<id>", methods=["DELETE"])
+def delete_route(id):
+    data = delete_route_by_id(id)
+    return jsonify(data)
+
+@app.route("/my_routes", methods=["DELETE"])
+def delete_all_routes():
+    data = delete_routes()
+    return jsonify(data)
+@app.route("/update_route/<id>", methods=["PUT"])
+def update_route(id):
+    data = request.get_json()
+    result = update_my_route(id, data)
+    return jsonify(result)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8000, debug=True)
