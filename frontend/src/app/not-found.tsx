@@ -22,16 +22,17 @@ export default function NotFoundPage() {
                 transition={{ delay: 0.3 }}
                 className="text-2xl font-semibold mb-2"
             >
-                Pagina niet gevonden
+                Page not found
             </motion.h2>
 
             <p className="text-muted-foreground mb-8 max-w-md">
-                Oeps! De pagina die je zoekt bestaat niet of is verplaatst.
+                Oops! The page you are looking for does not exist or has been
+                moved.
             </p>
 
             <Link href="/">
                 <Button size="lg" className="text-white">
-                    ⬅️ Terug naar home
+                    Back to home
                 </Button>
             </Link>
         </div>

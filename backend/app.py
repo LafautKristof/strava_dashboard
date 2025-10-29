@@ -1,7 +1,7 @@
 from flask import Flask, jsonify, Response, request
+from flask_cors import CORS
 import json
 from datetime import datetime, timezone
-from flask_cors import CORS
 from services.strava_services import (
     get_activities,
     get_activity,
@@ -13,7 +13,12 @@ from services.strava_services import (
     get_all_routes,
     delete_route_by_id,
     delete_routes,
-    update_my_route
+    update_my_route,
+    get_activities_by_date,
+    get_activities_for_stats,
+    get_activities_for_chart,
+    get_activities_for_period,
+    build_gear_summary,
 )
 
 app = Flask(__name__)
@@ -23,75 +28,101 @@ CORS(app)
 def home():
     return jsonify({"message": "Flask is running!"})
 
+
 @app.route("/activities")
 def activities():
     after_str = request.args.get("after")
-
-    if after_str:
-        try:
-            after_date = datetime.fromisoformat(after_str)
-            after_date = after_date.replace(tzinfo=timezone.utc)
+    try:
+        if after_str:
+            after_date = datetime.fromisoformat(after_str).replace(tzinfo=timezone.utc)
             data = get_activities_after_date(after_date)
+        else:
+            data = get_activities()
+        return Response(json.dumps(data, default=str, ensure_ascii=False), mimetype="application/json")
+    except ValueError:
+        return jsonify({"error": "Invalid date format, expected YYYY-MM-DD"}), 400
 
-            
-        except ValueError:
-            return jsonify({"error": "Invalid date format, expected YYYY-MM-DD"}), 400
-    else:
-        data = get_activities()
-
-
-  
-    json_str = json.dumps(data, default=str, ensure_ascii=False)
-    return Response(json_str, mimetype="application/json")
 
 @app.route("/activity/<id>")
-def get_activity_by_id(id):
-    data = get_activity(id)
-    return jsonify(data)
+def activity_by_id(id):
+    return jsonify(get_activity(id))
+
 
 @app.route("/athlete")
 def athlete():
-    data=get_athlete()
-    return jsonify(data)
+    return jsonify(get_athlete())
+
 
 @app.route("/stats")
 def athlete_stats():
-    data=get_athlete_stats()
-    return jsonify(data)
+    return jsonify(get_athlete_stats())
+
 
 @app.route("/streams/<id>")
-def get_stream(id):
-    data=get_stream_by_id(id)
-    return jsonify(data)
+def stream(id):
+    return jsonify(get_stream_by_id(id))
+
 
 @app.route("/save_route", methods=["POST"])
 def save_route():
-    print("save_route")
-    print(request.get_json())
     data = request.get_json()
-    
-    result=save_my_route(data)
-   
-    return jsonify(result)
+    return jsonify(save_my_route(data))
 
-@app.route("/my_routes")
-def get_routes():
-    data=get_all_routes()
-    return jsonify(data)
+
+@app.route("/my_routes", methods=["GET"])
+def routes():
+    return jsonify(get_all_routes())
+
+
 @app.route("/my_routes/<id>", methods=["DELETE"])
 def delete_route(id):
-    data = delete_route_by_id(id)
-    return jsonify(data)
+    return jsonify(delete_route_by_id(id))
+
 
 @app.route("/my_routes", methods=["DELETE"])
 def delete_all_routes():
-    data = delete_routes()
-    return jsonify(data)
+    return jsonify(delete_routes())
+
+
 @app.route("/update_route/<id>", methods=["PUT"])
 def update_route(id):
-    data = request.get_json()
-    result = update_my_route(id, data)
-    return jsonify(result)
+    return jsonify(update_my_route(id, request.get_json()))
+
+
+@app.route("/activities/day/<date>")
+def activities_day(date):
+    return jsonify(get_activities_by_date(date))
+
+
+@app.route("/my_stats")
+def my_stats():
+    year = request.args.get("date", type=int)
+    type_ = (request.args.get("type") or "").capitalize()
+    return jsonify(get_activities_for_stats(year, type_))
+
+
+@app.route("/overall_chart")
+def overall_chart():
+    return jsonify(get_activities_for_chart())
+
+
+@app.route("/activities_by_period")
+def activities_by_period():
+    label = request.args.get("label")
+    period = request.args.get("type")
+    year = int(request.args.get("year"))
+    return jsonify(get_activities_for_period(label, period, year))
+
+
+@app.route("/my_gear")
+def gear_summary():
+    athlete = get_athlete()
+    activities_data = get_activities()
+    return Response(
+        json.dumps(build_gear_summary(athlete, activities_data), default=str, ensure_ascii=False),
+        mimetype="application/json"
+    )
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8000, debug=True)

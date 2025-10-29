@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Name = ({ name }: { name: string }) => {
     return (
-        <Link href={`/athlete/`} className="text-xl font-bold">
+        <Link href={`/mystats`} className="text-xl font-bold">
             {name}
         </Link>
     );

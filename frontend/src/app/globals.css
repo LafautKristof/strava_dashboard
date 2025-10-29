@@ -124,13 +124,12 @@
     }
 }
 
-/* ✅ Fix voor Recharts Y-as en tekst */
 .recharts-cartesian-axis text {
     fill: currentColor !important;
 }
 
 .recharts-yAxis text {
-    fill: #3b82f6 !important; /* blauwe as-labels */
+    fill: #3b82f6 !important;
 }
 
 .recharts-yAxis line,
@@ -138,7 +137,6 @@
     stroke: #3b82f6 !important;
 }
 
-/* Leaflet container fix */
 .leaflet-container {
     width: 100% !important;
     height: 100% !important;
@@ -146,20 +144,17 @@
     z-index: 0;
 }
 
-/* Marker boven tiles */
 .leaflet-marker-pane {
     z-index: 10000 !important;
 }
 
-/* Tile anti-gap fix */
 .leaflet-tile {
-    margin: -1px; /* elimineert sub-pixel gaps */
+    margin: -1px;
     background: none !important;
     border: none !important;
     image-rendering: pixelated;
 }
 
-/* Optimaliseer rendering */
 .leaflet-layer,
 .leaflet-tile-container,
 .leaflet-tile-container img {

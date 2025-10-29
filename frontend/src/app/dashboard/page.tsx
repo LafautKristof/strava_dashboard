@@ -1,6 +1,5 @@
 import MiddleDashboardComponent from "@/components/Dashboard/MiddleDashboardComponents/MiddleDashboardComponent";
 import LeftDashboardComponent from "@/components/Dashboard/LeftDashboardComponents/LeftDashboardComponent";
-
 import { get8WeeksAgo } from "@/helpers/get8WeeksAgo";
 
 const page = async () => {
@@ -34,10 +33,7 @@ const page = async () => {
                 />
             </div>
             <div className="w-full lg:flex-1">
-                <MiddleDashboardComponent
-                    athlete={dataAthlete}
-                    activities={dataActivities}
-                />
+                <MiddleDashboardComponent athlete={dataAthlete} />
             </div>
         </main>
     );

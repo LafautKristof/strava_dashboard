@@ -12,20 +12,30 @@ import L from "leaflet";
 import { startIcon } from "@/helpers/Map/startIcon";
 import { finishIcon } from "@/helpers/Map/finishIcon";
 
-export default function Map({ route }: { route?: string }) {
+export default function Map({
+    route,
+    small = false,
+}: {
+    route?: string;
+    small?: boolean;
+}) {
     if (!route) return null;
     const coords = decode(route).map(([lat, lng]) => [lat, lng]) as [
         number,
         number
     ][];
-
+    const heightClass = small ? "h-[100px]" : "h-[400px]";
     return (
         <MapContainer
             key={`overview-map-${route}`}
-            className="h-[400px] w-full rounded-lg"
+            className={`${heightClass} w-full rounded-lg`}
             center={coords[0]}
             zoom={13}
-            scrollWheelZoom={false}
+            scrollWheelZoom={!small}
+            dragging={!small}
+            doubleClickZoom={!small}
+            zoomControl={!small}
+            attributionControl={!small}
         >
             <TileLayer
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -33,9 +43,12 @@ export default function Map({ route }: { route?: string }) {
             />
             <Polyline
                 positions={coords}
-                pathOptions={{ color: "gray", weight: 4 }}
+                pathOptions={{
+                    color: "gray",
+                    weight: small ? 3 : 5,
+                }}
             />
-            <FitBounds coords={coords} />
+            <FitBounds coords={coords} small={small} />
             {coords.length > 0 && (
                 <>
                     <Marker position={coords[0]} icon={startIcon} />
@@ -49,13 +62,22 @@ export default function Map({ route }: { route?: string }) {
     );
 }
 
-function FitBounds({ coords }: { coords: [number, number][] }) {
+function FitBounds({
+    coords,
+    small,
+}: {
+    coords: [number, number][];
+    small?: boolean;
+}) {
     const map = useMap();
     useEffect(() => {
         if (coords?.length) {
             const bounds = L.latLngBounds(coords);
-            map.fitBounds(bounds, { padding: [40, 40] });
+            map.fitBounds(bounds, { padding: small ? [20, 20] : [30, 30] });
         }
+        setTimeout(() => {
+            map.invalidateSize();
+        }, 200);
     }, [coords, map]);
     return null;
 }

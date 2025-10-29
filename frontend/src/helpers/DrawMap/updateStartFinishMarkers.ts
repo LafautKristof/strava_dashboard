@@ -56,7 +56,7 @@ export function checkDisconnected(features: Feature[], map: L.Map) {
             const popup = L.popup()
                 .setLatLng([currStart[1], currStart[0]])
                 .setContent(
-                    "⚠️ Deze lijn is niet verbonden met de vorige.<br/>💡 Zorg dat lijnen elkaar raken voor één route."
+                    "This line is not connected to the previous one.<br/> Make sure that lines are connected to each other for a single route."
                 )
                 .openOn(map);
             setTimeout(() => map.closePopup(popup), 4000);

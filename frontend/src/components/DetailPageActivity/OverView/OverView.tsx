@@ -22,12 +22,16 @@ const OverView = ({
 }) => {
     const who = athlete.profile;
     const firstSegment = activity.segment_efforts?.[0]?.segment;
+    console.log("activitie", activity);
+
     const where =
-        firstSegment?.city && firstSegment?.state && firstSegment?.country
-            ? `${firstSegment.city}, ${firstSegment.state}, ${firstSegment.country}`
+        activity.location_city && activity.location_country
+            ? `${activity.location_city}, ${activity.location_country}`
             : activity.location_city ||
               activity.location_country ||
-              "Onbekende locatie";
+              (firstSegment?.city && firstSegment?.country
+                  ? `${firstSegment.city}, ${firstSegment.country}`
+                  : "Onbekende locatie");
     const when = getStartTime(activity.start_date_local).toLocaleString();
     const what = activity.name;
     const description = activity.description;

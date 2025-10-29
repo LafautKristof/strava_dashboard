@@ -124,7 +124,7 @@ export default function SplitsMap({
     if (!LRef) {
         return (
             <div className="h-[400px] w-full flex items-center justify-center border rounded-md text-muted-foreground">
-                Kaart wordt geladen...
+                Map is loading...
             </div>
         );
     }

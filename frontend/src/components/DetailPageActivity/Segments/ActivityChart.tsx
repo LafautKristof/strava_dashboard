@@ -66,7 +66,7 @@ export default function ActivityChart({
     if (!chartData.length) {
         return (
             <div className="p-6 text-muted-foreground text-center text-sm sm:text-base">
-                Geen elevatiegegevens beschikbaar
+                No elevation data available
             </div>
         );
     }

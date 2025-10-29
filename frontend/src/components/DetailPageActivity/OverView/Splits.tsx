@@ -94,7 +94,7 @@ export default function Splits({
                                         colSpan={4}
                                         className="text-center py-4 text-muted-foreground"
                                     >
-                                        Geen splits beschikbaar
+                                        No splits available
                                     </TableCell>
                                 </TableRow>
                             )}

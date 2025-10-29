@@ -10,7 +10,7 @@ const LatestActivity = ({ activitie }: { activitie: Activities }) => {
         <>
             <div className="my-6 sm:my-8">
                 <h2 className="text-base sm:text-lg font-semibold text-muted-foreground mb-3">
-                    Laatste activiteit
+                    Latest activity
                 </h2>
 
                 <Link

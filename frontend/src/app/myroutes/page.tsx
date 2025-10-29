@@ -29,7 +29,7 @@ const MyRoutesPage = () => {
         <main className="flex flex-col lg:flex-row w-full min-h-[80vh] items-start gap-6">
             <div className="w-full lg:w-1/3">
                 <div className="flex items-center justify-between mb-3">
-                    <h2 className="text-lg font-semibold">Mijn routes</h2>
+                    <h2 className="text-lg font-semibold">My routes</h2>
                     <div className="flex gap-2">
                         <Button
                             variant="default"
@@ -47,14 +47,14 @@ const MyRoutesPage = () => {
                                 })
                             }
                         >
-                            ➕ Nieuwe route
+                            Add route
                         </Button>
                         <Button
                             variant="outline"
                             disabled={!selectedRoute}
                             onClick={() => setSelectedRoute(null)}
                         >
-                            ← Terug
+                            ← Back
                         </Button>
                     </div>
                 </div>

@@ -70,7 +70,7 @@ export default function WeeklyEffortChart({
     if (!hasData) {
         return (
             <Card className="p-6 text-center text-muted-foreground">
-                Geen data voor de laatste 12 weken
+                No data for the last 12 weeks
             </Card>
         );
     }

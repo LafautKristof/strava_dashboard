@@ -19,7 +19,7 @@ const WeeklyActivitiesList = ({
     if (!activities?.length) {
         return (
             <p className="text-center text-sm text-muted-foreground italic py-4">
-                Geen activiteiten deze week
+                No activities this week
             </p>
         );
     }

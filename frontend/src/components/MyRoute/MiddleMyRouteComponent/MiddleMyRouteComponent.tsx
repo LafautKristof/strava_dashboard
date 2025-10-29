@@ -10,7 +10,7 @@ import { RouteType } from "@/app/types/routeType";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { Select, SelectItem } from "@/components/ui/select";
+import { Select, SelectContent, SelectItem } from "@/components/ui/select";
 
 interface PMCreateEvent extends L.LeafletEvent {
     layer: L.Polyline;
@@ -160,7 +160,7 @@ export default function MiddleMyRouteComponent({
         setName("");
         setDescription("");
 
-        alert(isUpdate ? "✅ Route bijgewerkt!" : "✅ Route opgeslagen!");
+        alert(isUpdate ? "Route changed" : "Route saved");
     };
     return (
         <>
@@ -194,9 +194,11 @@ export default function MiddleMyRouteComponent({
                     className="w-full border p-2 rounded"
                 />
                 <Select value={type} onValueChange={(value) => setType(value)}>
-                    <SelectItem value="Run">Run</SelectItem>
-                    <SelectItem value="Ride">Ride</SelectItem>
-                    <SelectItem value="Walk">Walk</SelectItem>
+                    <SelectContent>
+                        <SelectItem value="Run">Run</SelectItem>
+                        <SelectItem value="Ride">Ride</SelectItem>
+                        <SelectItem value="Walk">Walk</SelectItem>
+                    </SelectContent>
                 </Select>
 
                 <div className="flex items-center gap-2">
@@ -205,7 +207,7 @@ export default function MiddleMyRouteComponent({
                         id="color"
                         value={color}
                         onChange={(e) => setColor(e.target.value)}
-                        className="w-12 h-12 border rounded"
+                        className="w-20 h-12 border rounded"
                     />
                 </div>
             </div>

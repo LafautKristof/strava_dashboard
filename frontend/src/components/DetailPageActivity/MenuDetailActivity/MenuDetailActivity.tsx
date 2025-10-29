@@ -22,7 +22,6 @@ const MenuDetailActivity = ({
             orientation="vertical"
             className="flex flex-col lg:flex-row w-full min-h-[80vh] items-start"
         >
-            {/* 🔸 Sidebar links */}
             <TabsList
                 className="
             flex flex-row lg:flex-col
@@ -63,7 +62,6 @@ const MenuDetailActivity = ({
                 ))}
             </TabsList>
 
-            {/* 🔸 Inhoud rechts */}
             <div className="flex-1 w-full p-4 lg:p-6 bg-white rounded-md border shadow-sm">
                 <TabsContent value="overview">
                     <OverView

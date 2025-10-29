@@ -8,7 +8,7 @@ const Chart = dynamic(() => import("./Chart"), {
     ssr: false,
     loading: () => (
         <div className="flex items-center justify-center h-[250px] text-gray-400">
-            📊 Chart laden...
+            Chart loading...
         </div>
     ),
 });

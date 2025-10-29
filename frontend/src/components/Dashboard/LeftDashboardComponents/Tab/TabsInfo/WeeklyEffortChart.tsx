@@ -103,7 +103,7 @@ export default function WeeklyEffortChart({
     if (!chartData.length) {
         return (
             <Card className="p-6 text-center text-muted-foreground">
-                Geen data voor de laatste 8 weken
+                No data for the last 8 weeks
             </Card>
         );
     }
