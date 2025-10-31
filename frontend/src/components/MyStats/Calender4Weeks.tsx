@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Activities4Weeks } from "@/app/types/activities4Weeks";
+import { Activities, Activities4Weeks } from "@/app/types/activities4Weeks";
 import {
     Table,
     TableBody,
@@ -78,11 +78,12 @@ const Calender4Weeks = ({
 
             <TableBody>
                 {activities4Weeks.map((week, weekIndex) => {
-                    const dayCells: any[][] = Array.from(
+                    const dayCells: Activities[][] = Array.from(
                         { length: 7 },
                         () => []
                     );
 
+                    console.log("dayCells", dayCells);
                     week.activities.forEach((activity) => {
                         const dayIndex = getDayIndex(activity.start_date_local);
                         if (dayIndex >= 0 && dayIndex < 7) {
@@ -97,7 +98,7 @@ const Calender4Weeks = ({
                         Walk: 0,
                     };
 
-                    week.activities.forEach((a: any) => {
+                    week.activities.forEach((a: Activities) => {
                         if (typeTimes[a.type] !== undefined) {
                             typeTimes[a.type] += a.moving_time ?? 0;
                         }

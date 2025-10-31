@@ -22,6 +22,7 @@ import { OverallChartData } from "@/app/types/overallChart";
 import { Activities } from "@/app/types/activities";
 import Link from "next/link";
 import { getTypeIcon } from "@/helpers/getTypeIcon";
+import { CategoricalChartState } from "recharts/types/chart/types";
 
 export default function MyOverallChart() {
     const [data, setData] = useState<OverallChartData | null>(null);
@@ -79,8 +80,10 @@ export default function MyOverallChart() {
             </div>
         );
     }
-    const handleBarClick = async (data: any) => {
-        const label = data?.activeLabel || data?.name;
+    const handleBarClick = async (data: CategoricalChartState) => {
+        console.log("data", data);
+        const label =
+            data.activeLabel || data.activePayload?.[0]?.payload?.name;
         if (!label) return;
         setSelectedLabel(label);
 
@@ -107,7 +110,9 @@ export default function MyOverallChart() {
                         <Button
                             key={m}
                             variant={metric === m ? "default" : "outline"}
-                            onClick={() => setMetric(m as any)}
+                            onClick={() => {
+                                setMetric(m as "time" | "distance" | "elev");
+                            }}
                         >
                             {m === "time"
                                 ? "Time"
@@ -123,7 +128,7 @@ export default function MyOverallChart() {
                         <Button
                             key={p}
                             variant={period === p ? "default" : "outline"}
-                            onClick={() => setPeriod(p as any)}
+                            onClick={() => setPeriod(p as "weekly" | "monthly")}
                         >
                             {p === "weekly" ? "Weekly" : "Monthly"}
                         </Button>
@@ -167,7 +172,7 @@ export default function MyOverallChart() {
                             }}
                         />
                         <Tooltip
-                            formatter={(value: any, name: string) => {
+                            formatter={(value: number, name: string) => {
                                 const num = Number(value) || 0;
                                 if (name === "distance")
                                     return [`${num.toFixed(1)} km`, "Distance"];

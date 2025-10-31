@@ -1,10 +1,6 @@
 import { Athlete } from "@/app/types/athlete";
-import Picture from "./Picture";
-import Name from "./Name";
-
 import TotalActivities4Weeks from "./TotalActivities4Weeks";
 import { Activities4Weeks } from "@/app/types/activities4Weeks";
-import { Activities } from "@/app/types/activities";
 
 const Last4Weeks = ({
     athlete,

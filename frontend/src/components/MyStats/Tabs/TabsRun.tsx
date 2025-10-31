@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Stats } from "@/app/types/stats";
+import { BestEfforts, Stats } from "@/app/types/stats";
 import {
     Table,
     TableBody,
@@ -105,7 +105,7 @@ const TabsRun = () => {
                                     Best Efforts
                                 </TableCell>
                             </TableRow>
-                            {stats.best_efforts.map((effort: any) => (
+                            {stats.best_efforts.map((effort: BestEfforts) => (
                                 <TableRow key={effort.label}>
                                     <TableCell>{effort.label}</TableCell>
                                     <TableCell className="text-center font-medium text-orange-600">

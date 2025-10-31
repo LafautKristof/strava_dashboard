@@ -12,7 +12,7 @@ export default function LazyMap({
     small?: boolean;
 }) {
     const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
-    const height = small ? "100px" : "400px";
+
     return (
         <div
             ref={ref}

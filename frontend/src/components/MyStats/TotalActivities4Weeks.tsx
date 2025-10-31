@@ -1,7 +1,5 @@
-import { Activities } from "@/app/types/activities";
 import { Activities4Weeks } from "@/app/types/activities4Weeks";
 import Calender4Weeks from "./Calender4Weeks";
-import { getDaysThisWeek } from "@/helpers/getActivitiesThisWeek";
 import MyOverallStats from "./MyOverallStats";
 import MyOverallChart from "./MyOverallChart";
 import { Athlete } from "@/app/types/athlete";
