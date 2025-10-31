@@ -44,7 +44,7 @@ export default function MyOverallChart() {
                     }
                 );
                 const json: OverallChartData = await res.json();
-                console.log(json);
+
                 setData(json);
             } catch (err) {
                 console.error("❌ Fout bij laden data:", err);
@@ -81,7 +81,6 @@ export default function MyOverallChart() {
         );
     }
     const handleBarClick = async (data: CategoricalChartState) => {
-        console.log("data", data);
         const label =
             data.activeLabel || data.activePayload?.[0]?.payload?.name;
         if (!label) return;
@@ -96,7 +95,7 @@ export default function MyOverallChart() {
                 )}&year=${year}`
             );
             const json = await res.json();
-            console.log("ac()", json);
+
             setActivities(json);
         } catch (err) {
             console.error("Failed to fetch activities:", err);
