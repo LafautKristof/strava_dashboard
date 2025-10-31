@@ -19,7 +19,6 @@ const page = async () => {
         resActivities4Weeks.json(),
     ]);
 
-    console.log(dataActivities4Weeks);
     return (
         <div>
             <Last4Weeks

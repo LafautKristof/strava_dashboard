@@ -25,7 +25,7 @@ const MiddleDashboardComponent = ({ athlete }: { athlete: Athlete }) => {
                 { cache: "no-store" }
             );
             const newData: DataActivity = await res.json();
-            console.log("newData", newData);
+
             if (newData.activities.length === 0) setHasMore(false);
             setActivities((prev) => [...prev, ...newData.activities]);
         } catch (err) {

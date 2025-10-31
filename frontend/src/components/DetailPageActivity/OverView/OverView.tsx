@@ -22,7 +22,6 @@ const OverView = ({
 }) => {
     const who = athlete.profile;
     const firstSegment = activity.segment_efforts?.[0]?.segment;
-    console.log("activitie", activity);
 
     const where =
         activity.location_city && activity.location_country
@@ -61,7 +60,6 @@ const OverView = ({
               },
           ]
         : [];
-    console.log("weater", weather);
 
     return (
         <>

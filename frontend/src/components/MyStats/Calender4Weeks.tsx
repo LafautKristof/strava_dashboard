@@ -83,7 +83,6 @@ const Calender4Weeks = ({
                         () => []
                     );
 
-                    console.log("dayCells", dayCells);
                     week.activities.forEach((activity) => {
                         const dayIndex = getDayIndex(activity.start_date_local);
                         if (dayIndex >= 0 && dayIndex < 7) {
