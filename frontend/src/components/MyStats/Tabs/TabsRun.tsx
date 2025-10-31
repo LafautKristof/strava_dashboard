@@ -24,7 +24,7 @@ const TabsRun = () => {
                     `${process.env.NEXT_PUBLIC_API_URL}/my_stats?date=${selectedYear}&type=run`
                 );
                 const data = await res.json();
-                console.log(data);
+
                 setStats(data);
             } catch (err) {
                 console.error("Error fetching stats:", err);
