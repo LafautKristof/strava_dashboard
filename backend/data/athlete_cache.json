@@ -39,7 +39,7 @@
       "nickname": "",
       "resource_state": 2,
       "retired": false,
-      "distance": 18300,
+      "distance": 18283,
       "converted_distance": 18.3
     },
     {
@@ -49,8 +49,8 @@
       "nickname": "",
       "resource_state": 2,
       "retired": false,
-      "distance": 22308,
-      "converted_distance": 22.3
+      "distance": 25269,
+      "converted_distance": 25.3
     }
   ]
 }

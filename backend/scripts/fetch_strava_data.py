@@ -2,7 +2,8 @@ import json, os, requests, time, sys
 from dotenv import load_dotenv
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 from utils.token_manager import get_access_token
-
+from utils.get_weather_for_activity import get_weather_for_activity
+from datetime import datetime, timezone, timedelta
 load_dotenv()
 TOKEN = get_access_token()
 HEADERS = {"Authorization": f"Bearer {TOKEN}"}
@@ -16,6 +17,7 @@ os.makedirs(DATA_DIR, exist_ok=True)
 STREAM_DIR = os.path.join(DATA_DIR, "streams")
 os.makedirs(STREAM_DIR, exist_ok=True)
 
+SYNC_FILE = os.path.join(DATA_DIR, "last_sync.txt")
 def save_json(filename, data):
     path = os.path.join(DATA_DIR, filename)
     with open(path, "w") as f:
@@ -48,20 +50,28 @@ def fetch_stats(athlete_id):
     return data
 
 
-def fetch_all_activities():
+def fetch_all_activities(since_timestamp=None):
     print("🚴 Fetching all activities (summary only)...")
     all_acts, page = [], 1
+    params = {"per_page": 200, "page": page}
+    if since_timestamp:
+        params["after"] = since_timestamp  # Unix timestamp
+
     while True:
         data = fetch_json(
             "https://www.strava.com/api/v3/athlete/activities",
-            params={"per_page": 200, "page": page},
+            params=params,
             sleep=1,
         )
         if not data:
             break
         all_acts.extend(data)
         print(f"  → Page {page} ({len(all_acts)} total)")
+        if len(data) < 200:
+            break
         page += 1
+        params["page"] = page
+
     return all_acts
 
 
@@ -110,19 +120,18 @@ def fetch_activity_streams(act_id):
 
 def fetch_all_streams(activities):
     """Loop through all activities and download streams safely."""
-    total = len(activities)
-    print(f"🩵 Fetching streams for {total} activities...")
-    count = 0
-
-    for i, act in enumerate(activities, 1):
+    new_count = 0
+    for act in activities:
         act_id = act["id"]
+        stream_path = os.path.join(STREAM_DIR, f"{act_id}.json")
+        if os.path.exists(stream_path):
+            continue  # cache bestaat → skip
         fetch_activity_streams(act_id)
-        count += 1
-
-        if count % 100 == 0:
-            print("⏸️ 100 requests done — sleeping 15 minutes to respect Strava rate limits...")
+        new_count += 1
+        if new_count % 100 == 0:
+            print("⏸️ 100 new streams fetched — sleeping 15 minutes...")
             time.sleep(15 * 60)
-
+    print(f"✅ Streams done — {new_count} new, rest skipped.")
 
 
 def main():
@@ -144,56 +153,97 @@ def main():
 
     fetch_stats(athlete_id)
 
-    all_acts = fetch_all_activities()
-    print(f"📦 Found {len(all_acts)} activities")
+    # 🔄 Always fetch last 60 days
+    print("📅 Fetching activities from last 60 days...")
+    since_dt = datetime.now(timezone.utc) - timedelta(days=60)
+    since_timestamp = int(since_dt.timestamp())
+    all_acts = fetch_all_activities(since_timestamp=since_timestamp)
+    print(f"📦 Found {len(all_acts)} activities (last 60 days)")
 
     cache_path = os.path.join(DATA_DIR, "activities_cache.json")
-    existing_ids = set()
     if os.path.exists(cache_path):
         with open(cache_path, "r") as f:
             existing = json.load(f)
-            existing_ids = {a["id"] for a in existing}
     else:
         existing = []
 
+    existing_ids = {a["id"] for a in existing}
+
+    # Bepaal welke activiteiten we moeten updaten
     new_acts = []
     for a in all_acts:
         match = next((x for x in existing if x["id"] == a["id"]), None)
-        if not match:
-            new_acts.append(a)
-        elif match.get("resource_state", 2) < 3:
-            print(f"🔁 Updating activity {a['id']} (was resource_state={match.get('resource_state')})")
+        if not match or match.get("resource_state", 2) < 3:
             new_acts.append(a)
 
-    print(f"🆕 {len([a for a in new_acts if a['id'] not in existing_ids])} new + "
-          f"🔁 {len([a for a in new_acts if a['id'] in existing_ids])} updated activities")
+    # 🧩 Als er geen nieuwe zijn, gebruik alle 60 dagen om weather te checken
+    if not new_acts:
+        print("ℹ️ No new Strava activities — checking last 60 days for missing weather...")
+        new_acts = all_acts
+
+    print(f"🔎 {len(new_acts)} activities to check for weather updates...\n")
+
+    MAX_AGE = timedelta(days=60)
+    ONE_YEAR = timedelta(days=365)
 
     for i, act in enumerate(new_acts, 1):
-        print(f"  → ({i}/{len(new_acts)}) Fetching detail for ID {act['id']}")
+        print(f"🟠 ({i}/{len(new_acts)}) Checking ID {act['id']}")
+
         detail = fetch_activity_detail(act["id"])
-        if detail:
-            detail["resource_state"] = 3
-            detail["map"] = detail.get("map", {})
-            detail["location_city"] = detail.get("location_city")
-            detail["location_country"] = detail.get("location_country")
+        if not detail:
+            print(f"⚠️ Skipping {act['id']} (no detail)")
+            continue
 
-            existing = [x for x in existing if x["id"] != act["id"]]
-            existing.append(detail)
-            existing.sort(key=lambda x: x.get("start_date", ""), reverse=True)
-            save_json("activities_cache.json", existing)
+        try:
+            activity_dt = datetime.fromisoformat(detail["start_date"].replace("Z", "+00:00"))
+            if datetime.now(timezone.utc) - activity_dt > ONE_YEAR:
+                print(f"🧊 Skipping {act['id']} — too old (>1y)")
+                continue
+        except Exception:
+            print(f"⚠️ Invalid date for {act['id']} — skipping age check")
 
-        if i % 100 == 0:
-            print("⏸️ Pausing 15 minutes to respect Strava rate limits...")
-            time.sleep(15 * 60)
+        existing_act = next((x for x in existing if x["id"] == act["id"]), None)
+        latlng = detail.get("start_latlng")
+        date_local = detail.get("start_date_local")
 
-    if existing:
-        print("🧭 Sorting all existing activities by start_date (newest first)...")
+        if existing_act and existing_act.get("weather"):
+            detail["weather"] = existing_act["weather"]
+            print(f"🟢 Keeping existing weather for {act['id']}")
+        elif latlng and len(latlng) == 2 and date_local:
+            try:
+                dt_local = datetime.fromisoformat(date_local.replace("Z", "+00:00"))
+            except Exception:
+                dt_local = None
+
+            if dt_local and (datetime.now(timezone.utc) - dt_local < MAX_AGE):
+                print(f"🌍 Fetching weather for {date_local} at ({latlng[0]}, {latlng[1]})")
+                weather = get_weather_for_activity(latlng[0], latlng[1], date_local)
+                if weather:
+                    detail["weather"] = weather
+                    print(f"🌤️ Weather added → {weather['condition']} ({weather['temperature']}°C)")
+                else:
+                    print(f"⚠️ No weather data returned for {act['id']}")
+            else:
+                print(f"⏳ Skipping weather for {act['id']} (too old or invalid date)")
+        else:
+            print(f"⚠️ Missing lat/lon or date for {act['id']} — cannot fetch weather")
+
+        # 💾 Save updated activity
+        existing = [x for x in existing if x["id"] != act["id"]]
+        existing.append(detail)
         existing.sort(key=lambda x: x.get("start_date", ""), reverse=True)
         save_json("activities_cache.json", existing)
 
-    fetch_all_streams(existing)
+        if i % 25 == 0:
+            print(f"💤 Processed {i}/{len(new_acts)} — pausing briefly to avoid rate limits")
+            time.sleep(3)
 
-    print("\n🏁 All done! Local cache is up to date.")
+    print("\n✅ Done adding weather for last 60 days.")
+    now_str = datetime.now(timezone.utc).isoformat()
+    with open(SYNC_FILE, "w") as f:
+        f.write(now_str)
+    print(f"✅ Updated last_sync.txt → {now_str}\n🏁 All done!")
+
 
 if __name__ == "__main__":
     main()

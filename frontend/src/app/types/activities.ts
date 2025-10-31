@@ -75,6 +75,7 @@ export type Activities = {
     embed_token: string;
     similar_activities: SimilarActivities;
     available_zones: string[];
+    weather: Weather;
 };
 
 export type Athlete = {
@@ -257,4 +258,14 @@ export type Gear = {
     primary: boolean;
     resource_state: number;
     retired: boolean;
+};
+
+export type Weather = {
+    condition: string;
+    temperature: number;
+    feels_like: number;
+    humidity: number;
+    wind_speed: number;
+    wind_dir: string;
+    cloud_cover: number;
 };

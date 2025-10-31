@@ -48,6 +48,21 @@ const OverView = ({
         },
     ];
 
+    const weather = activity.weather
+        ? [
+              {
+                  condition: activity.weather.condition,
+                  temperature: activity.weather.temperature,
+                  feels_like: activity.weather.feels_like,
+                  humidity: activity.weather.humidity,
+                  wind_speed: activity.weather.wind_speed,
+                  wind_dir: activity.weather.wind_dir,
+                  cloud_cover: activity.weather.cloud_cover,
+              },
+          ]
+        : [];
+    console.log("weater", weather);
+
     return (
         <>
             <div className="border-b">
@@ -78,8 +93,8 @@ const OverView = ({
                 />
 
                 <div className="flex-1 p-4">
-                    <Details details={details} />
-                    {activity.gear && activity.device_name && (
+                    <Details details={details} weather={weather} />
+                    {(activity.gear || activity.device_name) && (
                         <MyGear
                             gear={activity.gear}
                             device={activity.device_name}

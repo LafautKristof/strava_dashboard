@@ -1,4 +1,5 @@
 import { Separator } from "@/components/ui/separator";
+import { getWeatherIcon } from "@/helpers/getWeatherIcon";
 
 type Details = {
     distance: string;
@@ -9,10 +10,26 @@ type Details = {
     elapsedTime: string;
     calories: number;
 };
-const Details = ({ details }: { details: Details[] }) => {
+
+type Weather = {
+    condition: string;
+    temperature: number;
+    feels_like: number;
+    humidity: number;
+    wind_speed: number;
+    wind_dir: string;
+    cloud_cover: number;
+};
+const Details = ({
+    details,
+    weather,
+}: {
+    details: Details[];
+    weather?: Weather[];
+}) => {
     return (
         <>
-            <div className="flex gap-6 mb-4">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-4">
                 <div>
                     <div className="flex items-baseline gap-1">
                         <h2 className="text-2xl">{details[0].distance} </h2>
@@ -50,6 +67,40 @@ const Details = ({ details }: { details: Details[] }) => {
                     <p className="font-bold">{details[0].elapsedTime}</p>
                 </div>
             </div>
+
+            {weather && weather.length > 0 && (
+                <>
+                    {" "}
+                    <Separator />
+                    <div className="grid grid-cols-2 text-sm mt-4 mb-4 ">
+                        <div className="grid grid-cols-2">
+                            <p className="font-bold">{weather[0].condition}</p>
+                            <p className="font-bold">
+                                {getWeatherIcon(weather[0].condition)}
+                            </p>
+                            <p>Temperature</p>
+                            <p className="font-bold">
+                                {weather[0].temperature} °C
+                            </p>
+                            <p>Humidity</p>
+                            <p className="font-bold">{weather[0].humidity}%</p>
+                        </div>
+
+                        <div className="grid grid-cols-2">
+                            <p>Feels Like</p>
+                            <p className="font-bold">
+                                {weather[0].feels_like} °C
+                            </p>
+                            <p>Wind Speed</p>
+                            <p className="font-bold">
+                                {weather[0].wind_speed} km/h
+                            </p>
+                            <p>Wind Direction</p>
+                            <p className="font-bold">{weather[0].wind_dir}</p>
+                        </div>
+                    </div>
+                </>
+            )}
             <Separator />
         </>
     );
