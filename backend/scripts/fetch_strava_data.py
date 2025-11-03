@@ -55,7 +55,7 @@ def fetch_all_activities(since_timestamp=None):
     all_acts, page = [], 1
     params = {"per_page": 200, "page": page}
     if since_timestamp:
-        params["after"] = since_timestamp  # Unix timestamp
+        params["after"] = since_timestamp
 
     while True:
         data = fetch_json(
@@ -153,7 +153,7 @@ def main():
 
     fetch_stats(athlete_id)
 
-    # 🔄 Always fetch last 60 days
+
     print("📅 Fetching activities from last 60 days...")
     since_dt = datetime.now(timezone.utc) - timedelta(days=60)
     since_timestamp = int(since_dt.timestamp())
@@ -169,14 +169,14 @@ def main():
 
     existing_ids = {a["id"] for a in existing}
 
-    # Bepaal welke activiteiten we moeten updaten
+  
     new_acts = []
     for a in all_acts:
         match = next((x for x in existing if x["id"] == a["id"]), None)
         if not match or match.get("resource_state", 2) < 3:
             new_acts.append(a)
 
-    # 🧩 Als er geen nieuwe zijn, gebruik alle 60 dagen om weather te checken
+
     if not new_acts:
         print("ℹ️ No new Strava activities — checking last 60 days for missing weather...")
         new_acts = all_acts
@@ -228,7 +228,7 @@ def main():
         else:
             print(f"⚠️ Missing lat/lon or date for {act['id']} — cannot fetch weather")
 
-        # 💾 Save updated activity
+    
         existing = [x for x in existing if x["id"] != act["id"]]
         existing.append(detail)
         existing.sort(key=lambda x: x.get("start_date", ""), reverse=True)
