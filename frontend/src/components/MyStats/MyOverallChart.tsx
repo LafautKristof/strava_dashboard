@@ -87,7 +87,7 @@ export default function MyOverallChart() {
     }
     const handleBarClick = async (entry: ChartEntry) => {
         const label = entry.name;
-        console.log(label);
+
         if (!label) return;
         setSelectedLabel(label);
 

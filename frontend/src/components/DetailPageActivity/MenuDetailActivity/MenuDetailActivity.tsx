@@ -16,7 +16,6 @@ const MenuDetailActivity = ({
     athlete: Athlete;
     streams: Streams;
 }) => {
-    console.log("streams", streams);
     return (
         <Tabs
             defaultValue="overview"
