@@ -23,7 +23,12 @@ import { Activities } from "@/app/types/activities";
 import Link from "next/link";
 import { getTypeIcon } from "@/helpers/getTypeIcon";
 import { CategoricalChartState } from "recharts/types/chart/types";
-
+type ChartEntry = {
+    name: string;
+    time: number;
+    distance: number;
+    elev: number;
+};
 export default function MyOverallChart() {
     const [data, setData] = useState<OverallChartData | null>(null);
     const [loading, setLoading] = useState(true);
@@ -80,9 +85,9 @@ export default function MyOverallChart() {
             </div>
         );
     }
-    const handleBarClick = async (data: CategoricalChartState) => {
-        const label =
-            data.activeLabel || data.activePayload?.[0]?.payload?.name;
+    const handleBarClick = async (entry: ChartEntry) => {
+        const label = entry.name;
+        console.log(label);
         if (!label) return;
         setSelectedLabel(label);
 
@@ -160,7 +165,10 @@ export default function MyOverallChart() {
             </div>
             <div className="w-full h-[350px]">
                 <ResponsiveContainer width="100%" height="100%">
-                    <BarChart data={filteredData}>
+                    <BarChart
+                        data={filteredData}
+                        margin={{ top: 0, right: 0, left: -30, bottom: 0 }}
+                    >
                         <CartesianGrid strokeDasharray="3 3" />
                         <XAxis dataKey="name" />
                         <YAxis
@@ -168,6 +176,7 @@ export default function MyOverallChart() {
                                 value: metricLabel,
                                 angle: -90,
                                 position: "insideLeft",
+                                className: "hidden sm:block",
                             }}
                         />
                         <Tooltip
@@ -186,7 +195,9 @@ export default function MyOverallChart() {
                         <Bar
                             dataKey={metric}
                             radius={[6, 6, 0, 0]}
-                            onClick={(data) => handleBarClick(data)}
+                            onClick={({ payload }: { payload: ChartEntry }) =>
+                                handleBarClick(payload)
+                            }
                             cursor="pointer"
                         />
                     </BarChart>

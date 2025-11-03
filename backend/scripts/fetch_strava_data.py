@@ -159,7 +159,7 @@ def main():
     since_timestamp = int(since_dt.timestamp())
     all_acts = fetch_all_activities(since_timestamp=since_timestamp)
     print(f"📦 Found {len(all_acts)} activities (last 60 days)")
-
+    fetch_all_streams(all_acts)
     cache_path = os.path.join(DATA_DIR, "activities_cache.json")
     if os.path.exists(cache_path):
         with open(cache_path, "r") as f:
@@ -233,7 +233,12 @@ def main():
         existing.append(detail)
         existing.sort(key=lambda x: x.get("start_date", ""), reverse=True)
         save_json("activities_cache.json", existing)
-
+        stream_path = os.path.join(STREAM_DIR, f"{act['id']}.json")
+        if not os.path.exists(stream_path):
+            print(f"🎧 Fetching streams for activity {act['id']}")
+            fetch_activity_streams(act["id"])
+        else:
+            print(f"🟢 Streams already exist for {act['id']}")
         if i % 25 == 0:
             print(f"💤 Processed {i}/{len(new_acts)} — pausing briefly to avoid rate limits")
             time.sleep(3)

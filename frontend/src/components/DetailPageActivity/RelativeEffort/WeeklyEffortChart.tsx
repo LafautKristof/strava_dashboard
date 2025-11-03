@@ -198,6 +198,7 @@ export default function WeeklyEffortChart({
                             tick={{ fontSize: 12 }}
                         />
                         <YAxis
+                            hide
                             tick={{ fontSize: 12 }}
                             stroke="#cbd5e1"
                             label={{
