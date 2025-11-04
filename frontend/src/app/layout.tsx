@@ -1,5 +1,11 @@
 import NavBar from "@/components/NavBar";
 import "./globals.css";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Kristof's Strava Dashboard",
+    description: "Strava Dashboard for portfolio purposes",
+};
 export default function RootLayout({
     children,
 }: Readonly<{
