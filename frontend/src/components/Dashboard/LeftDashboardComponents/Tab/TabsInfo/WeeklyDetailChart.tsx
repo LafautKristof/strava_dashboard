@@ -31,13 +31,14 @@ export default function WeeklyDetailChart({
         { key: "Sat", label: "S" },
         { key: "Sun", label: "S" },
     ];
+
     const fullWeek = orderedDays.map((d) => {
         const existing = data.find((day) =>
-            day.day.toLowerCase().startsWith(d.key.toLowerCase())
+            day.day.toLowerCase().includes(d.key.toLowerCase())
         );
         return existing
-            ? { ...existing, label: d.label }
-            : { day: d.key, total_effort: 0, label: d.label };
+            ? { ...existing, key: d.key, label: d.label }
+            : { day: d.key, total_effort: 0, key: d.key, label: d.label };
     });
 
     const minEffort = 2;
@@ -48,7 +49,7 @@ export default function WeeklyDetailChart({
     }));
 
     return (
-        <div className="h-[180px] w-full transition-all duration-500 mt-4">
+        <div className="h-[180px] w-full mt-4 transition-all duration-500">
             <ResponsiveContainer width="100%" height="100%">
                 <BarChart
                     key={weekId}
@@ -58,11 +59,28 @@ export default function WeeklyDetailChart({
                 >
                     <CartesianGrid strokeDasharray="3 3" vertical={false} />
                     <XAxis
-                        dataKey="label"
-                        tick={{ fontSize: 12 }}
-                        axisLine={false}
+                        dataKey="key"
+                        interval={0}
                         tickLine={false}
+                        axisLine={false}
+                        tick={({ x, y, payload }) => {
+                            const day = orderedDays.find(
+                                (d) => d.key === payload.value
+                            );
+                            return (
+                                <text
+                                    x={x}
+                                    y={y + 10}
+                                    textAnchor="middle"
+                                    fontSize={12}
+                                    fill="#333"
+                                >
+                                    {day?.label}
+                                </text>
+                            );
+                        }}
                     />
+
                     <YAxis hide domain={[0, 100]} />
 
                     <Bar
@@ -72,7 +90,10 @@ export default function WeeklyDetailChart({
                         animationEasing="ease-in-out"
                     >
                         {displayData.map((entry, index) => (
-                            <Cell key={`bar-${index}`} fill={"#000000"} />
+                            <Cell
+                                key={`bar-${index}`}
+                                fill={entry.isEmpty ? "#d1d5db" : "#000000"}
+                            />
                         ))}
                     </Bar>
                 </BarChart>

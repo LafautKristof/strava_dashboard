@@ -84,11 +84,8 @@ export function TabsInfo({ data }: { data: Activities8Weeks[] }) {
                 {!hoveredWeek || hoveredWeek.activities.length === 0 ? (
                     <div className="mt-1">
                         <h2 className="text-sm text-gray-400 font-medium">
-                            No heart rate activities
+                            Hover over a week to see its activities
                         </h2>
-                        <p className="text-xs text-muted-foreground">
-                            Upload a workout to start your week.
-                        </p>
                     </div>
                 ) : hoveredWeek.total_effort > 160 ? (
                     <div className="mt-1">
