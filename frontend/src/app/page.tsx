@@ -9,6 +9,17 @@ export default function Home() {
                 <h1 className="text-2xl font-bold text-center text-blue-600">
                     Strava Portfolio Project Disclaimer
                 </h1>
+                <p className="text-md underline">
+                    This project is powered by the free hosting tiers of Vercel
+                    and Render — Vercel handles the frontend built with Next.js,
+                    while Render runs the Python backend API. Since both use
+                    automatic sleep mode to optimize resource usage, the backend
+                    may take a few seconds to “wake up” when the app hasn’t been
+                    used for a while. This setup demonstrates how modern
+                    full-stack apps can be deployed efficiently using free cloud
+                    services while maintaining strong performance and
+                    scalability.
+                </p>
 
                 <p>
                     This project was created solely for{" "}
