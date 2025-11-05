@@ -40,7 +40,7 @@ export default function Splits({
                     Splits
                 </div>
 
-                <ScrollArea className="max-h-[400px] w-full">
+                <ScrollArea className="h-[400px] w-full">
                     <Table>
                         <TableHeader>
                             <TableRow>
