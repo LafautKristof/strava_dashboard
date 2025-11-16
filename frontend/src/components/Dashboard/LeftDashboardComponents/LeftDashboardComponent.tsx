@@ -20,7 +20,7 @@ const LeftDashboardComponent = ({
     activities8Weeks: Activities8Weeks[];
 }) => {
     const daysThisWeek = getDaysThisWeek(activities.activities);
-
+    console.log(activities8Weeks);
     return (
         <>
             <div className="flex flex-col gap-6">
@@ -42,9 +42,7 @@ const LeftDashboardComponent = ({
                             <FriendsAndCountActivities
                                 following={athlete.friend_count}
                                 followers={athlete.follower_count}
-                                activities={
-                                    activities.activities[0].achievement_count
-                                }
+                                activities={activities.total_count}
                             />
                         </div>
                         <LatestActivity activitie={activities.activities[0]} />

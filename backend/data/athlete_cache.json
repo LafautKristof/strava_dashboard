@@ -9,11 +9,11 @@
   "state": null,
   "country": null,
   "sex": "M",
-  "premium": true,
-  "summit": true,
+  "premium": false,
+  "summit": false,
   "created_at": "2017-03-05T12:54:10Z",
   "updated_at": "2025-10-12T08:36:05Z",
-  "badge_type_id": 1,
+  "badge_type_id": 0,
   "weight": null,
   "profile_medium": "https://lh3.googleusercontent.com/a/ACg8ocLdPTrIS4FB0tBus7MLE1KgfGX2jhROH5cc8O5l-kzkRk0Ahw=s96-c",
   "profile": "https://lh3.googleusercontent.com/a/ACg8ocLdPTrIS4FB0tBus7MLE1KgfGX2jhROH5cc8O5l-kzkRk0Ahw=s96-c",
@@ -39,8 +39,8 @@
       "nickname": "",
       "resource_state": 2,
       "retired": false,
-      "distance": 21825,
-      "converted_distance": 21.8
+      "distance": 26063,
+      "converted_distance": 26.1
     },
     {
       "id": "g26339182",
@@ -49,8 +49,8 @@
       "nickname": "",
       "resource_state": 2,
       "retired": false,
-      "distance": 28962,
-      "converted_distance": 29.0
+      "distance": 40566,
+      "converted_distance": 40.6
     }
   ]
 }

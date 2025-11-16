@@ -3,33 +3,33 @@
   "biggest_climb_elevation_gain": 12.1,
   "recent_ride_totals": {
     "count": 2,
-    "distance": 70286.7,
-    "moving_time": 14050,
-    "elapsed_time": 30184,
-    "elevation_gain": 157.6,
+    "distance": 66465.9,
+    "moving_time": 13042,
+    "elapsed_time": 14148,
+    "elevation_gain": 98.9,
     "achievement_count": 0
   },
   "all_ride_totals": {
-    "count": 62,
-    "distance": 1812640.9999999998,
-    "moving_time": 379564,
-    "elapsed_time": 506500,
-    "elevation_gain": 3137.2999999999997
+    "count": 63,
+    "distance": 1845436.0999999999,
+    "moving_time": 386279,
+    "elapsed_time": 513677,
+    "elevation_gain": 3185.9999999999995
   },
   "recent_run_totals": {
     "count": 12,
-    "distance": 39436.1,
-    "moving_time": 18856,
-    "elapsed_time": 19078,
-    "elevation_gain": 21.400000000000006,
+    "distance": 41255.7,
+    "moving_time": 19320,
+    "elapsed_time": 19519,
+    "elevation_gain": 18.4,
     "achievement_count": 0
   },
   "all_run_totals": {
-    "count": 145,
-    "distance": 789325.0,
-    "moving_time": 334646,
-    "elapsed_time": 338317,
-    "elevation_gain": 1321.4999999999995
+    "count": 149,
+    "distance": 805166.3999999999,
+    "moving_time": 342150,
+    "elapsed_time": 345939,
+    "elevation_gain": 1331.4999999999995
   },
   "recent_swim_totals": {
     "count": 0,
@@ -47,18 +47,18 @@
     "elevation_gain": 0
   },
   "ytd_ride_totals": {
-    "count": 28,
-    "distance": 927025,
-    "moving_time": 191367.0,
-    "elapsed_time": 251309.0,
-    "elevation_gain": 1418.5
+    "count": 29,
+    "distance": 959820,
+    "moving_time": 198082.0,
+    "elapsed_time": 258486.0,
+    "elevation_gain": 1467.2
   },
   "ytd_run_totals": {
-    "count": 29,
-    "distance": 114853,
-    "moving_time": 51949.0,
-    "elapsed_time": 52452.0,
-    "elevation_gain": 145.7
+    "count": 33,
+    "distance": 130694,
+    "moving_time": 59453.0,
+    "elapsed_time": 60074.0,
+    "elevation_gain": 155.69999999999996
   },
   "ytd_swim_totals": {
     "count": 0,
