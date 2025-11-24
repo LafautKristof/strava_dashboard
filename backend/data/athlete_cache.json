@@ -39,8 +39,8 @@
       "nickname": "",
       "resource_state": 2,
       "retired": false,
-      "distance": 35076,
-      "converted_distance": 35.1
+      "distance": 33674,
+      "converted_distance": 33.7
     },
     {
       "id": "g26339182",
@@ -49,8 +49,8 @@
       "nickname": "",
       "resource_state": 2,
       "retired": false,
-      "distance": 40566,
-      "converted_distance": 40.6
+      "distance": 44805,
+      "converted_distance": 44.8
     }
   ]
 }
