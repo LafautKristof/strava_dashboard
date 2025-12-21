@@ -2,34 +2,34 @@
   "biggest_ride_distance": 60110.3,
   "biggest_climb_elevation_gain": 12.1,
   "recent_ride_totals": {
-    "count": 2,
-    "distance": 30031.300000000003,
-    "moving_time": 7175,
-    "elapsed_time": 14549,
-    "elevation_gain": 28.9,
+    "count": 3,
+    "distance": 60013.0,
+    "moving_time": 14149,
+    "elapsed_time": 26667,
+    "elevation_gain": 103.1,
     "achievement_count": 0
   },
   "all_ride_totals": {
-    "count": 65,
-    "distance": 1875467.3999999997,
-    "moving_time": 393454,
-    "elapsed_time": 528226,
-    "elevation_gain": 3214.899999999999
+    "count": 66,
+    "distance": 1905449.0999999996,
+    "moving_time": 400428,
+    "elapsed_time": 540344,
+    "elevation_gain": 3289.0999999999995
   },
   "recent_run_totals": {
     "count": 11,
-    "distance": 44060.700000000004,
-    "moving_time": 21043,
-    "elapsed_time": 21244,
-    "elevation_gain": 32.400000000000006,
+    "distance": 43786.4,
+    "moving_time": 20812,
+    "elapsed_time": 21011,
+    "elevation_gain": 34.8,
     "achievement_count": 0
   },
   "all_run_totals": {
-    "count": 160,
-    "distance": 849227.1,
-    "moving_time": 363193,
-    "elapsed_time": 367183,
-    "elevation_gain": 1363.8999999999996
+    "count": 163,
+    "distance": 863348.6999999998,
+    "moving_time": 369823,
+    "elapsed_time": 373854,
+    "elevation_gain": 1379.9999999999998
   },
   "recent_swim_totals": {
     "count": 0,
@@ -47,18 +47,18 @@
     "elevation_gain": 0
   },
   "ytd_ride_totals": {
-    "count": 31,
-    "distance": 989852,
-    "moving_time": 205257.0,
-    "elapsed_time": 273035.0,
-    "elevation_gain": 1496.1000000000001
+    "count": 32,
+    "distance": 1019833,
+    "moving_time": 212231.0,
+    "elapsed_time": 285153.0,
+    "elevation_gain": 1570.3000000000002
   },
   "ytd_run_totals": {
-    "count": 44,
-    "distance": 174755,
-    "moving_time": 80496.0,
-    "elapsed_time": 81318.0,
-    "elevation_gain": 188.09999999999997
+    "count": 47,
+    "distance": 188876,
+    "moving_time": 87126.0,
+    "elapsed_time": 87989.0,
+    "elevation_gain": 204.19999999999996
   },
   "ytd_swim_totals": {
     "count": 0,
