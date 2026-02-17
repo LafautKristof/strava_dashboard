@@ -4,23 +4,24 @@ import { useEffect, useMemo, useState } from "react";
 import dynamic from "next/dynamic";
 import polyline from "@mapbox/polyline";
 import { useMap } from "react-leaflet";
-import { Activities } from "@/app/types/activities";
+
 import "leaflet/dist/leaflet.css";
-import { finishIcon } from "@/helpers/Map/finishIcon";
-import { startIcon } from "@/helpers/Map/startIcon";
-import { getTypeMarker } from "@/helpers/Map/getTypeMarker";
+import { finishIcon } from "@/helpers/MapHelpers/finishIcon";
+import { startIcon } from "@/helpers/MapHelpers/startIcon";
+import { getTypeMarker } from "@/helpers/MapHelpers/getTypeMarker";
+import { Activity } from "@/app/types/activity";
 
 const MapContainer = dynamic(
     () => import("react-leaflet").then((m) => m.MapContainer),
-    { ssr: false }
+    { ssr: false },
 );
 const TileLayer = dynamic(
     () => import("react-leaflet").then((m) => m.TileLayer),
-    { ssr: false }
+    { ssr: false },
 );
 const Polyline = dynamic(
     () => import("react-leaflet").then((m) => m.Polyline),
-    { ssr: false }
+    { ssr: false },
 );
 const Marker = dynamic(() => import("react-leaflet").then((m) => m.Marker), {
     ssr: false,
@@ -69,12 +70,19 @@ export default function SplitsMap({
     selectedSplit,
     hoverKm,
 }: {
-    activity: Activities;
+    activity: Activity;
     selectedSplit: number | null;
     hoverKm?: number | null;
 }) {
     const [LRef, setLRef] = useState<typeof import("leaflet") | null>(null);
-
+    const color = {
+        Run: "#ff6900",
+        Walk: "#4caf50",
+        Ride: "#3b82f6",
+        Workout: "#ad46ff",
+        WeightTraining: "#ad46ff",
+        Other: "#9ca3af",
+    }[activity.type];
     useEffect(() => {
         import("leaflet").then((mod) => setLRef(mod));
     }, []);
@@ -100,7 +108,7 @@ export default function SplitsMap({
                 : selectedSplit + 1;
 
         const startIndex = Math.floor(
-            (startKm / totalDistance) * coords.length
+            (startKm / totalDistance) * coords.length,
         );
         const endIndex = Math.floor((endKm / totalDistance) * coords.length);
 
@@ -116,21 +124,21 @@ export default function SplitsMap({
         const ratio = hoverKm / totalKm;
         const index = Math.min(
             coords.length - 1,
-            Math.floor(ratio * coords.length)
+            Math.floor(ratio * coords.length),
         );
         return coords[index] ?? null;
     }, [hoverKm, coords, activity.distance]);
 
     if (!LRef) {
         return (
-            <div className="h-[400px] w-full flex items-center justify-center border rounded-md text-muted-foreground">
+            <div className="h-100 w-full flex items-center justify-center border rounded-md text-muted-foreground">
                 Map is loading...
             </div>
         );
     }
 
     return (
-        <div className="relative h-[400px] w-full border rounded-md overflow-hidden">
+        <div className="relative h-100 w-full border rounded-md overflow-hidden">
             <MapContainer
                 key={activity.id}
                 center={center}
@@ -145,7 +153,7 @@ export default function SplitsMap({
 
                 <Polyline
                     positions={coords}
-                    pathOptions={{ color: "blue", weight: 4 }}
+                    pathOptions={{ color: color, weight: 4 }}
                 />
                 {coords.length > 0 && (
                     <>

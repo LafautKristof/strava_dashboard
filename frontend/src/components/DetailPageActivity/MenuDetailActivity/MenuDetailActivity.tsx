@@ -1,61 +1,41 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import OverView from "../OverView/OverView";
-import { Activities } from "@/app/types/activities";
+
 import { Athlete } from "@/app/types/athlete";
-import { Streams } from "@/app/types/streams";
+
 import RelativeEffort from "../RelativeEffort/RelativeEffort";
 import HeartRate from "../HeartRate/HeartRate";
 import Segment from "../Segments/Segment";
+import { Activity } from "@/app/types/activity";
+import { Streams } from "@/app/types/streams";
 
 const MenuDetailActivity = ({
     activity,
     athlete,
     streams,
 }: {
-    activity: Activities;
+    activity: Activity;
     athlete: Athlete;
     streams: Streams;
 }) => {
+    const tabs = [
+        { value: "overview", label: "Overview" },
+        { value: "relative-effort", label: "Relative Effort" },
+        { value: "heartrate", label: "Heart Rate" },
+        { value: "segments", label: "Segments" },
+    ];
     return (
         <Tabs
             defaultValue="overview"
             orientation="vertical"
             className="flex flex-col lg:flex-row w-full min-h-[80vh] items-start"
         >
-            <TabsList
-                className="
-            flex flex-row lg:flex-col
-            gap-2
-            bg-muted/20
-            p-2
-            rounded-md
-            overflow-x-auto lg:overflow-y-auto no-scrollbar
-            whitespace-nowrap
-            w-full lg:w-[220px]
-            shrink-0
-        "
-            >
-                {[
-                    { value: "overview", label: "Overview" },
-                    { value: "relative-effort", label: "Relative Effort" },
-                    { value: "heartrate", label: "Heart Rate" },
-                    { value: "segments", label: "Segments" },
-                ].map((tab) => (
+            <TabsList className=" flex flex-row lg:flex-col gap-2 bg-muted/20 p-2 rounded-md overflow-x-auto lg:overflow-y-auto no-scrollbar whitespace-nowrap w-full lg:w-55 shrink-0">
+                {tabs.map((tab) => (
                     <TabsTrigger
                         key={tab.value}
                         value={tab.value}
-                        className="
-                    flex items-center justify-center lg:justify-start
-                    px-3 py-2 rounded-md
-                    text-sm sm:text-base
-                    transition-colors
-                    data-[state=active]:bg-orange-400
-                    data-[state=active]:text-white
-                    hover:bg-orange-200/60
-                    w-auto lg:w-full
-                    h-auto
-                    flex-shrink-0
-                "
+                        className=" flex items-center justify-center lg:justify-start px-3 py-2 rounded-md text-sm sm:text-base transition-colors  data-[state=active]:bg-orange-400  data-[state=active]:text-white  hover:bg-orange-200/60 w-auto lg:w-full h-auto shrink-0 cursor-pointer"
                     >
                         {tab.label}
                     </TabsTrigger>

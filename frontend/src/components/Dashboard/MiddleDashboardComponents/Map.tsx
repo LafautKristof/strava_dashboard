@@ -9,28 +9,36 @@ import { decode } from "@mapbox/polyline";
 import "leaflet/dist/leaflet.css";
 import { useEffect } from "react";
 import L from "leaflet";
-import { startIcon } from "@/helpers/Map/startIcon";
-import { finishIcon } from "@/helpers/Map/finishIcon";
+import { startIcon } from "@/helpers/MapHelpers/startIcon";
+import { finishIcon } from "@/helpers/MapHelpers/finishIcon";
 
 export default function Map({
     route,
     small = false,
+    activitieType,
 }: {
     route?: string;
     small?: boolean;
+    activitieType?: string;
 }) {
     if (!route) return null;
     const coords = decode(route).map(([lat, lng]) => [lat, lng]) as [
         number,
-        number
+        number,
     ][];
-    const heightClass = small ? "h-[100px]" : "h-[400px]";
+    const heightClass = small ? "h-[50px]" : "h-[400px]";
+    const color = {
+        Run: "#ff6900",
+        Walk: "#4caf50",
+        Ride: "#3b82f6",
+        Workout: "#ad46ff",
+        WeightTraining: "#ad46ff",
+        Other: "#9ca3af",
+    }[activitieType || "Run"];
     return (
         <MapContainer
             key={`overview-map-${route}`}
             className={`${heightClass} w-full rounded-lg`}
-            center={coords[0]}
-            zoom={13}
             scrollWheelZoom={!small}
             dragging={!small}
             doubleClickZoom={!small}
@@ -44,7 +52,7 @@ export default function Map({
             <Polyline
                 positions={coords}
                 pathOptions={{
-                    color: "gray",
+                    color: color,
                     weight: small ? 3 : 5,
                 }}
             />
@@ -71,13 +79,16 @@ function FitBounds({
 }) {
     const map = useMap();
     useEffect(() => {
-        if (coords?.length) {
-            const bounds = L.latLngBounds(coords);
-            map.fitBounds(bounds, { padding: small ? [20, 20] : [30, 30] });
-        }
-        setTimeout(() => {
+        if (!coords?.length) return;
+        const bounds = L.latLngBounds(coords);
+        map.fitBounds(bounds, {
+            paddingTopLeft: [50, 0],
+            paddingBottomRight: [0, 90],
+        });
+
+        requestAnimationFrame(() => {
             map.invalidateSize();
-        }, 200);
-    }, [coords, map]);
+        });
+    }, [coords, map, small]);
     return null;
 }

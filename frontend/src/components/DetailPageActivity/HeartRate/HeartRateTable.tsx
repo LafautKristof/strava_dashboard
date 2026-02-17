@@ -14,12 +14,12 @@ const HeartRateTable = ({ zoneCounts }: { zoneCounts: ZoneCounts[] }) => {
     const colors = ["#FFE4E1", "#FA8072", "#DC143C", "#FF0000", "#8B0000"];
 
     return (
-        <Table className="min-w-[600px] w-full text-sm md:text-base lg:text-lg">
+        <Table className="min-w-150 w-full text-sm md:text-base lg:text-lg">
             <TableBody>
                 {zoneCounts.map((zone, index) => (
                     <TableRow
                         key={zone.zone}
-                        className="bg-gray-50 hover:bg-gray-100 transition rounded-lg"
+                        className="bg-gray-50 hover:bg-orange-100 transition rounded-lg"
                     >
                         <TableCell className="font-semibold text-gray-700 p-3 rounded-l-lg">
                             {zone.zone}
@@ -31,10 +31,10 @@ const HeartRateTable = ({ zoneCounts }: { zoneCounts: ZoneCounts[] }) => {
                             {index === 0
                                 ? `< ${Math.round(zone.max)}`
                                 : index === zoneCounts.length - 1
-                                ? `> ${Math.round(zone.min)}`
-                                : `${Math.round(zone.min)} - ${Math.round(
-                                      zone.max
-                                  )}`}
+                                  ? `> ${Math.round(zone.min)}`
+                                  : `${Math.round(zone.min)} - ${Math.round(
+                                        zone.max,
+                                    )}`}
                         </TableCell>
 
                         <TableCell className="p-3 text-right text-gray-600">

@@ -1,13 +1,14 @@
 import { PiFireSimpleFill } from "react-icons/pi";
 import WeekDays from "./WeekDays";
-import { DaysThisWeek } from "@/app/types/streak";
+
+import { ActivitiesThisWeek, Weekday } from "@/app/types/activititiesThisWeek";
 
 const YourStreak = ({
     streak,
     days,
 }: {
     streak: number;
-    days: DaysThisWeek;
+    days: ActivitiesThisWeek;
 }) => {
     return (
         <div className="mt-8 sm:mt-10">

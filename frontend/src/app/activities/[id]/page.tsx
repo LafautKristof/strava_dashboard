@@ -12,8 +12,8 @@ export default async function ActivityPage({
             fetch(`${process.env.NEXT_PUBLIC_API_URL}/athlete`, {
                 cache: "force-cache",
             }),
-            fetch(`${process.env.NEXT_PUBLIC_API_URL}/activity/${id}`, {
-                cache: "no-store",
+            fetch(`${process.env.NEXT_PUBLIC_API_URL}/activities/${id}`, {
+                next: { revalidate: 300 },
             }),
             fetch(`${process.env.NEXT_PUBLIC_API_URL}/streams/${id}`, {
                 cache: "no-store",
@@ -24,9 +24,9 @@ export default async function ActivityPage({
             return notFound();
         }
         const [dataAthlete, dataActivities, dataStreams] = await Promise.all([
-            safeJson(resAthlete),
-            safeJson(resActivities),
-            safeJson(resStreams),
+            resAthlete.json(),
+            resActivities.json(),
+            resStreams.json(),
         ]);
 
         if (!dataAthlete || !dataActivities || !dataStreams) {
@@ -45,12 +45,5 @@ export default async function ActivityPage({
     } catch (error) {
         console.error("❌ Activity fetch error:", error);
         return notFound();
-    }
-}
-async function safeJson(res: Response) {
-    try {
-        return await res.json();
-    } catch {
-        return null;
     }
 }

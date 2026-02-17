@@ -27,6 +27,7 @@ const Details = ({
     details: Details[];
     weather?: Weather[];
 }) => {
+    console.log("details", details[0].pace);
     return (
         <>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-4">

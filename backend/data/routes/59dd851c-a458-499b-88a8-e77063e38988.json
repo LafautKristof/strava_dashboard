@@ -1,0 +1,32 @@
+{
+  "id": "59dd851c-a458-499b-88a8-e77063e38988",
+  "name": "test",
+  "description": "",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            4.135475,
+            51.038693
+          ],
+          [
+            4.079021,
+            51.042147
+          ],
+          [
+            4.046762,
+            51.054774
+          ]
+        ]
+      }
+    }
+  ],
+  "distance": 6.622052886570324,
+  "color": "#f97316",
+  "date": "2026-02-17T10:58:16.276Z",
+  "type": "Ride"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "346e2c17-9e04-4976-8c26-35baef5b1128",
+  "name": "test1",
+  "description": "",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            4.06272,
+            51.057471
+          ],
+          [
+            4.146971,
+            51.030165
+          ],
+          [
+            4.044875,
+            51.064592
+          ]
+        ]
+      }
+    }
+  ],
+  "distance": 14.725616459081666,
+  "color": "#f97316",
+  "date": "2026-02-17T10:53:00.359Z",
+  "type": "Walk"
+}

@@ -13,8 +13,9 @@ import {
 } from "recharts";
 import { Card, CardContent } from "@/components/ui/card";
 import { useState, useEffect } from "react";
-import { Activities12Weeks } from "@/app/types/activities12Weeks";
-import { Activities } from "@/app/types/activities";
+
+import { ActivitiesGroupedByWeek } from "@/app/types/activitiesGroupedByWeek";
+import { Activity } from "@/app/types/activity";
 
 type EffortDotProps = {
     cx: number;
@@ -28,13 +29,13 @@ export default function WeeklyEffortChart({
     onHoverWeek,
     activity,
 }: {
-    activities12Weeks: Activities12Weeks[];
-    onHoverWeek?: (week: Activities12Weeks | null) => void;
-    activity: Activities;
+    activities12Weeks: ActivitiesGroupedByWeek[];
+    onHoverWeek?: (week: ActivitiesGroupedByWeek | null) => void;
+    activity: Activity;
 }) {
-    const [selectedWeek, setSelectedWeek] = useState<Activities12Weeks | null>(
-        null
-    );
+    const [selectedWeek, setSelectedWeek] =
+        useState<ActivitiesGroupedByWeek | null>(null);
+    // console.log("selected", selectedWeek);
 
     const hasData = activities12Weeks?.length > 0;
 
@@ -100,8 +101,8 @@ export default function WeeklyEffortChart({
             value < w.minZone
                 ? "#ee82ee"
                 : value > w.maxZone
-                ? "#ef4444"
-                : "#a855f7";
+                  ? "#ef4444"
+                  : "#a855f7";
 
         return (
             <circle
@@ -222,23 +223,22 @@ export default function WeeklyEffortChart({
                             }}
                         />
 
-                        {activityWeekIndex !== null && (
+                        {selectedWeek && (
                             <ReferenceLine
-                                x={chartData[activityWeekIndex].weekIndex}
-                                stroke="#000000"
+                                x={selectedWeek.weekIndex}
+                                stroke="#F57C00"
                                 strokeWidth={3}
                             />
                         )}
 
-                        {selectedWeek &&
-                            selectedWeek.weekIndex !== undefined && (
-                                <ReferenceArea
-                                    x1={selectedWeek.weekIndex - 0.5}
-                                    x2={selectedWeek.weekIndex + 0.5}
-                                    fill="#a855f7"
-                                    fillOpacity={0.08}
-                                />
-                            )}
+                        {selectedWeek && selectedWeek.week !== undefined && (
+                            <ReferenceArea
+                                x1={selectedWeek.weekIndex - 0.5}
+                                x2={selectedWeek.weekIndex + 0.5}
+                                fill="#a855f7"
+                                fillOpacity={0.08}
+                            />
+                        )}
                     </ComposedChart>
                 </ResponsiveContainer>
             </CardContent>

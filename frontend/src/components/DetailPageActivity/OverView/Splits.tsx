@@ -1,5 +1,5 @@
 "use client";
-import { Activities, Splits as SplitsType } from "@/app/types/activities";
+
 import {
     Table,
     TableBody,
@@ -13,6 +13,7 @@ import { getGapPace } from "@/helpers/getGapPace";
 import { getSplitLabel } from "@/helpers/getSplitLabel";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import dynamic from "next/dynamic";
+import { Activity, SplitsMetric } from "@/app/types/activity";
 
 const SplitsMap = dynamic(() => import("./SplitsMap"), { ssr: false });
 
@@ -23,8 +24,8 @@ export default function Splits({
     selectedSplit,
     onSelectedSplit,
 }: {
-    splits: SplitsType[];
-    activity: Activities;
+    splits: SplitsMetric[];
+    activity: Activity;
     hoverKm?: number | null;
     selectedSplit?: number | null;
     onSelectedSplit?: (index: number | null) => void;
@@ -36,11 +37,11 @@ export default function Splits({
     return (
         <div className="flex flex-col md:flex-row gap-4 w-full">
             <div className="w-full md:w-[35%] border rounded-md overflow-hidden bg-white shadow-sm">
-                <div className="bg-gray-500 text-white text-center py-3 text-lg font-semibold">
+                <div className="bg-orange-500 text-white text-center py-3 text-lg font-semibold">
                     Splits
                 </div>
 
-                <ScrollArea className="h-[400px] w-full">
+                <ScrollArea className="h-100 w-full">
                     <Table>
                         <TableHeader>
                             <TableRow>
@@ -61,15 +62,15 @@ export default function Splits({
                                         }
                                         className={`cursor-pointer transition-colors ${
                                             selectedSplit === index
-                                                ? "bg-blue-100"
-                                                : "hover:bg-gray-100"
+                                                ? "bg-orange-200"
+                                                : "hover:bg-orange-200"
                                         }`}
                                     >
                                         <TableCell>
                                             {getSplitLabel(
                                                 index,
                                                 splits.length,
-                                                split.distance
+                                                split.distance,
                                             )}
                                         </TableCell>
                                         <TableCell>
@@ -77,12 +78,12 @@ export default function Splits({
                                         </TableCell>
                                         <TableCell>
                                             {getGapPace(
-                                                split.average_grade_adjusted_speed
+                                                split.average_grade_adjusted_speed,
                                             )}
                                         </TableCell>
                                         <TableCell>
                                             {split.elevation_difference?.toFixed(
-                                                1
+                                                1,
                                             )}
                                             m
                                         </TableCell>
@@ -104,7 +105,7 @@ export default function Splits({
             </div>
 
             <div className="flex-1 border rounded-md shadow-sm overflow-hidden bg-white">
-                <div className="h-[300px] md:h-[400px] relative">
+                <div className="h-75 md:h-100 relative">
                     <SplitsMap
                         activity={activity}
                         selectedSplit={selectedSplit ?? null}

@@ -1,11 +1,11 @@
-import { Activities } from "@/app/types/activities";
+import { Activity } from "@/app/types/activity";
 import { Separator } from "@/components/ui/separator";
-import getDateWithoutTime from "@/helpers/getDate";
+import formatDateAndTime from "@/helpers/formatDateAndTime";
+
 import Link from "next/link";
 
-const LatestActivity = ({ activitie }: { activitie: Activities }) => {
-    const date = getDateWithoutTime(new Date(activitie.start_date_local));
-
+const LatestActivity = ({ activitie }: { activitie: Activity }) => {
+    const date = formatDateAndTime(activitie.start_date_local, 1);
     return (
         <>
             <div className="my-6 sm:my-8">

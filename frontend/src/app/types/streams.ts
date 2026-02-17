@@ -1,14 +1,20 @@
 export type Streams = {
-    altitude: Stream;
-    grade_adjusted_speed: Stream;
-    velocity_smooth: Stream;
-    time: Stream;
-    heartrate: Stream;
-    distance: Stream;
-};
-
-export type Stream = {
-    data: number[];
-    original_size: number;
-    resolution: string;
+    altitude: {
+        data: number[];
+    };
+    distance: {
+        data: number[];
+    };
+    heartrate: {
+        data: number[];
+    };
+    velocity_smooth: {
+        data: number[];
+    };
+    grade_adjusted_speed: {
+        data: number[];
+    };
+    time: {
+        data: number[];
+    };
 };

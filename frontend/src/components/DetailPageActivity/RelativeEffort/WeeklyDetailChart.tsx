@@ -1,5 +1,5 @@
 "use client";
-import * as React from "react";
+
 import {
     BarChart,
     Bar,
@@ -66,7 +66,7 @@ export default function WeeklyDetailChart({
                                     y + height - Math.max(height, minHeight);
                                 const adjustedHeight = Math.max(
                                     height,
-                                    minHeight
+                                    minHeight,
                                 );
 
                                 return (

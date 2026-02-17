@@ -2,34 +2,34 @@
   "biggest_ride_distance": 60110.3,
   "biggest_climb_elevation_gain": 12.1,
   "recent_ride_totals": {
-    "count": 0,
-    "distance": 0,
-    "moving_time": 0,
-    "elapsed_time": 0,
-    "elevation_gain": 0,
+    "count": 1,
+    "distance": 14718.4,
+    "moving_time": 3249,
+    "elapsed_time": 3563,
+    "elevation_gain": 31.7,
     "achievement_count": 0
   },
   "all_ride_totals": {
-    "count": 66,
-    "distance": 1905449.0999999996,
-    "moving_time": 400428,
-    "elapsed_time": 540344,
-    "elevation_gain": 3289.0999999999995
+    "count": 67,
+    "distance": 1920167.4999999995,
+    "moving_time": 403677,
+    "elapsed_time": 543907,
+    "elevation_gain": 3320.7999999999993
   },
   "recent_run_totals": {
-    "count": 8,
-    "distance": 33230.0,
-    "moving_time": 14725,
-    "elapsed_time": 14794,
-    "elevation_gain": 30.2,
+    "count": 9,
+    "distance": 37847.1,
+    "moving_time": 16807,
+    "elapsed_time": 16862,
+    "elevation_gain": 33.4,
     "achievement_count": 0
   },
   "all_run_totals": {
-    "count": 175,
-    "distance": 911291.8999999998,
-    "moving_time": 391078,
-    "elapsed_time": 395258,
-    "elevation_gain": 1429.8999999999999
+    "count": 178,
+    "distance": 923535.4999999998,
+    "moving_time": 396460,
+    "elapsed_time": 400664,
+    "elevation_gain": 1435.3
   },
   "recent_swim_totals": {
     "count": 0,
@@ -47,18 +47,18 @@
     "elevation_gain": 0
   },
   "ytd_ride_totals": {
-    "count": 0,
-    "distance": 0,
-    "moving_time": 0,
-    "elapsed_time": 0,
-    "elevation_gain": 0
+    "count": 1,
+    "distance": 14718,
+    "moving_time": 3249.0,
+    "elapsed_time": 3563.0,
+    "elevation_gain": 31.7
   },
   "ytd_run_totals": {
-    "count": 9,
-    "distance": 35259,
-    "moving_time": 15606.0,
-    "elapsed_time": 15694.0,
-    "elevation_gain": 30.2
+    "count": 12,
+    "distance": 47503,
+    "moving_time": 20988.0,
+    "elapsed_time": 21100.0,
+    "elevation_gain": 35.6
   },
   "ytd_swim_totals": {
     "count": 0,
@@ -66,5 +66,9 @@
     "moving_time": 0,
     "elapsed_time": 0,
     "elevation_gain": 0
-  }
+  },
+  "biggest_run_distance": 10116.5,
+  "biggest_walk_distance": 14206.5,
+  "longest_run_time": 4250,
+  "longest_walk_time": 10905
 }

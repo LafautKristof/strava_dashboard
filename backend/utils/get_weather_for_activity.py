@@ -1,6 +1,7 @@
 import requests
 from datetime import datetime, timezone
 
+
 def get_weather_for_activity(lat, lon, date_local):
     """Haalt weerinfo op voor één activiteit."""
     try:
@@ -35,21 +36,27 @@ def get_weather_for_activity(lat, lon, date_local):
         return None
 
     times = data["time"]
-    values = list(zip(
-        data["temperature_2m"],
-        data["apparent_temperature"],
-        data["relative_humidity_2m"],
-        data["windspeed_10m"],
-        data["winddirection_10m"],
-        data["cloudcover"],
-    ))
+    values = list(
+        zip(
+            data["temperature_2m"],
+            data["apparent_temperature"],
+            data["relative_humidity_2m"],
+            data["windspeed_10m"],
+            data["winddirection_10m"],
+            data["cloudcover"],
+        )
+    )
 
     from math import fabs
 
     # ✅ Maak ook Open-Meteo tijden UTC-aware
     try:
-        dt_list = [datetime.fromisoformat(t).replace(tzinfo=timezone.utc) for t in times]
-        idx = min(range(len(dt_list)), key=lambda i: fabs((dt_list[i] - dt).total_seconds()))
+        dt_list = [
+            datetime.fromisoformat(t).replace(tzinfo=timezone.utc) for t in times
+        ]
+        idx = min(
+            range(len(dt_list)), key=lambda i: fabs((dt_list[i] - dt).total_seconds())
+        )
     except Exception as e:
         print(f"⚠️ [Weather] Time match failed: {e}")
         return None
@@ -60,11 +67,7 @@ def get_weather_for_activity(lat, lon, date_local):
     wind_index = int((winddir + 22.5) // 45) % 8
     wind_cardinal = directions[wind_index]
 
-    condition = (
-        "Cloudy" if clouds > 60 else
-        "Partly Cloudy" if clouds > 30 else
-        "Clear"
-    )
+    condition = "Cloudy" if clouds > 60 else "Partly Cloudy" if clouds > 30 else "Clear"
 
     return {
         "condition": condition,

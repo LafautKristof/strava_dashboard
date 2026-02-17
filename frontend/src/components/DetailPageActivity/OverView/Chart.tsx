@@ -12,10 +12,11 @@ import {
     ComposedChart,
 } from "recharts";
 import { ChartContainer } from "@/components/ui/chart";
-import { Activities } from "@/app/types/activities";
+
 import { Button } from "@/components/ui/button";
 import { Streams } from "@/app/types/streams";
 import { useEffect, useState } from "react";
+import { Activity } from "@/app/types/activity";
 
 type Metric = "elevation" | "pace" | "gap" | "heartrate";
 
@@ -25,7 +26,7 @@ export default function Chart({
     onHoverKm,
     selectedSplit,
 }: {
-    activity: Activities;
+    activity: Activity;
     streams: Streams;
     onHoverKm?: (km: number | null) => void;
     selectedSplit?: number | null;
@@ -48,8 +49,8 @@ export default function Chart({
         })) ?? [];
 
     const maxKm =
-        chartData.length > 0 ? chartData[chartData.length - 1].km ?? 0 : 0;
-    const ticks = Array.from({ length: Math.ceil(maxKm) + 1 }, (_, i) => i);
+        chartData.length > 0 ? (chartData[chartData.length - 1].km ?? 0) : 0;
+    const ticks = Array.from({ length: Math.floor(maxKm) + 1 }, (_, i) => i);
 
     const [visibleMetrics, setVisibleMetrics] = useState<Metric[]>([
         "elevation",
@@ -60,7 +61,7 @@ export default function Chart({
         setVisibleMetrics((prev) =>
             prev.includes(metric)
                 ? prev.filter((m) => m !== metric)
-                : [...prev, metric]
+                : [...prev, metric],
         );
     };
 
@@ -90,7 +91,10 @@ export default function Chart({
 
     return (
         <div className="w-full">
-            <ChartContainer className="aspect-auto h-[220px] sm:h-[280px] md:h-[320px] w-full overflow-visible">
+            <ChartContainer
+                config={{}}
+                className="aspect-auto h-55 sm:h-70 md:h-80 w-full overflow-visible"
+            >
                 <ResponsiveContainer width="100%" height="100%">
                     <ComposedChart
                         layout="horizontal"
@@ -124,7 +128,7 @@ export default function Chart({
                         <XAxis
                             dataKey="km"
                             type="number"
-                            domain={[0, Math.ceil(maxKm) + 0.2]}
+                            domain={[0, maxKm]}
                             allowDataOverflow
                             ticks={ticks}
                             tickFormatter={(v) => `${v} km`}
@@ -187,7 +191,7 @@ export default function Chart({
                         {activeKm !== null &&
                             (() => {
                                 const point = chartData.find(
-                                    (d) => Math.abs(d.km - activeKm) < 0.02
+                                    (d) => Math.abs(d.km - activeKm) < 0.02,
                                 );
                                 const yValue = point?.elevation;
                                 if (yValue === undefined || yValue === null)
@@ -212,13 +216,15 @@ export default function Chart({
                     <Button
                         key={metric}
                         size="sm"
-                        variant={
-                            visibleMetrics.includes(metric)
-                                ? "default"
-                                : "outline"
-                        }
                         onClick={() => toggleMetric(metric)}
-                        className="whitespace-nowrap"
+                        variant="outline"
+                        className={`whitespace-nowrap cursor-pointer transition-colors
+  ${
+      visibleMetrics.includes(metric)
+          ? "bg-orange-500 text-white border-orange-500 hover:bg-orange-600 hover:text-white"
+          : "bg-transparent text-foreground border-muted hover:bg-muted/40"
+  }
+`}
                     >
                         {metric.charAt(0).toUpperCase() + metric.slice(1)}
                     </Button>

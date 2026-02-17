@@ -1,10 +1,11 @@
-import { get12WeeksAgo } from "@/helpers/get12WeeksAgo";
 import WeeklyEffortChartWrapper from "./WeeklyEffortChartWrapper";
 import Header from "../OverView/Header";
-import { Activities } from "@/app/types/activities";
+
 import StatsThisActivity from "./StatsThisActivity";
 import EffortThisWeek from "./EffortThisWeek";
-import { Activities12Weeks } from "@/app/types/activities12Weeks";
+
+import { Activity } from "@/app/types/activity";
+import { ActivitiesGroupedByWeek } from "@/app/types/activitiesGroupedByWeek";
 
 export default async function RelativeEffort({
     activity,
@@ -12,22 +13,21 @@ export default async function RelativeEffort({
     lastname,
     type,
 }: {
-    activity: Activities;
+    activity: Activity;
     firstname: string;
     lastname: string;
     type: string;
 }) {
-    const after = get12WeeksAgo();
     const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/activities?after=${after}`,
-        { cache: "no-cache" }
+        `${process.env.NEXT_PUBLIC_API_URL}/activities/weeks?range=12`,
+        { cache: "no-cache" },
     );
-    const activities12Weeks: Activities12Weeks[] = await res.json();
+    const activities12Weeks: ActivitiesGroupedByWeek[] = await res.json();
     const total = activities12Weeks.reduce(
-        (sum: number, w: Activities12Weeks) => {
+        (sum: number, w: ActivitiesGroupedByWeek) => {
             return sum + (w.total_effort || 0);
         },
-        0
+        0,
     );
     const avg = total / activities12Weeks.length;
 
@@ -74,7 +74,7 @@ export default async function RelativeEffort({
                     <StatsThisActivity activity={activity} />
                 </div>
                 <div className="flex flex-col md:flex-row gap-6">
-                    <div className="w-full md:w-[300px] flex-shrink-0    ">
+                    <div className="w-full md:w-75 shrink-0    ">
                         <EffortThisWeek
                             sufferscore={activity.suffer_score}
                             zoneStatus={zoneStatus || ""}

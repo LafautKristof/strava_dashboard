@@ -1,41 +1,46 @@
-import { Activities } from "@/app/types/activities";
+import { ActivityShort } from "@/app/types/activitiesGroupedByWeek";
+import {
+    ActivitiesThisWeek,
+    ActivityType,
+    Weekday,
+} from "@/app/types/activititiesThisWeek";
 
-export type DaysThisWeek = {
-    Mon?: { type: "run" | "ride" };
-    Tue?: { type: "run" | "ride" };
-    Wed?: { type: "run" | "ride" };
-    Thu?: { type: "run" | "ride" };
-    Fri?: { type: "run" | "ride" };
-    Sat?: { type: "run" | "ride" };
-    Sun?: { type: "run" | "ride" };
+const TYPE_MAP: Record<string, ActivityType> = {
+    run: "run",
+    ride: "ride",
+    walk: "walk",
+    hike: "hike",
+    swim: "swim",
 };
 
-export function getDaysThisWeek(activities: Activities[]): DaysThisWeek {
-    const days: DaysThisWeek = {};
+const WEEKDAYS: Weekday[] = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+
+export function getActivitiesThisWeek(
+    activities: ActivityShort[],
+): ActivitiesThisWeek {
+    const days: ActivitiesThisWeek = {};
 
     const today = new Date();
-    const monday = new Date(today);
-    const day = today.getDay();
-    const diff = day === 0 ? -6 : 1 - day;
-    monday.setDate(today.getDate() + diff);
+    today.setHours(0, 0, 0, 0);
 
-    const dayNames: (keyof DaysThisWeek)[] = [
-        "Mon",
-        "Tue",
-        "Wed",
-        "Thu",
-        "Fri",
-        "Sat",
-        "Sun",
-    ];
+    const monday = new Date(today);
+    const day = today.getDay() || 7;
+    monday.setDate(today.getDate() - (day - 1));
 
     for (const act of activities) {
-        const start = new Date(act.start_date);
+        const start = new Date(act.start_date_local);
 
         if (start >= monday && start <= today) {
             const index = (start.getDay() + 6) % 7;
-            const key = dayNames[index];
-            days[key] = { type: act.type.toLowerCase() as "run" | "ride" };
+            const key = WEEKDAYS[index];
+
+            const type = TYPE_MAP[act.type.toLowerCase()] ?? "other";
+
+            if (!days[key]) {
+                days[key] = { types: [type] };
+            } else if (!days[key]!.types.includes(type)) {
+                days[key]!.types.push(type);
+            }
         }
     }
 

@@ -5,24 +5,25 @@ import dynamic from "next/dynamic";
 import polyline from "@mapbox/polyline";
 import { useMap } from "react-leaflet";
 import L from "leaflet";
-import type { SegmentEffort } from "@/app/types/activities";
+
 import "leaflet/dist/leaflet.css";
 import { Streams } from "@/app/types/streams";
-import { finishIcon } from "@/helpers/Map/finishIcon";
-import { startIcon } from "@/helpers/Map/startIcon";
-import { getTypeMarker } from "@/helpers/Map/getTypeMarker";
+import { finishIcon } from "@/helpers/MapHelpers/finishIcon";
+import { startIcon } from "@/helpers/MapHelpers/startIcon";
+import { getTypeMarker } from "@/helpers/MapHelpers/getTypeMarker";
+import { SegmentEffort } from "@/app/types/activity";
 
 const MapContainer = dynamic(
     () => import("react-leaflet").then((m) => m.MapContainer),
-    { ssr: false }
+    { ssr: false },
 );
 const TileLayer = dynamic(
     () => import("react-leaflet").then((m) => m.TileLayer),
-    { ssr: false }
+    { ssr: false },
 );
 const Polyline = dynamic(
     () => import("react-leaflet").then((m) => m.Polyline),
-    { ssr: false }
+    { ssr: false },
 );
 const Marker = dynamic(() => import("react-leaflet").then((m) => m.Marker), {
     ssr: false,
@@ -102,7 +103,7 @@ export default function ActivityMap({
         const endIdx = findClosestIndex(end as [number, number]);
         return coords.slice(
             Math.min(startIdx, endIdx),
-            Math.max(startIdx, endIdx)
+            Math.max(startIdx, endIdx),
         );
     }, [hoveredSegment, coords]);
 
@@ -119,7 +120,7 @@ export default function ActivityMap({
         const ratio = (hoverKm * 1000) / totalDistance;
         const index = Math.min(
             coords.length - 1,
-            Math.floor(ratio * coords.length)
+            Math.floor(ratio * coords.length),
         );
 
         return coords[index] ?? null;
@@ -132,7 +133,7 @@ export default function ActivityMap({
     }
 
     return (
-        <div className="relative h-[300px] w-full border rounded-md overflow-hidden">
+        <div className="relative h-75 w-full border rounded-md overflow-hidden">
             <MapContainer
                 key={`activity-map-${activityPolyline}`}
                 center={coords[0] ?? [50.85, 4.35]}

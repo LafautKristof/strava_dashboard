@@ -1,5 +1,6 @@
 "use client";
 
+import { ActivitiesGroupedByWeek } from "@/app/types/activitiesGroupedByWeek";
 import { getMessageLabelColor } from "@/helpers/getMessageLabelColor";
 import { endOfISOWeek, format, startOfISOWeek } from "date-fns";
 import { enUS } from "date-fns/locale";
@@ -21,9 +22,10 @@ export default function WeeklyDetailInfo({
     week,
     avgEffort,
 }: {
-    week: WeekData | null;
+    week: ActivitiesGroupedByWeek | null;
     avgEffort?: number;
 }) {
+    console.log("week", week);
     if (!week) {
         return (
             <div className="text-center text-sm text-muted-foreground italic py-4">
@@ -60,7 +62,7 @@ export default function WeeklyDetailInfo({
     const messageLabelColor = getMessageLabelColor(
         totalEffort,
         minZone,
-        maxZone
+        maxZone,
     );
 
     return (

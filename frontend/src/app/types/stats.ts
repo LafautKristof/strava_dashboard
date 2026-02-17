@@ -5,9 +5,9 @@ export type Stats = {
     yearly: StatsData;
     all_time: StatsDataAllTime;
     best_efforts: BestEfforts[];
-    biggestClimb: string;
-    longestRide: string;
-    totalElevation: string;
+    longest_time: string;
+    longest_distance_km: string;
+    most_elevation_m: string;
 };
 
 export type StatsData = {

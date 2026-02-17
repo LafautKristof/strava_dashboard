@@ -3,14 +3,14 @@
 import { useState } from "react";
 import Splits from "./Splits";
 import ActivityChartWrapper from "./ActivityChartWrapper";
-import { Activities } from "@/app/types/activities";
+import { Activity } from "@/app/types/activity";
 import { Streams } from "@/app/types/streams";
 
 export default function ActivityOverview({
     activity,
     streams,
 }: {
-    activity: Activities;
+    activity: Activity;
     streams: Streams;
 }) {
     const [hoverKm, setHoverKm] = useState<number | null>(null);

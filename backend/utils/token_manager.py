@@ -37,8 +37,10 @@ def get_access_token():
 
     data = response.json()
     ACCESS_TOKEN = data["access_token"]
- 
+
     EXPIRES_AT = data["expires_at"]
 
-    print(f"✅ Token valid until {time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(EXPIRES_AT))}")
+    print(
+        f"✅ Token valid until {time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(EXPIRES_AT))}"
+    )
     return ACCESS_TOKEN

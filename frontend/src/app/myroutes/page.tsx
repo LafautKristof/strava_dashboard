@@ -1,23 +1,19 @@
 "use client";
-import LeftMyRoutesComponent from "@/components/MyRoute/LeftMyRouteComponent/LeftMyRoutesComponent";
 import { useEffect, useState } from "react";
-import { RouteType } from "../types/routeType";
 import { Button } from "@/components/ui/button";
 import dynamic from "next/dynamic";
-const MiddleMyRouteComponent = dynamic(
-    () =>
-        import(
-            "@/components/MyRoute/MiddleMyRouteComponent/MiddleMyRouteComponent"
-        ),
-    { ssr: false }
-);
+import { RouteType } from "../types/routeType";
+import RouteList from "@/components/MyRoute/RouteList/RouteList";
+import FormComponent from "@/components/MyRoute/Form/FormComponent";
+
 const MyRoutesPage = () => {
     const [selectedRoute, setSelectedRoute] = useState<RouteType | null>(null);
+    const [isCreating, setIsCreating] = useState(false);
     const [routes, setRoutes] = useState<RouteType[]>([]);
     useEffect(() => {
         const fetchRoutes = async () => {
             const res = await fetch(
-                `${process.env.NEXT_PUBLIC_API_URL}/my_routes`
+                `${process.env.NEXT_PUBLIC_API_URL}/my_routes`,
             );
             const data: RouteType[] = await res.json();
             setRoutes(data);
@@ -26,60 +22,66 @@ const MyRoutesPage = () => {
     }, []);
 
     return (
-        <main className="flex flex-col lg:flex-row w-full min-h-[80vh] items-start gap-6">
-            <div className="w-full lg:w-1/3">
+        <main className="flex flex-col  w-full min-h-[80vh]  gap-6">
+            <div className="w-full rounded-xl overflow-hidden shadow-md">
+                {selectedRoute || isCreating ? (
+                    <FormComponent
+                        selectedRoute={
+                            selectedRoute ?? {
+                                id: crypto.randomUUID(),
+                                name: "",
+                                description: "",
+                                type: "Run",
+                                distance: 0,
+                                date: new Date().toISOString(),
+                                features: [],
+                                color: "#f97316",
+                            }
+                        }
+                        onRouteAdded={(newRoute) => {
+                            setRoutes((prev) => {
+                                const exists = prev.some(
+                                    (r) => r.id === newRoute.id,
+                                );
+                                return exists
+                                    ? prev.map((r) =>
+                                          r.id === newRoute.id ? newRoute : r,
+                                      )
+                                    : [newRoute, ...prev];
+                            });
+
+                            setSelectedRoute(newRoute);
+                            setIsCreating(false);
+                        }}
+                    />
+                ) : (
+                    <div className="flex items-center justify-center h-[500px] border rounded-lg bg-gray-50 dark:bg-gray-800 text-gray-500">
+                        Selecteer een route of klik op "Add route"
+                    </div>
+                )}
+            </div>
+            <div className="w-full bg-white dark:bg-gray-900 rounded-xl shadow-md p-6">
                 <div className="flex items-center justify-between mb-3">
                     <h2 className="text-lg font-semibold">My routes</h2>
                     <div className="flex gap-2">
                         <Button
-                            variant="default"
-                            disabled={!!selectedRoute}
-                            onClick={() =>
-                                setSelectedRoute({
-                                    id: crypto.randomUUID(),
-                                    name: "",
-                                    description: "",
-                                    type: "Run",
-                                    distance: 0,
-                                    date: new Date().toISOString(),
-                                    features: [],
-                                    color: "#f97316",
-                                })
-                            }
+                            className="w-full mt-4 bg-orange-500 hover:bg-amber-500 cursor-pointer"
+                            onClick={() => {
+                                setSelectedRoute(null);
+                                setIsCreating(true);
+                            }}
                         >
                             Add route
-                        </Button>
-                        <Button
-                            variant="outline"
-                            disabled={!selectedRoute}
-                            onClick={() => setSelectedRoute(null)}
-                        >
-                            ← Back
                         </Button>
                     </div>
                 </div>
 
-                <LeftMyRoutesComponent
+                <RouteList
                     routes={routes}
                     setRoutes={setRoutes}
-                    onSelectRoute={(route) => setSelectedRoute(route)}
-                />
-            </div>
-
-            <div className="w-full lg:w-2/3">
-                <MiddleMyRouteComponent
-                    onRouteAdded={(newRoute) => {
-                        setRoutes((prev) => {
-                            const exists = prev.some(
-                                (r) => r.id === newRoute.id
-                            );
-                            return exists
-                                ? prev.map((r) =>
-                                      r.id === newRoute.id ? newRoute : r
-                                  )
-                                : [newRoute, ...prev];
-                        });
-                        setSelectedRoute(newRoute);
+                    onSelectRoute={(route) => {
+                        setSelectedRoute(route);
+                        setIsCreating(false);
                     }}
                     selectedRoute={selectedRoute}
                 />

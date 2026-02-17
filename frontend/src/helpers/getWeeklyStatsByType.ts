@@ -1,74 +1,80 @@
-import { Activities } from "@/app/types/activities";
-
-function getISOWeekFromDate(date: Date): string {
-    const tmp = new Date(
-        Date.UTC(date.getFullYear(), date.getMonth(), date.getDate())
+import { ActivitiesGroupedByWeek } from "@/app/types/activitiesGroupedByWeek";
+import { getCurrentISOWeek } from "./getCurrentWeek";
+export function getLastActiveWeek(
+    weeks: ActivitiesGroupedByWeek[],
+): ActivitiesGroupedByWeek | null {
+    return (
+        [...weeks]
+            .reverse()
+            .find((w) => w.activities && w.activities.length > 0) ?? null
     );
-    tmp.setUTCDate(tmp.getUTCDate() + 4 - (tmp.getUTCDay() || 7));
-    const yearStart = new Date(Date.UTC(tmp.getUTCFullYear(), 0, 1));
-    const weekNo = Math.ceil(((+tmp - +yearStart) / 86400000 + 1) / 7);
-    return `${tmp.getUTCFullYear()}-W${String(weekNo).padStart(2, "0")}`;
+}
+type DayData = {
+    day: string; // "Mon" | "Tue" | ...
+    hasActivity: boolean;
+};
+const ORDERED_DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+
+function getLocalWeekStart(date: Date) {
+    const d = new Date(date);
+    const day = d.getDay(); // 0 = Sun, 1 = Mon
+    const diff = day === 0 ? -6 : 1 - day;
+    d.setDate(d.getDate() + diff);
+    d.setHours(0, 0, 0, 0);
+    return d;
 }
 
-export function getCurrentISOWeek(): string {
-    return getISOWeekFromDate(new Date());
-}
+export function getDaysDataForWeek(week: ActivitiesGroupedByWeek) {
+    const weekStart = getLocalWeekStart(new Date(week.start));
 
-export function getWeeklyStatsByType(activities: Activities[], type: string) {
-    const currentWeek = getCurrentISOWeek();
-    const filtered = activities.filter((a) => {
-        if (a.type.toLowerCase() !== type.toLowerCase()) return false;
-        const date = new Date(a.start_date_local);
-        return getISOWeekFromDate(date) === currentWeek;
-    });
+    const activeDays = new Set<string>();
 
-    const totalDistanceKm = filtered.reduce(
-        (sum, a) => sum + a.distance / 1000,
-        0
-    );
-    const totalMovingTimeSec = filtered.reduce(
-        (sum, a) => sum + (a.moving_time || 0),
-        0
-    );
-    const totalElevationGain = filtered.reduce(
-        (sum, a) => sum + (a.total_elevation_gain || 0),
-        0
-    );
+    for (const act of week.activities) {
+        if (!act.start_date_local) continue;
 
-    const hours = Math.floor(totalMovingTimeSec / 3600);
-    const minutes = Math.floor((totalMovingTimeSec % 3600) / 60);
-    const formattedTime = hours > 0 ? `${hours}h ${minutes}m` : `${minutes}m`;
-    const orderedDays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
-    const daysData = orderedDays.map((day) => {
-        const dayActivities = filtered.filter((a) =>
-            new Date(a.start_date_local)
-                .toLocaleDateString("en-US", { weekday: "short" })
-                .startsWith(day)
+        const actDate = new Date(act.start_date_local);
+
+        // verschil in lokale dagen
+        const diffDays = Math.floor(
+            (actDate.getTime() - weekStart.getTime()) / (1000 * 60 * 60 * 24),
         );
 
-        return {
-            day,
-            hasActivity: dayActivities.length > 0,
-            totalDistanceKm: dayActivities.reduce(
-                (s, a) => s + a.distance / 1000,
-                0
-            ),
-            totalTimeSec: dayActivities.reduce(
-                (s, a) => s + (a.moving_time || 0),
-                0
-            ),
-            totalElevation: dayActivities.reduce(
-                (s, a) => s + (a.total_elevation_gain || 0),
-                0
-            ),
-        };
-    });
+        if (diffDays >= 0 && diffDays <= 6) {
+            activeDays.add(ORDERED_DAYS[diffDays]);
+        }
+    }
+
+    return ORDERED_DAYS.map((day) => ({
+        day,
+        hasActivity: activeDays.has(day),
+    }));
+}
+
+export function getWeeklyStatsByType(
+    data: ActivitiesGroupedByWeek[],
+    type: string,
+) {
+    const currentWeek = data[7].activities;
+
+    const totalDistanceKm =
+        currentWeek.reduce((total, activity) => total + activity.distance, 0) /
+        1000;
+    const totalMovingTimeInSeconds = currentWeek.reduce(
+        (total, activity) => total + activity.moving_time,
+        0,
+    );
+    const hours = Math.floor(totalMovingTimeInSeconds / 3600);
+    const minutes = Math.floor((totalMovingTimeInSeconds % 3600) / 60);
+    const formattedTime =
+        hours > 0 ? `${hours}h ${minutes}min` : `${minutes} min`;
+    const totalElevationGain = currentWeek.reduce(
+        (total, activity) => total + activity.elevation,
+        0,
+    );
 
     return {
-        totalDistanceKm: Number(totalDistanceKm.toFixed(1)),
-        totalElevationGain: Math.round(totalElevationGain),
-        totalMovingTimeSec,
+        totalDistanceKm,
         formattedTime,
-        daysData,
+        totalElevationGain,
     };
 }

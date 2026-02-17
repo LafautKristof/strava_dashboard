@@ -1,13 +1,14 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { Activities } from "@/app/types/activities";
+
 import { Streams } from "@/app/types/streams";
+import { Activity } from "@/app/types/activity";
 
 const Chart = dynamic(() => import("./Chart"), {
     ssr: false,
     loading: () => (
-        <div className="flex items-center justify-center h-[250px] text-gray-400">
+        <div className="flex items-center justify-center h-62.5 text-gray-400">
             Chart loading...
         </div>
     ),
@@ -19,7 +20,7 @@ export default function ActivityChartWrapper({
     onHoverKm,
     selectedSplit,
 }: {
-    activity: Activities;
+    activity: Activity;
     streams: Streams;
     onHoverKm?: (km: number | null) => void;
     selectedSplit?: number | null;

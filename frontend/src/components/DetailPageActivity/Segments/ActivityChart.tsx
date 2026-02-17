@@ -12,8 +12,9 @@ import {
     Tooltip,
 } from "recharts";
 import { ChartContainer } from "@/components/ui/chart";
-import type { SegmentEffort } from "@/app/types/activities";
+
 import { Streams } from "@/app/types/streams";
+import { SegmentEffort } from "@/app/types/activity";
 
 export default function ActivityChart({
     distance,
@@ -72,7 +73,10 @@ export default function ActivityChart({
     }
 
     return (
-        <ChartContainer className="aspect-auto h-[220px] sm:h-[280px] md:h-[320px] w-full overflow-visible">
+        <ChartContainer
+            config={{}}
+            className="aspect-auto h-[220px] sm:h-[280px] md:h-[320px] w-full overflow-visible"
+        >
             <ResponsiveContainer width="100%" height="100%">
                 <ComposedChart
                     data={chartData}
@@ -129,7 +133,7 @@ export default function ActivityChart({
                         <ReferenceArea
                             x1={highlightRange.x1}
                             x2={highlightRange.x2}
-                            fill="#22c55e"
+                            fill="#F52C00"
                             fillOpacity={0.25}
                             stroke="none"
                         />

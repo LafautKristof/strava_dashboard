@@ -6,7 +6,7 @@ import Header from "../OverView/Header";
 import StatsThisActivity from "../RelativeEffort/StatsThisActivity";
 import HeartRateTable from "./HeartRateTable";
 import { Athlete } from "@/app/types/athlete";
-import { Activities } from "@/app/types/activities";
+import { Activity } from "@/app/types/activity";
 
 export default function HeartRate({
     heartRate,
@@ -17,7 +17,7 @@ export default function HeartRate({
     heartRate: number[];
     athlete: Athlete;
     type: string;
-    activity: Activities;
+    activity: Activity;
 }) {
     const HRmax = 220 - getAge(process.env.NEXT_PUBLIC_BIRTHDATE!);
     const zoneCounts = getHeartRateDistribution(heartRate, HRmax);

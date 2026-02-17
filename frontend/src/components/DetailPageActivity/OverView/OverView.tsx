@@ -1,22 +1,22 @@
-import { Activities } from "@/app/types/activities";
 import { Athlete } from "@/app/types/athlete";
-import Header from "./Header";
-import { getStartTime } from "@/helpers/getStartTime";
 import WhoWhereWhenWhat from "./WhoWhereWhenWhat";
 import Details from "./Detail";
-import { getTimeInHoursMinutes } from "@/helpers/getHours";
-import { formatPace } from "@/helpers/getAveragePace";
 import MyGear from "./MyGear";
 import ActivityOverview from "./ActivityOverview";
-import { Streams } from "@/app/types/streams";
 import { Separator } from "@/components/ui/separator";
+import { Activity } from "@/app/types/activity";
+import { Streams } from "@/app/types/streams";
+import formatDateAndTime, {
+    getTimeInHoursMinutes,
+} from "@/helpers/formatDateAndTime";
+import { formatPace } from "@/helpers/formatPace";
 
 const OverView = ({
     activity,
     athlete,
     streams,
 }: {
-    activity: Activities;
+    activity: Activity;
     athlete: Athlete;
     streams: Streams;
 }) => {
@@ -24,14 +24,14 @@ const OverView = ({
     const firstSegment = activity.segment_efforts?.[0]?.segment;
 
     const where =
-        activity.location_city && activity.location_country
-            ? `${activity.location_city}, ${activity.location_country}`
-            : activity.location_city ||
-              activity.location_country ||
+        activity.location.city && activity.location.country
+            ? `${activity.location.city}, ${activity.location.country}`
+            : activity.location.city ||
+              activity.location.country ||
               (firstSegment?.city && firstSegment?.country
                   ? `${firstSegment.city}, ${firstSegment.country}`
                   : "Onbekende locatie");
-    const when = getStartTime(activity.start_date_local).toLocaleString();
+    const when = formatDateAndTime(activity.start_date_local, 2);
     const what = activity.name;
     const description = activity.description;
 
@@ -63,13 +63,6 @@ const OverView = ({
 
     return (
         <>
-            <div className="border-b">
-                <Header
-                    athlete={`${athlete.firstname} ${athlete.lastname}`}
-                    workout={activity.type}
-                />
-            </div>
-
             <div className="flex flex-col lg:flex-row border mt-4">
                 <div className="flex-1 p-4">
                     <WhoWhereWhenWhat

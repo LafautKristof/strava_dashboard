@@ -1,41 +1,40 @@
-import MiddleDashboardComponent from "@/components/Dashboard/MiddleDashboardComponents/MiddleDashboardComponent";
 import LeftDashboardComponent from "@/components/Dashboard/LeftDashboardComponents/LeftDashboardComponent";
-import { get8WeeksAgo } from "@/helpers/get8WeeksAgo";
+import MiddleDashboardComponent from "@/components/Dashboard/MiddleDashboardComponents/MiddleDashboardComponent";
 
-const page = async () => {
-    const after = get8WeeksAgo();
-    const [resAthlete, resActivities, resActivities8Weeks] = await Promise.all([
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}/athlete`, {
-            cache: "no-store",
-        }),
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}/activities`, {
-            cache: "no-store",
-        }),
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}/activities?after=${after}`, {
-            cache: "no-store",
-        }),
-    ]);
-
-    const [dataAthlete, dataActivities, dataActivities8Weeks] =
+const DashboardPage = async () => {
+    const [resAthlete, resActivities, resActivitiesLast8Weeks] =
         await Promise.all([
-            resAthlete.json(),
-            resActivities.json(),
-            resActivities8Weeks.json(),
+            fetch(`${process.env.NEXT_PUBLIC_API_URL}/athlete`, {
+                cache: "no-store",
+            }),
+            fetch(`${process.env.NEXT_PUBLIC_API_URL}/activities/stats`, {
+                cache: "no-store",
+            }),
+            fetch(
+                `${process.env.NEXT_PUBLIC_API_URL}/activities/weeks?range=8`,
+                { cache: "no-store" },
+            ),
         ]);
 
+    const [athlete, activitiesStats, activitiesLast8Weeks] = await Promise.all([
+        resAthlete.json(),
+        resActivities.json(),
+        resActivitiesLast8Weeks.json(),
+    ]);
+
     return (
-        <main className="flex flex-col lg:flex-row w-full min-h-[80vh] items-start gap-6">
+        <div className="flex flex-col lg:flex-row min-h-[80vh] items-start gap-6">
             <div className="w-full lg:w-1/3">
                 <LeftDashboardComponent
-                    athlete={dataAthlete}
-                    activities={dataActivities}
-                    activities8Weeks={dataActivities8Weeks}
+                    athlete={athlete}
+                    activitiesStats={activitiesStats}
+                    activitiesLast8Weeks={activitiesLast8Weeks}
                 />
             </div>
-            <div className="w-full lg:flex-1">
-                <MiddleDashboardComponent athlete={dataAthlete} />
+            <div className="w-full lg:w-2/3">
+                <MiddleDashboardComponent athlete={athlete} />
             </div>
-        </main>
+        </div>
     );
 };
-export default page;
+export default DashboardPage;

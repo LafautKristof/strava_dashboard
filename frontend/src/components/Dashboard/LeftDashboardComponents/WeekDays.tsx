@@ -1,25 +1,26 @@
 "use client";
 
 import { useMemo } from "react";
-import { DaysThisWeek } from "@/app/types/streak";
-import { getIconComponentForActivity } from "@/helpers/getIconForActivitie";
+
+import { getIconsForActivity } from "@/helpers/getIconsForActivity";
+import { ActivitiesThisWeek, Weekday } from "@/app/types/activititiesThisWeek";
 
 export default function WeekDays({
     daysThisWeek,
 }: {
-    daysThisWeek: DaysThisWeek | undefined;
+    daysThisWeek: ActivitiesThisWeek;
 }) {
     const days = useMemo(() => {
         const today = new Date();
         const todayUTC = new Date(
-            Date.UTC(today.getFullYear(), today.getMonth(), today.getDate())
+            Date.UTC(today.getFullYear(), today.getMonth(), today.getDate()),
         );
         const dayOfWeek = todayUTC.getUTCDay();
         const monday = new Date(todayUTC);
         const mondayOffset = dayOfWeek === 0 ? -6 : 1 - dayOfWeek;
         monday.setUTCDate(todayUTC.getUTCDate() + mondayOffset);
 
-        const dayNames: (keyof DaysThisWeek)[] = [
+        const dayNames: Weekday[] = [
             "Mon",
             "Tue",
             "Wed",
@@ -36,12 +37,12 @@ export default function WeekDays({
             const dateOnly = new Date(
                 d.getFullYear(),
                 d.getMonth(),
-                d.getDate()
+                d.getDate(),
             ).toDateString();
             const todayOnly = new Date(
                 today.getFullYear(),
                 today.getMonth(),
-                today.getDate()
+                today.getDate(),
             ).toDateString();
 
             const entry = daysThisWeek?.[name];
@@ -52,7 +53,7 @@ export default function WeekDays({
                 date: d.getUTCDate(),
                 isToday: dateOnly === todayOnly,
                 isFuture: d > today,
-                activityType: entry?.type ?? null,
+                activityType: entry?.types[0] ?? null,
             };
         });
     }, [daysThisWeek]);
@@ -62,9 +63,9 @@ export default function WeekDays({
             {days.map((day) => {
                 const Icon =
                     day.activityType && !day.isFuture
-                        ? getIconComponentForActivity(
+                        ? getIconsForActivity(
                               day.activityType.charAt(0).toUpperCase() +
-                                  day.activityType.slice(1)
+                                  day.activityType.slice(1),
                           )
                         : null;
 

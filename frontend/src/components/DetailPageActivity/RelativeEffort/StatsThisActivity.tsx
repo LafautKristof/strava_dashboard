@@ -1,12 +1,12 @@
-import { Activities } from "@/app/types/activities";
+import { Activity } from "@/app/types/activity";
+import { getTimeInHoursMinutes } from "@/helpers/formatDateAndTime";
 import { formatPace } from "@/helpers/getAveragePace";
-import { getTimeInHoursMinutes } from "@/helpers/getHours";
 
 const StatsThisActivity = ({
     activity,
     relativeEffort,
 }: {
-    activity: Activities;
+    activity: Activity;
     relativeEffort?: number;
 }) => {
     return (

@@ -1,5 +1,6 @@
 "use client";
-import { SegmentEffort } from "@/app/types/activities";
+
+import { SegmentEffort } from "@/app/types/activity";
 import {
     Table,
     TableBody,
@@ -9,8 +10,8 @@ import {
     TableRow,
 } from "@/components/ui/table";
 import { calculatePaceAndGap } from "@/helpers/calculatePaceAndGap";
+import { getTimeInHoursMinutes } from "@/helpers/formatDateAndTime";
 
-import { getTimeInHoursMinutes } from "@/helpers/getHours";
 const SegmentList = ({
     segment,
     onHoverSegment,
@@ -22,7 +23,7 @@ const SegmentList = ({
         <Table>
             <TableHeader>
                 <TableRow>
-                    <TableHead className="w-[100px]"></TableHead>
+                    <TableHead className="w-25"></TableHead>
                     <TableHead>Name</TableHead>
                     <TableHead>Time</TableHead>
                     <TableHead>Distance</TableHead>
@@ -48,6 +49,7 @@ const SegmentList = ({
                             key={seg.id}
                             onMouseEnter={() => onHoverSegment?.(seg)}
                             onMouseLeave={() => onHoverSegment?.(null)}
+                            className="cursor-pointer hover:bg-orange-400 hover:text-white"
                         >
                             <TableCell className="text-center"></TableCell>
                             <TableCell>{seg.name}</TableCell>

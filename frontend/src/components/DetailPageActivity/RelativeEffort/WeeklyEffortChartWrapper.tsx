@@ -5,22 +5,23 @@ import WeeklyEffortChart from "./WeeklyEffortChart";
 import WeeklyDetailChart from "./WeeklyDetailChart";
 import WeeklyDetailInfo from "./WeeklyDetailInfo";
 import WeeklyActivitiesList from "./WeeklyActivitiesList";
-import { Activities } from "@/app/types/activities";
+
+import { Activity } from "@/app/types/activity";
+
 import {
-    Activities12Weeks,
-    Activities as Activities12,
-} from "@/app/types/activities12Weeks";
+    ActivitiesGroupedByWeek,
+    ActivityShort,
+} from "@/app/types/activitiesGroupedByWeek";
 
 export default function WeeklyEffortChartWrapper({
     activities12Weeks,
     activity,
 }: {
-    activities12Weeks: Activities12Weeks[];
-    activity: Activities;
+    activities12Weeks: ActivitiesGroupedByWeek[];
+    activity: Activity;
 }) {
-    const [hoveredWeek, setHoveredWeek] = useState<Activities12Weeks | null>(
-        null
-    );
+    const [hoveredWeek, setHoveredWeek] =
+        useState<ActivitiesGroupedByWeek | null>(null);
 
     useEffect(() => {
         if (activities12Weeks?.length && !hoveredWeek) {
@@ -28,10 +29,11 @@ export default function WeeklyEffortChartWrapper({
         }
     }, [activities12Weeks, hoveredWeek]);
 
-    function getDaysForWeek(activities: Activities12[] = []) {
+    function getDaysForWeek(activities: ActivityShort[] = []) {
+        console.log("activities", activities);
         const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
         const grouped: Record<string, number> = Object.fromEntries(
-            days.map((d) => [d, 0])
+            days.map((d) => [d, 0]),
         );
 
         activities.forEach((a) => {
@@ -56,28 +58,7 @@ export default function WeeklyEffortChartWrapper({
 
                 <div className="min-h-[180px] transition-none">
                     <WeeklyDetailInfo
-                        week={
-                            hoveredWeek
-                                ? {
-                                      week: hoveredWeek.week,
-                                      total_effort: hoveredWeek.total_effort,
-                                      minZone: hoveredWeek.minZone,
-                                      maxZone: hoveredWeek.maxZone,
-                                      activities: hoveredWeek.activities.map(
-                                          (a) => ({
-                                              id: a.id,
-                                              name: a.name,
-                                              suffer_score: a.suffer_score,
-                                              start_date_local:
-                                                  typeof a.start_date_local ===
-                                                  "string"
-                                                      ? a.start_date_local
-                                                      : a.start_date_local.toISOString(),
-                                          })
-                                      ),
-                                  }
-                                : null
-                        }
+                        week={hoveredWeek}
                         avgEffort={
                             hoveredWeek
                                 ? ((hoveredWeek.minZone ?? 0) +

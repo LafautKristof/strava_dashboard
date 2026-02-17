@@ -1,26 +1,37 @@
+import { ActivitiesStats } from "@/app/types/activititiesStats";
+
+import { Athlete } from "@/app/types/athlete";
+import { Card, CardContent } from "@/components/ui/card";
 import Picture from "./Picture";
 import Name from "./Name";
 import FriendsAndCountActivities from "./FriendsAndCountActivities";
-import YourStreak from "./YourStreak";
-import { Athlete } from "@/app/types/athlete";
-import { DataActivity } from "@/app/types/activities";
 import LatestActivity from "./LatestActivity";
-import { getDaysThisWeek } from "@/helpers/getActivitiesThisWeek";
-import { Card, CardContent } from "@/components/ui/card";
-import { Activities8Weeks } from "@/app/types/activities12Weeks";
-import TabLayout from "./Tab/TabLayout";
+import YourStreak from "./YourStreak";
 
+import { getActivitiesThisWeek } from "@/helpers/getActivitiesThisWeek";
+import TabLayout from "./Tabs/TabLayout";
+import { ActivitiesGroupedByWeek } from "@/app/types/activitiesGroupedByWeek";
+import { getCurrentISOWeek } from "@/helpers/getCurrentWeek";
 const LeftDashboardComponent = ({
     athlete,
-    activities,
-    activities8Weeks,
+    activitiesStats,
+    activitiesLast8Weeks,
 }: {
     athlete: Athlete;
-    activities: DataActivity;
-    activities8Weeks: Activities8Weeks[];
+    activitiesStats: ActivitiesStats;
+    activitiesLast8Weeks: ActivitiesGroupedByWeek[];
 }) => {
-    const daysThisWeek = getDaysThisWeek(activities.activities);
-    console.log(activities8Weeks);
+    const currentWeek = getCurrentISOWeek();
+    //current week => 2026-w07
+    const currentWeekData =
+        activitiesLast8Weeks.find((w) => w.week === currentWeek) ??
+        activitiesLast8Weeks.at(-1);
+
+    //current week data => {activities: [],end: "2026-02-15T00:00:00+00:00"start: "2026-02-09T00:00:00+00:00"total_effort: 0week: "2026-W07"
+    const activitiesThisWeek = getActivitiesThisWeek(
+        currentWeekData?.activities ?? [],
+    );
+    //console.log("activities this week", activitiesThisWeek); // activities[...]
     return (
         <>
             <div className="flex flex-col gap-6">
@@ -28,7 +39,7 @@ const LeftDashboardComponent = ({
                     <CardContent>
                         <div className="flex items-center gap-3">
                             <div>
-                                <Picture picture={athlete.profile_medium} />
+                                <Picture picture={athlete.profile} />
                             </div>
 
                             <div className="text-left">
@@ -42,14 +53,16 @@ const LeftDashboardComponent = ({
                             <FriendsAndCountActivities
                                 following={athlete.friend_count}
                                 followers={athlete.follower_count}
-                                activities={activities.total_count}
+                                activities={activitiesStats.total_activities}
                             />
                         </div>
-                        <LatestActivity activitie={activities.activities[0]} />
+                        <LatestActivity
+                            activitie={activitiesStats.last_activity}
+                        />
 
                         <YourStreak
-                            streak={activities.weekly_streak}
-                            days={daysThisWeek}
+                            streak={activitiesStats.weekly_streak}
+                            days={activitiesThisWeek}
                         />
                     </CardContent>
                 </Card>
@@ -57,8 +70,8 @@ const LeftDashboardComponent = ({
                 <Card className="bg-white  text-black  p-4 rounded-md mt-6">
                     <CardContent>
                         <TabLayout
-                            activities8Weeks={activities8Weeks}
-                            activities={activities}
+                            activities8Weeks={activitiesLast8Weeks}
+                            activitiesStats={activitiesStats}
                         />
                     </CardContent>
                 </Card>
