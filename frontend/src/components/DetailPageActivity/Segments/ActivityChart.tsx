@@ -13,8 +13,8 @@ import {
 } from "recharts";
 import { ChartContainer } from "@/components/ui/chart";
 
-import { Streams } from "@/app/types/streams";
-import { SegmentEffort } from "@/app/types/activity";
+import { Streams } from "@/types/streams";
+import { SegmentEffort } from "@/types/activity";
 
 export default function ActivityChart({
     distance,

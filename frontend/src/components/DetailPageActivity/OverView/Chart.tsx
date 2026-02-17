@@ -14,9 +14,9 @@ import {
 import { ChartContainer } from "@/components/ui/chart";
 
 import { Button } from "@/components/ui/button";
-import { Streams } from "@/app/types/streams";
+import { Streams } from "@/types/streams";
 import { useEffect, useState } from "react";
-import { Activity } from "@/app/types/activity";
+import { Activity } from "@/types/activity";
 
 type Metric = "elevation" | "pace" | "gap" | "heartrate";
 

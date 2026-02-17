@@ -3,7 +3,7 @@
 import { useMemo } from "react";
 
 import { getIconsForActivity } from "@/helpers/getIconsForActivity";
-import { ActivitiesThisWeek, Weekday } from "@/app/types/activititiesThisWeek";
+import { ActivitiesThisWeek, Weekday } from "@/types/activititiesThisWeek";
 
 export default function WeekDays({
     daysThisWeek,

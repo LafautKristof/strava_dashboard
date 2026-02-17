@@ -1,5 +1,5 @@
-import { ActivityList } from "@/app/types/activityList";
-import { GearData } from "@/app/types/gear";
+import { ActivityList } from "@/types/activityList";
+import { GearData } from "@/types/gear";
 
 import CardButton from "./CardButton";
 import PercentageBar from "./PercentageBar";
@@ -7,7 +7,7 @@ import PaginationButton from "./PaginationButton";
 import { Loader } from "lucide-react";
 import Link from "next/link";
 import ActivitieCardSmall from "../ActivitieCardSmall";
-import { Pagination } from "@/app/types/pagination";
+import { Pagination } from "@/types/pagination";
 
 const GearOverviewList = ({
     gear,

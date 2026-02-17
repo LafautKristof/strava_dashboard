@@ -1,7 +1,7 @@
 "use client";
 
-import { ActivityList } from "@/app/types/activityList";
-import { Athlete } from "@/app/types/athlete";
+import { ActivityList } from "@/types/activityList";
+import { Athlete } from "@/types/athlete";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { format } from "date-fns";
 import FilterForm from "./FilterForm";

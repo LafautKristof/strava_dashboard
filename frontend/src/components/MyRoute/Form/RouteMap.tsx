@@ -6,7 +6,7 @@ import { useEffect, useRef } from "react";
 import { Feature, LineString } from "geojson";
 import EnableDrawing from "./EnableDrawing";
 import "@geoman-io/leaflet-geoman-free";
-import { RouteType } from "@/app/types/routeType";
+import { RouteType } from "@/types/routeType";
 
 interface Props {
     color: string;

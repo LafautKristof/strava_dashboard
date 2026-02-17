@@ -9,7 +9,7 @@ import "leaflet/dist/leaflet.css";
 import { finishIcon } from "@/helpers/MapHelpers/finishIcon";
 import { startIcon } from "@/helpers/MapHelpers/startIcon";
 import { getTypeMarker } from "@/helpers/MapHelpers/getTypeMarker";
-import { Activity } from "@/app/types/activity";
+import { Activity } from "@/types/activity";
 
 const MapContainer = dynamic(
     () => import("react-leaflet").then((m) => m.MapContainer),

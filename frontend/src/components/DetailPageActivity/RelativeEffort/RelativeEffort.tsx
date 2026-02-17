@@ -4,8 +4,8 @@ import Header from "../OverView/Header";
 import StatsThisActivity from "./StatsThisActivity";
 import EffortThisWeek from "./EffortThisWeek";
 
-import { Activity } from "@/app/types/activity";
-import { ActivitiesGroupedByWeek } from "@/app/types/activitiesGroupedByWeek";
+import { Activity } from "@/types/activity";
+import { ActivitiesGroupedByWeek } from "@/types/activitiesGroupedByWeek";
 
 export default async function RelativeEffort({
     activity,

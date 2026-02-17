@@ -5,9 +5,9 @@ import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 
 import Link from "next/link";
-import { Activity } from "@/app/types/activity";
+import { Activity } from "@/types/activity";
 import { getTimeInHoursMinutes } from "@/helpers/formatDateAndTime";
-import { ActivityShort } from "@/app/types/activitiesGroupedByWeek";
+import { ActivityShort } from "@/types/activitiesGroupedByWeek";
 import { getTypeIcon } from "@/helpers/getTypeIcon";
 
 const WeeklyActivitiesList = ({

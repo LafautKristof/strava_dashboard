@@ -1,13 +1,13 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import OverView from "../OverView/OverView";
 
-import { Athlete } from "@/app/types/athlete";
+import { Athlete } from "@/types/athlete";
 
 import RelativeEffort from "../RelativeEffort/RelativeEffort";
 import HeartRate from "../HeartRate/HeartRate";
 import Segment from "../Segments/Segment";
-import { Activity } from "@/app/types/activity";
-import { Streams } from "@/app/types/streams";
+import { Activity } from "@/types/activity";
+import { Streams } from "@/types/streams";
 
 const MenuDetailActivity = ({
     activity,

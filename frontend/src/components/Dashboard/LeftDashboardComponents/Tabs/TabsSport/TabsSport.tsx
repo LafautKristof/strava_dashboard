@@ -3,12 +3,12 @@ import Chart from "./Chart";
 import ThisWeek from "./ThisWeek";
 import TimeElevation from "./TimeElevation";
 import ThisYear from "./ThisYear";
-import { ActivitiesGroupedByWeek } from "@/app/types/activitiesGroupedByWeek";
+import { ActivitiesGroupedByWeek } from "@/types/activitiesGroupedByWeek";
 import {
     getDaysDataForWeek,
     getWeeklyStatsByType,
 } from "@/helpers/getWeeklyStatsByType";
-import { ActivitiesStats, ActivityType } from "@/app/types/activititiesStats";
+import { ActivitiesStats, ActivityType } from "@/types/activititiesStats";
 import { getThisYearStatsByType } from "@/helpers/getThisYearStatsByType";
 import { useMemo } from "react";
 import { getCurrentISOWeek } from "@/helpers/getCurrentWeek";

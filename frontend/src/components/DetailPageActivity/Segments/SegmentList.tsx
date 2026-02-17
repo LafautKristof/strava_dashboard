@@ -1,6 +1,6 @@
 "use client";
 
-import { SegmentEffort } from "@/app/types/activity";
+import { SegmentEffort } from "@/types/activity";
 import {
     Table,
     TableBody,

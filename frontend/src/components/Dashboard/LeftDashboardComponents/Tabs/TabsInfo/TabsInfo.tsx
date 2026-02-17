@@ -5,7 +5,7 @@ import WeeklyEffortChartWrapper from "./WeeklyEffortChartWrapper";
 import WeeklyDetailChart from "./WeeklyDetailChart";
 import WeeklyDetailInfo from "./WeeklyDetailInfo";
 import { getCurrentISOWeek } from "@/helpers/getCurrentWeek";
-import { ActivitiesGroupedByWeek } from "@/app/types/activitiesGroupedByWeek";
+import { ActivitiesGroupedByWeek } from "@/types/activitiesGroupedByWeek";
 
 type WeekDay = { day: string; total_effort: number };
 

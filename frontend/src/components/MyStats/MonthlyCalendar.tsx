@@ -2,7 +2,7 @@
 import {
     Activities,
     ActivitiesCurrentMonth,
-} from "@/app/types/activitiesCurrentMonth";
+} from "@/types/activitiesCurrentMonth";
 
 import {
     Dialog,

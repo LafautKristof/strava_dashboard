@@ -1,6 +1,6 @@
 "use client";
 
-import { ActivitiesGroupedByWeek } from "@/app/types/activitiesGroupedByWeek";
+import { ActivitiesGroupedByWeek } from "@/types/activitiesGroupedByWeek";
 import { getMessageLabelColor } from "@/helpers/getMessageLabelColor";
 import { endOfISOWeek, format, startOfISOWeek } from "date-fns";
 import { enUS } from "date-fns/locale";

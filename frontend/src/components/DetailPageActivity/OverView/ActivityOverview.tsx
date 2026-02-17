@@ -3,8 +3,8 @@
 import { useState } from "react";
 import Splits from "./Splits";
 import ActivityChartWrapper from "./ActivityChartWrapper";
-import { Activity } from "@/app/types/activity";
-import { Streams } from "@/app/types/streams";
+import { Activity } from "@/types/activity";
+import { Streams } from "@/types/streams";
 
 export default function ActivityOverview({
     activity,

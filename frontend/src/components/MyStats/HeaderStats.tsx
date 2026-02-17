@@ -1,8 +1,8 @@
 "use client";
-import { Athlete } from "@/app/types/athlete";
+import { Athlete } from "@/types/athlete";
 import Picture from "./Picture";
 import Name from "./Name";
-import { ActivitiesCurrentMonth } from "@/app/types/activitiesCurrentMonth";
+import { ActivitiesCurrentMonth } from "@/types/activitiesCurrentMonth";
 import MonthlyCalendar from "./MonthlyCalendar";
 import MonthlyPieChart from "./MonthlyPieChart";
 import { useState } from "react";

@@ -1,11 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { GearData, GearResponse } from "../types/gear";
+import { GearData, GearResponse } from "../../types/gear";
 import LoaderComponent from "@/components/LoaderComponent";
-import { ActivityList } from "../types/activityList";
+import { ActivityList } from "../../types/activityList";
 import GearOverviewList from "@/components/MyGear/GearOverviewList";
-import { Pagination } from "../types/pagination";
+import { Pagination } from "../../types/pagination";
 
 export default function GearOverviewPage({
     initialOpenGearId,

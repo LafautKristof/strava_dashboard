@@ -1,6 +1,6 @@
 "use client";
 
-import { RouteType } from "@/app/types/routeType";
+import { RouteType } from "@/types/routeType";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import {

@@ -1,4 +1,4 @@
-import { Activity } from "@/app/types/activity";
+import { Activity } from "@/types/activity";
 import { getTimeInHoursMinutes } from "@/helpers/formatDateAndTime";
 import { formatPace } from "@/helpers/getAveragePace";
 

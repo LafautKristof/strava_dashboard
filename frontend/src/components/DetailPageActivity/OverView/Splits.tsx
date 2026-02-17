@@ -13,7 +13,7 @@ import { getGapPace } from "@/helpers/getGapPace";
 import { getSplitLabel } from "@/helpers/getSplitLabel";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import dynamic from "next/dynamic";
-import { Activity, SplitsMetric } from "@/app/types/activity";
+import { Activity, SplitsMetric } from "@/types/activity";
 
 const SplitsMap = dynamic(() => import("./SplitsMap"), { ssr: false });
 

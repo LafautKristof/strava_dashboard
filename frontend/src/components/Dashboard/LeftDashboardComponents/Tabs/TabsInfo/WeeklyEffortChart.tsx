@@ -12,7 +12,7 @@ import {
 } from "recharts";
 import { Card } from "@/components/ui/card";
 import { useCallback, useMemo } from "react";
-import { ActivitiesGroupedByWeek } from "@/app/types/activitiesGroupedByWeek";
+import { ActivitiesGroupedByWeek } from "@/types/activitiesGroupedByWeek";
 import {
     CustomActiveDot,
     CustomDot,

@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import dynamic from "next/dynamic";
-import { RouteType } from "../types/routeType";
+import { RouteType } from "../../types/routeType";
 import RouteList from "@/components/MyRoute/RouteList/RouteList";
 import FormComponent from "@/components/MyRoute/Form/FormComponent";
 

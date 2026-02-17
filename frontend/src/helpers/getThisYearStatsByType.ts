@@ -1,5 +1,5 @@
-import { ActivitiesStats, ActivityType } from "@/app/types/activititiesStats";
-import { Activity } from "@/app/types/activity";
+import { ActivitiesStats, ActivityType } from "@/types/activititiesStats";
+import { Activity } from "@/types/activity";
 
 export function getThisYearStatsByType(
     data: ActivitiesStats,

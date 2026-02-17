@@ -14,8 +14,8 @@ import {
 import { Card, CardContent } from "@/components/ui/card";
 import { useState, useEffect } from "react";
 
-import { ActivitiesGroupedByWeek } from "@/app/types/activitiesGroupedByWeek";
-import { Activity } from "@/app/types/activity";
+import { ActivitiesGroupedByWeek } from "@/types/activitiesGroupedByWeek";
+import { Activity } from "@/types/activity";
 
 type EffortDotProps = {
     cx: number;

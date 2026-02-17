@@ -10,7 +10,7 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table";
-import { Stats } from "@/app/types/stats";
+import { Stats } from "@/types/stats";
 import LoaderComponent from "@/components/LoaderComponent";
 
 const TabsSport = ({ tab }: { tab: string }) => {

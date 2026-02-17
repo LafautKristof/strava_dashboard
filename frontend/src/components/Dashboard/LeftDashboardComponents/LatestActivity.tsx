@@ -1,4 +1,4 @@
-import { Activity } from "@/app/types/activity";
+import { Activity } from "@/types/activity";
 import { Separator } from "@/components/ui/separator";
 import formatDateAndTime from "@/helpers/formatDateAndTime";
 

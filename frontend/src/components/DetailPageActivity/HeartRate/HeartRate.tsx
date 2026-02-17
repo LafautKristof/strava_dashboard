@@ -5,8 +5,8 @@ import { getHeartRateDistribution } from "@/helpers/getHeartZone";
 import Header from "../OverView/Header";
 import StatsThisActivity from "../RelativeEffort/StatsThisActivity";
 import HeartRateTable from "./HeartRateTable";
-import { Athlete } from "@/app/types/athlete";
-import { Activity } from "@/app/types/activity";
+import { Athlete } from "@/types/athlete";
+import { Activity } from "@/types/activity";
 
 export default function HeartRate({
     heartRate,

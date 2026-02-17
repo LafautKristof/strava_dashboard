@@ -1,4 +1,4 @@
-import { Pagination } from "@/app/types/pagination";
+import { Pagination } from "@/types/pagination";
 import { Button } from "../ui/button";
 
 const PaginationButton = ({

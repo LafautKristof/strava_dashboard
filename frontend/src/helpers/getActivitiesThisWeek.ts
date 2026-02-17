@@ -1,9 +1,9 @@
-import { ActivityShort } from "@/app/types/activitiesGroupedByWeek";
+import { ActivityShort } from "@/types/activitiesGroupedByWeek";
 import {
     ActivitiesThisWeek,
     ActivityType,
     Weekday,
-} from "@/app/types/activititiesThisWeek";
+} from "@/types/activititiesThisWeek";
 
 const TYPE_MAP: Record<string, ActivityType> = {
     run: "run",

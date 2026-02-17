@@ -2,7 +2,7 @@
 import {
     ActivitiesCurrentMonth,
     ActivityType,
-} from "@/app/types/activitiesCurrentMonth";
+} from "@/types/activitiesCurrentMonth";
 import { typeColors } from "@/lib/constants/typeColors";
 import { Cell, Pie, PieChart, ResponsiveContainer, Tooltip } from "recharts";
 import { useMemo, useState } from "react";

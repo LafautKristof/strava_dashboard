@@ -1,4 +1,4 @@
-import { ActivityList } from "@/app/types/activityList";
+import { ActivityList } from "@/types/activityList";
 
 import LazyMap from "./Dashboard/MiddleDashboardComponents/LazyMap";
 import Link from "next/link";

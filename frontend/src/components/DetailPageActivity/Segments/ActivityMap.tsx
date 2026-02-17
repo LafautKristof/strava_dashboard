@@ -7,11 +7,11 @@ import { useMap } from "react-leaflet";
 import L from "leaflet";
 
 import "leaflet/dist/leaflet.css";
-import { Streams } from "@/app/types/streams";
+import { Streams } from "@/types/streams";
 import { finishIcon } from "@/helpers/MapHelpers/finishIcon";
 import { startIcon } from "@/helpers/MapHelpers/startIcon";
 import { getTypeMarker } from "@/helpers/MapHelpers/getTypeMarker";
-import { SegmentEffort } from "@/app/types/activity";
+import { SegmentEffort } from "@/types/activity";
 
 const MapContainer = dynamic(
     () => import("react-leaflet").then((m) => m.MapContainer),

@@ -10,9 +10,9 @@ import {
 import AssignmentIcon from "@mui/icons-material/Assignment";
 import { TabsInfo } from "./TabsInfo/TabsInfo";
 
-import { ActivitiesGroupedByWeek } from "@/app/types/activitiesGroupedByWeek";
+import { ActivitiesGroupedByWeek } from "@/types/activitiesGroupedByWeek";
 import TabsSport from "./TabsSport/TabsSport";
-import { ActivitiesStats } from "@/app/types/activititiesStats";
+import { ActivitiesStats } from "@/types/activititiesStats";
 
 const TabLayout = ({
     activities8Weeks,

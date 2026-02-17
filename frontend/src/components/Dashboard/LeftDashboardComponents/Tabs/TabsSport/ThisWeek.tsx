@@ -1,4 +1,4 @@
-import { ActivityType } from "@/app/types/activititiesStats";
+import { ActivityType } from "@/types/activititiesStats";
 
 const ThisWeek = ({
     totalDistanceKm,

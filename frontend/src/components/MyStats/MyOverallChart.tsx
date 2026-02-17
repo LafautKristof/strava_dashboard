@@ -21,8 +21,8 @@ import { ChevronDown } from "lucide-react";
 
 import Link from "next/link";
 
-import { OverallChartData } from "@/app/types/overAllChart";
-import { Activity } from "@/app/types/activity";
+import { OverallChartData } from "@/types/overAllChart";
+import { Activity } from "@/types/activity";
 import LoaderComponent from "../LoaderComponent";
 import ActivitieCardSmall from "../ActivitieCardSmall";
 type ChartEntry = {

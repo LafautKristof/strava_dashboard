@@ -2,8 +2,8 @@
 
 import dynamic from "next/dynamic";
 
-import { Streams } from "@/app/types/streams";
-import { Activity } from "@/app/types/activity";
+import { Streams } from "@/types/streams";
+import { Activity } from "@/types/activity";
 
 const Chart = dynamic(() => import("./Chart"), {
     ssr: false,

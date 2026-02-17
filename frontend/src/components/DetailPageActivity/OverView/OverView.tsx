@@ -1,11 +1,11 @@
-import { Athlete } from "@/app/types/athlete";
+import { Athlete } from "@/types/athlete";
 import WhoWhereWhenWhat from "./WhoWhereWhenWhat";
 import Details from "./Detail";
 import MyGear from "./MyGear";
 import ActivityOverview from "./ActivityOverview";
 import { Separator } from "@/components/ui/separator";
-import { Activity } from "@/app/types/activity";
-import { Streams } from "@/app/types/streams";
+import { Activity } from "@/types/activity";
+import { Streams } from "@/types/streams";
 import formatDateAndTime, {
     getTimeInHoursMinutes,
 } from "@/helpers/formatDateAndTime";
