@@ -1,5 +1,5 @@
-import LeftDashboardComponent from "@/components/Dashboard/LeftDashboardComponents/LeftDashboardComponent";
-import MiddleDashboardComponent from "@/components/Dashboard/MiddleDashboardComponents/MiddleDashboardComponent";
+import LeftDashboardComponent from "@/src/components/Dashboard/LeftDashboardComponents/LeftDashboardComponent";
+import MiddleDashboardComponent from "@/src/components/Dashboard/MiddleDashboardComponents/MiddleDashboardComponent";
 
 const DashboardPage = async () => {
     const [resAthlete, resActivities, resActivitiesLast8Weeks] =

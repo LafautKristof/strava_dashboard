@@ -2,10 +2,12 @@
 
 import { useEffect, useState } from "react";
 import { GearData, GearResponse } from "../../types/gear";
-import LoaderComponent from "@/components/LoaderComponent";
+
 import { ActivityList } from "../../types/activityList";
-import GearOverviewList from "@/components/MyGear/GearOverviewList";
+
 import { Pagination } from "../../types/pagination";
+import LoaderComponent from "@/src/components/LoaderComponent";
+import GearOverviewList from "@/src/components/MyGear/GearOverviewList";
 
 export default function GearOverviewPage({
     initialOpenGearId,

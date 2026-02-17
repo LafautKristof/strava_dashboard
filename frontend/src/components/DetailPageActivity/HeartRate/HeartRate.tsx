@@ -1,12 +1,12 @@
 "use client";
 
-import { getAge } from "@/helpers/getAge";
-import { getHeartRateDistribution } from "@/helpers/getHeartZone";
+import { Activity } from "@/src/types/activity";
 import Header from "../OverView/Header";
 import StatsThisActivity from "../RelativeEffort/StatsThisActivity";
 import HeartRateTable from "./HeartRateTable";
-import { Athlete } from "@/types/athlete";
-import { Activity } from "@/types/activity";
+import { Athlete } from "@/src/types/athlete";
+import { getAge } from "@/src/helpers/getAge";
+import { getHeartRateDistribution } from "@/src/helpers/getHeartZone";
 
 export default function HeartRate({
     heartRate,

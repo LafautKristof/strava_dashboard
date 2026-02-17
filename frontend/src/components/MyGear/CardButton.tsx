@@ -1,7 +1,7 @@
 import { ChevronDown } from "lucide-react";
 import { Button } from "../ui/button";
 
-import { GearData } from "@/types/gear";
+import { GearData } from "@/src/types/gear";
 
 const CardButton = ({
     isSelected,

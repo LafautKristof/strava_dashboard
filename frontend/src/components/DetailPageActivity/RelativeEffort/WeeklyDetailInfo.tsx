@@ -1,7 +1,7 @@
 "use client";
 
-import { ActivitiesGroupedByWeek } from "@/types/activitiesGroupedByWeek";
-import { getMessageLabelColor } from "@/helpers/getMessageLabelColor";
+import { ActivitiesGroupedByWeek } from "@/src/types/activitiesGroupedByWeek";
+import { getMessageLabelColor } from "@/src/helpers/getMessageLabelColor";
 import { endOfISOWeek, format, startOfISOWeek } from "date-fns";
 import { enUS } from "date-fns/locale";
 

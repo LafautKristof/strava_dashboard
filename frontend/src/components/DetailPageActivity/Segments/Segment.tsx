@@ -5,10 +5,10 @@ import dynamic from "next/dynamic";
 import SegmentList from "./SegmentList";
 import { useState } from "react";
 import Header from "../OverView/Header";
-import { Athlete } from "@/types/athlete";
+import { Athlete } from "@/src/types/athlete";
 import ActivityChart from "./ActivityChart";
-import { Streams } from "@/types/streams";
-import { Activity, SegmentEffort } from "@/types/activity";
+import { Streams } from "@/src/types/streams";
+import { Activity, SegmentEffort } from "@/src/types/activity";
 
 const ActivityMap = dynamic(() => import("./ActivityMap"), { ssr: false });
 

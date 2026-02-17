@@ -6,12 +6,12 @@ import WeeklyDetailChart from "./WeeklyDetailChart";
 import WeeklyDetailInfo from "./WeeklyDetailInfo";
 import WeeklyActivitiesList from "./WeeklyActivitiesList";
 
-import { Activity } from "@/types/activity";
+import { Activity } from "@/src/types/activity";
 
 import {
     ActivitiesGroupedByWeek,
     ActivityShort,
-} from "@/types/activitiesGroupedByWeek";
+} from "@/src/types/activitiesGroupedByWeek";
 
 export default function WeeklyEffortChartWrapper({
     activities12Weeks,

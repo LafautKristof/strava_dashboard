@@ -1,4 +1,4 @@
-import { ActivitiesCurrentMonth } from "@/types/activitiesCurrentMonth";
+import { ActivitiesCurrentMonth } from "@/src/types/activitiesCurrentMonth";
 
 export function buildMonthGrid(
     monthData: ActivitiesCurrentMonth[],

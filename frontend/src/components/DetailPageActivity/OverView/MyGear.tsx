@@ -1,4 +1,4 @@
-import { Gear } from "@/types/activity";
+import { Gear } from "@/src/types/activity";
 import Link from "next/link";
 
 const MyGear = ({ gear, device }: { gear?: Gear; device?: string }) => {

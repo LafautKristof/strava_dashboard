@@ -1,8 +1,8 @@
 "use client";
 
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
+import { Input } from "@/src/components/ui/input";
+import { Textarea } from "@/src/components/ui/textarea";
+import { Button } from "@/src/components/ui/button";
 
 import {
     Select,
@@ -11,8 +11,8 @@ import {
     SelectItem,
     SelectTrigger,
     SelectValue,
-} from "@/components/ui/select";
-import { getTypeIcon } from "@/helpers/getTypeIcon";
+} from "@/src/components/ui/select";
+import { getTypeIcon } from "@/src/helpers/getTypeIcon";
 
 interface Props {
     name: string;

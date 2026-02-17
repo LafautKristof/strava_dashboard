@@ -1,5 +1,10 @@
 "use client";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+    Tabs,
+    TabsContent,
+    TabsList,
+    TabsTrigger,
+} from "@/src/components/ui/tabs";
 import {
     DirectionsBike,
     DirectionsRun,

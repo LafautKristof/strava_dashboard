@@ -9,9 +9,9 @@ import {
     TableHead,
     TableHeader,
     TableRow,
-} from "@/components/ui/table";
-import { Stats } from "@/types/stats";
-import LoaderComponent from "@/components/LoaderComponent";
+} from "@/src/components/ui/table";
+import { Stats } from "@/src/types/stats";
+import LoaderComponent from "@/src/components/LoaderComponent";
 
 const TabsSport = ({ tab }: { tab: string }) => {
     const [stats, setStats] = useState<Stats | null>(null);

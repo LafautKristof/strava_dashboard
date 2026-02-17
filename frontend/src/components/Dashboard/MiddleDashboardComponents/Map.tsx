@@ -9,8 +9,8 @@ import { decode } from "@mapbox/polyline";
 import "leaflet/dist/leaflet.css";
 import { useEffect } from "react";
 import L from "leaflet";
-import { startIcon } from "@/helpers/MapHelpers/startIcon";
-import { finishIcon } from "@/helpers/MapHelpers/finishIcon";
+import { startIcon } from "@/src/helpers/MapHelpers/startIcon";
+import { finishIcon } from "@/src/helpers/MapHelpers/finishIcon";
 
 export default function Map({
     route,

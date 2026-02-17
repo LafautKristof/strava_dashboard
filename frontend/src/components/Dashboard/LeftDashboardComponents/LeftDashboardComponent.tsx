@@ -1,17 +1,16 @@
-import { ActivitiesStats } from "@/types/activititiesStats";
-
-import { Athlete } from "@/types/athlete";
-import { Card, CardContent } from "@/components/ui/card";
 import Picture from "./Picture";
 import Name from "./Name";
 import FriendsAndCountActivities from "./FriendsAndCountActivities";
 import LatestActivity from "./LatestActivity";
 import YourStreak from "./YourStreak";
 
-import { getActivitiesThisWeek } from "@/helpers/getActivitiesThisWeek";
 import TabLayout from "./Tabs/TabLayout";
-import { ActivitiesGroupedByWeek } from "@/types/activitiesGroupedByWeek";
-import { getCurrentISOWeek } from "@/helpers/getCurrentWeek";
+import { Athlete } from "@/src/types/athlete";
+import { ActivitiesStats } from "@/src/types/activititiesStats";
+import { ActivitiesGroupedByWeek } from "@/src/types/activitiesGroupedByWeek";
+import { getCurrentISOWeek } from "@/src/helpers/getCurrentWeek";
+import { getActivitiesThisWeek } from "@/src/helpers/getActivitiesThisWeek";
+import { Card, CardContent } from "../../ui/card";
 const LeftDashboardComponent = ({
     athlete,
     activitiesStats,

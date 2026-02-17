@@ -2,20 +2,20 @@
 import {
     Activities,
     ActivitiesCurrentMonth,
-} from "@/types/activitiesCurrentMonth";
+} from "@/src/types/activitiesCurrentMonth";
 
 import {
     Dialog,
     DialogContent,
     DialogHeader,
     DialogTitle,
-} from "@/components/ui/dialog";
-import { buildMonthGrid } from "@/helpers/CalendarHelpers/buildMonthGrid";
-import { typeColors } from "@/lib/constants/typeColors";
+} from "@/src/components/ui/dialog";
+import { buildMonthGrid } from "@/src/helpers/CalendarHelpers/buildMonthGrid";
+import { typeColors } from "@/src/lib/constants/typeColors";
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
-import { getTimeInHoursMinutes } from "@/helpers/formatDateAndTime";
-import { getTypeIcon } from "@/helpers/getTypeIcon";
+import { getTimeInHoursMinutes } from "@/src/helpers/formatDateAndTime";
+import { getTypeIcon } from "@/src/helpers/getTypeIcon";
 import { Button } from "../ui/button";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 import LoaderComponent from "../LoaderComponent";

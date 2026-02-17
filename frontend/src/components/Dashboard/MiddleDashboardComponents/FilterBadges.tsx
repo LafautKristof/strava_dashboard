@@ -1,5 +1,5 @@
-import { Badge } from "@/components/ui/badge";
 import { X } from "lucide-react";
+import { Badge } from "../../ui/badge";
 
 const FilterBadges = ({
     children,

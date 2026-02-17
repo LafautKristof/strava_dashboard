@@ -1,6 +1,6 @@
 import L from "leaflet";
 
-import { markerIcons } from "@/helpers/DrawMap/markers";
+import { markerIcons } from "@/src/helpers/DrawMap/markers";
 import type { Feature, LineString } from "geojson";
 
 let startMarker: L.Marker | null = null;
@@ -8,7 +8,7 @@ let finishMarker: L.Marker | null = null;
 
 export function updateStartFinishMarkers(
     map: L.Map,
-    features: Feature<LineString>[]
+    features: Feature<LineString>[],
 ) {
     const allCoords = features
         .filter((f) => f.geometry.type === "LineString")
@@ -49,14 +49,14 @@ export function checkDisconnected(features: Feature[], map: L.Map) {
         const prevEnd = prev.geometry.coordinates.at(-1)!;
         const currStart = curr.geometry.coordinates[0];
         const dist = L.latLng(prevEnd[1], prevEnd[0]).distanceTo(
-            L.latLng(currStart[1], currStart[0])
+            L.latLng(currStart[1], currStart[0]),
         );
 
         if (dist > 5) {
             const popup = L.popup()
                 .setLatLng([currStart[1], currStart[0]])
                 .setContent(
-                    "This line is not connected to the previous one.<br/> Make sure that lines are connected to each other for a single route."
+                    "This line is not connected to the previous one.<br/> Make sure that lines are connected to each other for a single route.",
                 )
                 .openOn(map);
             setTimeout(() => map.closePopup(popup), 4000);

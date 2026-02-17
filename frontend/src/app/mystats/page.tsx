@@ -1,7 +1,6 @@
-import HeaderStats from "@/components/MyStats/HeaderStats";
-
-import MyOverallChart from "@/components/MyStats/MyOverallChart";
-import MyOverallStats from "@/components/MyStats/MyOverallStats";
+import HeaderStats from "@/src/components/MyStats/HeaderStats";
+import MyOverallChart from "@/src/components/MyStats/MyOverallChart";
+import MyOverallStats from "@/src/components/MyStats/MyOverallStats";
 
 const page = async () => {
     const resAthlete = await fetch(

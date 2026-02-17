@@ -1,4 +1,5 @@
-import { getZoneColor } from "@/helpers/ChartHelpers/getZoneColor";
+import { getZoneColor } from "@/src/helpers/ChartHelpers/getZoneColor";
+
 type CustomDotProps = {
     cx?: number;
     cy?: number;

@@ -1,8 +1,8 @@
 "use client";
 
-import { RouteType } from "@/types/routeType";
-import { Button } from "@/components/ui/button";
-import { ScrollArea } from "@/components/ui/scroll-area";
+import { RouteType } from "@/src/types/routeType";
+import { Button } from "@/src/components/ui/button";
+import { ScrollArea } from "@/src/components/ui/scroll-area";
 import {
     Table,
     TableBody,
@@ -10,9 +10,9 @@ import {
     TableHead,
     TableHeader,
     TableRow,
-} from "@/components/ui/table";
-import formatDateAndTime from "@/helpers/formatDateAndTime";
-import { getTypeIcon } from "@/helpers/getTypeIcon";
+} from "@/src/components/ui/table";
+import formatDateAndTime from "@/src/helpers/formatDateAndTime";
+import { getTypeIcon } from "@/src/helpers/getTypeIcon";
 import { Trash2 } from "lucide-react";
 
 import { Dispatch, SetStateAction, useEffect, useState } from "react";

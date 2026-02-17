@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { Feature, LineString } from "geojson";
 import RouteForm from "./RouteForm";
-import { RouteType } from "@/types/routeType";
+import { RouteType } from "@/src/types/routeType";
 import dynamic from "next/dynamic";
 
 const RouteMap = dynamic(() => import("./RouteMap"), {

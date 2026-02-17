@@ -10,19 +10,19 @@ import {
     CartesianGrid,
     Tooltip,
 } from "recharts";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/src/components/ui/button";
 import {
     DropdownMenu,
     DropdownMenuContent,
     DropdownMenuItem,
     DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+} from "@/src/components/ui/dropdown-menu";
 import { ChevronDown } from "lucide-react";
 
 import Link from "next/link";
 
-import { OverallChartData } from "@/types/overAllChart";
-import { Activity } from "@/types/activity";
+import { OverallChartData } from "@/src/types/overAllChart";
+import { Activity } from "@/src/types/activity";
 import LoaderComponent from "../LoaderComponent";
 import ActivitieCardSmall from "../ActivitieCardSmall";
 type ChartEntry = {

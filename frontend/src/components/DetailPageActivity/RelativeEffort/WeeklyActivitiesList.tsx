@@ -1,14 +1,8 @@
-import DirectionsRunIcon from "@mui/icons-material/DirectionsRun";
-import DirectionsWalkIcon from "@mui/icons-material/DirectionsWalk";
-import DirectionsBikeIcon from "@mui/icons-material/DirectionsBike";
-import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";
-import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
-
 import Link from "next/link";
-import { Activity } from "@/types/activity";
-import { getTimeInHoursMinutes } from "@/helpers/formatDateAndTime";
-import { ActivityShort } from "@/types/activitiesGroupedByWeek";
-import { getTypeIcon } from "@/helpers/getTypeIcon";
+
+import { getTimeInHoursMinutes } from "@/src/helpers/formatDateAndTime";
+import { ActivityShort } from "@/src/types/activitiesGroupedByWeek";
+import { getTypeIcon } from "@/src/helpers/getTypeIcon";
 
 const WeeklyActivitiesList = ({
     activities,

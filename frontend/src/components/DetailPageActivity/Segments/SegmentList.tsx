@@ -1,6 +1,6 @@
 "use client";
 
-import { SegmentEffort } from "@/types/activity";
+import { SegmentEffort } from "@/src/types/activity";
 import {
     Table,
     TableBody,
@@ -8,9 +8,9 @@ import {
     TableHead,
     TableHeader,
     TableRow,
-} from "@/components/ui/table";
-import { calculatePaceAndGap } from "@/helpers/calculatePaceAndGap";
-import { getTimeInHoursMinutes } from "@/helpers/formatDateAndTime";
+} from "@/src/components/ui/table";
+import { calculatePaceAndGap } from "@/src/helpers/calculatePaceAndGap";
+import { getTimeInHoursMinutes } from "@/src/helpers/formatDateAndTime";
 
 const SegmentList = ({
     segment,

@@ -11,11 +11,11 @@ import {
     ReferenceLine,
     ReferenceArea,
 } from "recharts";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from "@/src/components/ui/card";
 import { useState, useEffect } from "react";
 
-import { ActivitiesGroupedByWeek } from "@/types/activitiesGroupedByWeek";
-import { Activity } from "@/types/activity";
+import { ActivitiesGroupedByWeek } from "@/src/types/activitiesGroupedByWeek";
+import { Activity } from "@/src/types/activity";
 
 type EffortDotProps = {
     cx: number;

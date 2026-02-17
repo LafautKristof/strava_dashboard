@@ -1,7 +1,6 @@
 import { PiFireSimpleFill } from "react-icons/pi";
 import WeekDays from "./WeekDays";
-
-import { ActivitiesThisWeek, Weekday } from "@/types/activititiesThisWeek";
+import { ActivitiesThisWeek } from "@/src/types/activititiesThisWeek";
 
 const YourStreak = ({
     streak,

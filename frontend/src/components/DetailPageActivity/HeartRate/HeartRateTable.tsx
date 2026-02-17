@@ -1,5 +1,5 @@
-import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
-import { formatDuration } from "@/helpers/getHeartZone";
+import { formatDuration } from "@/src/helpers/getHeartZone";
+import { Table, TableBody, TableCell, TableRow } from "../../ui/table";
 
 export type ZoneCounts = {
     zone: string;

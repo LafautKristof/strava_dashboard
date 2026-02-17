@@ -1,4 +1,4 @@
-import MenuDetailActivity from "@/components/DetailPageActivity/MenuDetailActivity/MenuDetailActivity";
+import MenuDetailActivity from "@/src/components/DetailPageActivity/MenuDetailActivity/MenuDetailActivity";
 import { notFound } from "next/navigation";
 export default async function ActivityPage({
     params,

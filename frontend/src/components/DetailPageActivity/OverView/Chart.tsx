@@ -11,12 +11,12 @@ import {
     Area,
     ComposedChart,
 } from "recharts";
-import { ChartContainer } from "@/components/ui/chart";
 
-import { Button } from "@/components/ui/button";
-import { Streams } from "@/types/streams";
 import { useEffect, useState } from "react";
-import { Activity } from "@/types/activity";
+import { Activity } from "@/src/types/activity";
+import { Streams } from "@/src/types/streams";
+import { ChartContainer } from "../../ui/chart";
+import { Button } from "../../ui/button";
 
 type Metric = "elevation" | "pace" | "gap" | "heartrate";
 

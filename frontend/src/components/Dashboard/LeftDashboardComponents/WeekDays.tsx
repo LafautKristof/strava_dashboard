@@ -1,9 +1,8 @@
 "use client";
 
+import { getIconsForActivity } from "@/src/helpers/getIconsForActivity";
+import { ActivitiesThisWeek, Weekday } from "@/src/types/activititiesThisWeek";
 import { useMemo } from "react";
-
-import { getIconsForActivity } from "@/helpers/getIconsForActivity";
-import { ActivitiesThisWeek, Weekday } from "@/types/activititiesThisWeek";
 
 export default function WeekDays({
     daysThisWeek,

@@ -1,5 +1,5 @@
-import { Separator } from "@/components/ui/separator";
-import { getWeatherIcon } from "@/helpers/getWeatherIcon";
+import { Separator } from "@/src/components/ui/separator";
+import { getWeatherIcon } from "@/src/helpers/getWeatherIcon";
 
 type Details = {
     distance: string;

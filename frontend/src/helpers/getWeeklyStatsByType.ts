@@ -1,5 +1,5 @@
-import { ActivitiesGroupedByWeek } from "@/types/activitiesGroupedByWeek";
-import { getCurrentISOWeek } from "./getCurrentWeek";
+import { ActivitiesGroupedByWeek } from "@/src/types/activitiesGroupedByWeek";
+
 export function getLastActiveWeek(
     weeks: ActivitiesGroupedByWeek[],
 ): ActivitiesGroupedByWeek | null {

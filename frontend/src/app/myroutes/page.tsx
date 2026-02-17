@@ -1,10 +1,10 @@
 "use client";
 import { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
-import dynamic from "next/dynamic";
+
 import { RouteType } from "../../types/routeType";
-import RouteList from "@/components/MyRoute/RouteList/RouteList";
-import FormComponent from "@/components/MyRoute/Form/FormComponent";
+import FormComponent from "@/src/components/MyRoute/Form/FormComponent";
+import { Button } from "@mui/material";
+import RouteList from "@/src/components/MyRoute/RouteList/RouteList";
 
 const MyRoutesPage = () => {
     const [selectedRoute, setSelectedRoute] = useState<RouteType | null>(null);

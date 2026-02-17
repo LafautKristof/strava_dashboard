@@ -1,6 +1,5 @@
 "use client";
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
     DirectionsBike,
     DirectionsRun,
@@ -10,9 +9,15 @@ import {
 import AssignmentIcon from "@mui/icons-material/Assignment";
 import { TabsInfo } from "./TabsInfo/TabsInfo";
 
-import { ActivitiesGroupedByWeek } from "@/types/activitiesGroupedByWeek";
 import TabsSport from "./TabsSport/TabsSport";
-import { ActivitiesStats } from "@/types/activititiesStats";
+import { ActivitiesGroupedByWeek } from "@/src/types/activitiesGroupedByWeek";
+import { ActivitiesStats } from "@/src/types/activititiesStats";
+import {
+    Tabs,
+    TabsContent,
+    TabsList,
+    TabsTrigger,
+} from "@/src/components/ui/tabs";
 
 const TabLayout = ({
     activities8Weeks,

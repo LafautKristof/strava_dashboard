@@ -1,9 +1,8 @@
 "use client";
 
+import { Activity } from "@/src/types/activity";
+import { Streams } from "@/src/types/streams";
 import dynamic from "next/dynamic";
-
-import { Streams } from "@/types/streams";
-import { Activity } from "@/types/activity";
 
 const Chart = dynamic(() => import("./Chart"), {
     ssr: false,

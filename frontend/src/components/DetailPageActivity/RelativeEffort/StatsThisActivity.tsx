@@ -1,6 +1,6 @@
-import { Activity } from "@/types/activity";
-import { getTimeInHoursMinutes } from "@/helpers/formatDateAndTime";
-import { formatPace } from "@/helpers/getAveragePace";
+import { Activity } from "@/src/types/activity";
+import { getTimeInHoursMinutes } from "@/src/helpers/formatDateAndTime";
+import { formatPace } from "@/src/helpers/getAveragePace";
 
 const StatsThisActivity = ({
     activity,

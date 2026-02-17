@@ -1,16 +1,18 @@
 "use client";
 
-import { ActivityList } from "@/types/activityList";
-import { Athlete } from "@/types/athlete";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { format } from "date-fns";
 import FilterForm from "./FilterForm";
-import { Button } from "@/components/ui/button";
+
 import { DateRange } from "react-day-picker";
-import { AppendQueryParams } from "@/helpers/AppendQueryParams";
-import ActivitieCard from "@/components/ActivitieCard";
-import { getTimeInHoursMinutes2 } from "@/helpers/formatDateAndTime";
+
 import FilterBadges from "./FilterBadges";
+import { Athlete } from "@/src/types/athlete";
+import { ActivityList } from "@/src/types/activityList";
+import { AppendQueryParams } from "@/src/helpers/AppendQueryParams";
+import { Button } from "../../ui/button";
+import { getTimeInHoursMinutes2 } from "@/src/helpers/formatDateAndTime";
+import ActivitieCard from "../../ActivitieCard";
 
 const DEFAULT_MIN_DISTANCE = 0;
 const DEFAULT_MAX_DISTANCE = 100000;

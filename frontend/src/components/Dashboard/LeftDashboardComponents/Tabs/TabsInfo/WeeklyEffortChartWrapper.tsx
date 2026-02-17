@@ -1,6 +1,6 @@
 "use client";
 
-import { ActivitiesGroupedByWeek } from "@/types/activitiesGroupedByWeek";
+import { ActivitiesGroupedByWeek } from "@/src/types/activitiesGroupedByWeek";
 import dynamic from "next/dynamic";
 
 const WeeklyEffortChart = dynamic(() => import("./WeeklyEffortChart"), {

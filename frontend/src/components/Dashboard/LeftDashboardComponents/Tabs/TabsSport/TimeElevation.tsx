@@ -1,5 +1,5 @@
-import { ActivityType } from "@/types/activititiesStats";
-import { Separator } from "@/components/ui/separator";
+import { Separator } from "@/src/components/ui/separator";
+import { ActivityType } from "@/src/types/activititiesStats";
 
 const TimeElevation = ({
     formattedTime,

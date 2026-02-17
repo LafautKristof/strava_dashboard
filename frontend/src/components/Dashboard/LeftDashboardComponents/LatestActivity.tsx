@@ -1,8 +1,7 @@
-import { Activity } from "@/types/activity";
-import { Separator } from "@/components/ui/separator";
-import formatDateAndTime from "@/helpers/formatDateAndTime";
-
+import formatDateAndTime from "@/src/helpers/formatDateAndTime";
+import { Activity } from "@/src/types/activity";
 import Link from "next/link";
+import { Separator } from "../../ui/separator";
 
 const LatestActivity = ({ activitie }: { activitie: Activity }) => {
     const date = formatDateAndTime(activitie.start_date_local, 1);

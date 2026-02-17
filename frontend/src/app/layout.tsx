@@ -1,7 +1,8 @@
-import NavBar from "@/components/NavBar";
 import "./globals.css";
 import { Metadata } from "next";
-
+import "leaflet/dist/leaflet.css";
+import "@geoman-io/leaflet-geoman-free/dist/leaflet-geoman.css";
+import NavBar from "../components/NavBar";
 export const metadata: Metadata = {
     title: "Kristof's Strava Dashboard",
     description: "Strava Dashboard for portfolio purposes",

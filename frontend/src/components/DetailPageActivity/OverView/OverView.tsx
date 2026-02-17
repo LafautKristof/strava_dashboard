@@ -1,15 +1,15 @@
-import { Athlete } from "@/types/athlete";
+import { Athlete } from "@/src/types/athlete";
 import WhoWhereWhenWhat from "./WhoWhereWhenWhat";
 import Details from "./Detail";
 import MyGear from "./MyGear";
 import ActivityOverview from "./ActivityOverview";
-import { Separator } from "@/components/ui/separator";
-import { Activity } from "@/types/activity";
-import { Streams } from "@/types/streams";
+import { Separator } from "@/src/components/ui/separator";
+import { Activity } from "@/src/types/activity";
+import { Streams } from "@/src/types/streams";
 import formatDateAndTime, {
     getTimeInHoursMinutes,
-} from "@/helpers/formatDateAndTime";
-import { formatPace } from "@/helpers/formatPace";
+} from "@/src/helpers/formatDateAndTime";
+import { formatPace } from "@/src/helpers/formatPace";
 
 const OverView = ({
     activity,

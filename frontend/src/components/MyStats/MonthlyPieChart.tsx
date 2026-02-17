@@ -2,8 +2,8 @@
 import {
     ActivitiesCurrentMonth,
     ActivityType,
-} from "@/types/activitiesCurrentMonth";
-import { typeColors } from "@/lib/constants/typeColors";
+} from "@/src/types/activitiesCurrentMonth";
+import { typeColors } from "@/src/lib/constants/typeColors";
 import { Cell, Pie, PieChart, ResponsiveContainer, Tooltip } from "recharts";
 import { useMemo, useState } from "react";
 import { Button } from "../ui/button";

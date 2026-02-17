@@ -1,5 +1,5 @@
-import formatDateAndTime from "@/helpers/formatDateAndTime";
-import { getTypeIcon } from "@/helpers/getTypeIcon";
+import formatDateAndTime from "@/src/helpers/formatDateAndTime";
+import { getTypeIcon } from "@/src/helpers/getTypeIcon";
 
 const ActivitieCardSmall = ({ activities }: { activities: any }) => {
     return (

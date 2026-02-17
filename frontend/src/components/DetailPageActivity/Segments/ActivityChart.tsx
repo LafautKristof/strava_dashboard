@@ -11,10 +11,10 @@ import {
     YAxis,
     Tooltip,
 } from "recharts";
-import { ChartContainer } from "@/components/ui/chart";
+import { ChartContainer } from "@/src/components/ui/chart";
 
-import { Streams } from "@/types/streams";
-import { SegmentEffort } from "@/types/activity";
+import { Streams } from "@/src/types/streams";
+import { SegmentEffort } from "@/src/types/activity";
 
 export default function ActivityChart({
     distance,

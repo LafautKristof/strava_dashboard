@@ -1,17 +1,19 @@
-import { Separator } from "@/components/ui/separator";
 import Chart from "./Chart";
 import ThisWeek from "./ThisWeek";
 import TimeElevation from "./TimeElevation";
 import ThisYear from "./ThisYear";
-import { ActivitiesGroupedByWeek } from "@/types/activitiesGroupedByWeek";
+
+import { useMemo } from "react";
+import { ActivitiesGroupedByWeek } from "@/src/types/activitiesGroupedByWeek";
+import { ActivitiesStats, ActivityType } from "@/src/types/activititiesStats";
+
 import {
     getDaysDataForWeek,
     getWeeklyStatsByType,
-} from "@/helpers/getWeeklyStatsByType";
-import { ActivitiesStats, ActivityType } from "@/types/activititiesStats";
-import { getThisYearStatsByType } from "@/helpers/getThisYearStatsByType";
-import { useMemo } from "react";
-import { getCurrentISOWeek } from "@/helpers/getCurrentWeek";
+} from "@/src/helpers/getWeeklyStatsByType";
+import { getThisYearStatsByType } from "@/src/helpers/getThisYearStatsByType";
+import { getCurrentISOWeek } from "@/src/helpers/getCurrentWeek";
+import { Separator } from "@/src/components/ui/separator";
 
 const TabsSport = ({
     activities8Weeks,

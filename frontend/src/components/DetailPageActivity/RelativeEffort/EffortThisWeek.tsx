@@ -1,5 +1,5 @@
-import { getEffortLabel } from "@/helpers/getEffortLabel";
-import { getEffortText } from "@/helpers/getEffortText";
+import { getEffortLabel } from "@/src/helpers/getEffortLabel";
+import { getEffortText } from "@/src/helpers/getEffortText";
 
 const EffortThisWeek = ({
     sufferscore,
@@ -12,8 +12,8 @@ const EffortThisWeek = ({
         zoneStatus === "above"
             ? "#ef4444"
             : zoneStatus === "below"
-            ? "#ee82ee"
-            : "#a855f7";
+              ? "#ee82ee"
+              : "#a855f7";
     return (
         <div className=" overflow-hidden p-8">
             <p className="text-2xl font-semibold">Relative Effort</p>

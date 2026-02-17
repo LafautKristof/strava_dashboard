@@ -10,13 +10,14 @@ import {
     Area,
     Tooltip,
 } from "recharts";
-import { Card } from "@/components/ui/card";
+
 import { useCallback, useMemo } from "react";
-import { ActivitiesGroupedByWeek } from "@/types/activitiesGroupedByWeek";
+import { ActivitiesGroupedByWeek } from "@/src/types/activitiesGroupedByWeek";
+import { Card } from "@mui/material";
 import {
     CustomActiveDot,
     CustomDot,
-} from "@/components/ChartComponents/CustomDot";
+} from "@/src/components/ChartComponents/CustomDot";
 
 export default function WeeklyEffortChart({
     data,

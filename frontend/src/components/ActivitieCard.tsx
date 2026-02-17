@@ -1,9 +1,9 @@
-import { ActivityList } from "@/types/activityList";
+import { ActivityList } from "@/src/types/activityList";
 
 import LazyMap from "./Dashboard/MiddleDashboardComponents/LazyMap";
 import Link from "next/link";
-import { getTimeInHoursMinutes } from "@/helpers/formatDateAndTime";
-import { getTypeIcon } from "@/helpers/getTypeIcon";
+import { getTimeInHoursMinutes } from "@/src/helpers/formatDateAndTime";
+import { getTypeIcon } from "@/src/helpers/getTypeIcon";
 
 const ActivitieCard = ({
     activity,

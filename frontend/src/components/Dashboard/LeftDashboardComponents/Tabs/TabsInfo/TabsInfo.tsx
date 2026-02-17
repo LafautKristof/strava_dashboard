@@ -4,9 +4,8 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import WeeklyEffortChartWrapper from "./WeeklyEffortChartWrapper";
 import WeeklyDetailChart from "./WeeklyDetailChart";
 import WeeklyDetailInfo from "./WeeklyDetailInfo";
-import { getCurrentISOWeek } from "@/helpers/getCurrentWeek";
-import { ActivitiesGroupedByWeek } from "@/types/activitiesGroupedByWeek";
-
+import { ActivitiesGroupedByWeek } from "@/src/types/activitiesGroupedByWeek";
+import { getCurrentISOWeek } from "@/src/helpers/getCurrentWeek";
 type WeekDay = { day: string; total_effort: number };
 
 export function TabsInfo({ data }: { data: ActivitiesGroupedByWeek[] }) {
