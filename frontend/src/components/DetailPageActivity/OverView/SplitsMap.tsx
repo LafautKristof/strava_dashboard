@@ -138,13 +138,13 @@ export default function SplitsMap({
     }
 
     return (
-        <div className="relative h-100 w-full border rounded-md overflow-hidden">
+        <div className="relative h-100 w-full border rounded-md overflow-hidden z-0">
             <MapContainer
                 key={activity.id}
                 center={center}
                 zoom={13}
                 scrollWheelZoom={false}
-                className="absolute inset-0 w-full h-full"
+                className="absolute inset-0 w-full h-full z-0"
             >
                 <TileLayer
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
