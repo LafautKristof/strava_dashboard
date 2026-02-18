@@ -17,6 +17,7 @@ from services.update_my_route import update_my_route
 from services.delete_routes import delete_routes
 from services.get_all_routes import get_all_routes
 from services.save_my_route import save_my_route
+import os
 
 app = Flask(__name__)
 CORS(app)
@@ -157,4 +158,5 @@ def update_route(id):
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8000, debug=True)
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host="0.0.0.0", port=port)
