@@ -60,7 +60,7 @@ export default function WeeklyDetailChart({
     const maxEffort = Math.max(...displayData.map((d) => d.total_effort));
 
     return (
-        <div className="h-65 w-full mt-4 transition-all duration-500">
+        <div className="h-40 w-full mt-4 transition-all duration-500">
             <ResponsiveContainer width="100%" height="100%">
                 <BarChart
                     key={weekId}

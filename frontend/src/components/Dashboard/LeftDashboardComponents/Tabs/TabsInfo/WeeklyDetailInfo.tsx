@@ -11,7 +11,7 @@ export default function WeeklyDetailInfo({ data }: { data: any }) {
     const maxHr = heartRates.length > 0 ? Math.max(...heartRates) : null;
 
     return (
-        <div className="flex justify-between items-center my-3 px-2  gap-4 text-sm">
+        <div className="flex flex-col justify-center items-center my-3 px-2  gap-4 text-sm">
             <div className="flex flex-col items-center">
                 <p className="text-2xl">Score</p>
                 <p className="font-semibold">{data.total_effort}</p>
