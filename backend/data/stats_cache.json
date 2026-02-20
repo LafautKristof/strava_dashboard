@@ -17,18 +17,18 @@
     "elevation_gain": 3320.7999999999993
   },
   "recent_run_totals": {
-    "count": 9,
-    "distance": 37847.1,
-    "moving_time": 16807,
-    "elapsed_time": 16862,
-    "elevation_gain": 33.4,
+    "count": 7,
+    "distance": 29283.199999999997,
+    "moving_time": 13096,
+    "elapsed_time": 13146,
+    "elevation_gain": 20.5,
     "achievement_count": 0
   },
   "all_run_totals": {
-    "count": 178,
-    "distance": 923535.4999999998,
-    "moving_time": 396460,
-    "elapsed_time": 400664,
+    "count": 179,
+    "distance": 927693.0999999996,
+    "moving_time": 398242,
+    "elapsed_time": 402462,
     "elevation_gain": 1435.3
   },
   "recent_swim_totals": {
@@ -54,10 +54,10 @@
     "elevation_gain": 31.7
   },
   "ytd_run_totals": {
-    "count": 12,
-    "distance": 47503,
-    "moving_time": 20988.0,
-    "elapsed_time": 21100.0,
+    "count": 13,
+    "distance": 51661,
+    "moving_time": 22770.0,
+    "elapsed_time": 22898.0,
     "elevation_gain": 35.6
   },
   "ytd_swim_totals": {
@@ -66,9 +66,5 @@
     "moving_time": 0,
     "elapsed_time": 0,
     "elevation_gain": 0
-  },
-  "biggest_run_distance": 10116.5,
-  "biggest_walk_distance": 14206.5,
-  "longest_run_time": 4250,
-  "longest_walk_time": 10905
+  }
 }
