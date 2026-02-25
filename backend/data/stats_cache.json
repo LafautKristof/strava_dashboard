@@ -10,18 +10,18 @@
     "achievement_count": 0
   },
   "all_ride_totals": {
-    "count": 67,
-    "distance": 1920167.4999999995,
-    "moving_time": 403677,
-    "elapsed_time": 543907,
-    "elevation_gain": 3320.7999999999993
+    "count": 68,
+    "distance": 1948198.0999999994,
+    "moving_time": 409635,
+    "elapsed_time": 553316,
+    "elevation_gain": 3394.4999999999995
   },
   "recent_run_totals": {
     "count": 7,
-    "distance": 29706.199999999997,
-    "moving_time": 13089,
-    "elapsed_time": 13142,
-    "elevation_gain": 16.3,
+    "distance": 28493.799999999996,
+    "moving_time": 12808,
+    "elapsed_time": 12861,
+    "elevation_gain": 12.4,
     "achievement_count": 0
   },
   "all_run_totals": {
@@ -47,11 +47,11 @@
     "elevation_gain": 0
   },
   "ytd_ride_totals": {
-    "count": 1,
-    "distance": 14718,
-    "moving_time": 3249.0,
-    "elapsed_time": 3563.0,
-    "elevation_gain": 31.7
+    "count": 2,
+    "distance": 42749,
+    "moving_time": 9207.0,
+    "elapsed_time": 12972.0,
+    "elevation_gain": 105.4
   },
   "ytd_run_totals": {
     "count": 15,

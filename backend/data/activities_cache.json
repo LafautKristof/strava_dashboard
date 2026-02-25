@@ -5,6 +5,1862 @@
       "id": 20266921,
       "resource_state": 1
     },
+    "name": "Ochtendrit",
+    "distance": 28030.6,
+    "moving_time": 5958,
+    "elapsed_time": 9409,
+    "total_elevation_gain": 73.7,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": null,
+    "device_name": "Polar Pacer",
+    "id": 17517886519,
+    "start_date": "2026-02-25T08:01:25Z",
+    "start_date_local": "2026-02-25T09:01:25Z",
+    "timezone": "(GMT+01:00) Europe/Brussels",
+    "utc_offset": 3600.0,
+    "location_city": null,
+    "location_state": null,
+    "location_country": null,
+    "achievement_count": 3,
+    "kudos_count": 0,
+    "comment_count": 0,
+    "athlete_count": 1,
+    "photo_count": 0,
+    "map": {
+      "id": "a17517886519",
+      "polyline": "}~qvHygaXk@z@]ZU@MFIAa@FGBEAeCz@aAReCbAm@b@}@d@g@^i@Z]JM?MC_Bs@c@UmBu@q@S]EMEIUF{@hB}Qd@}FD_A?m@A}@Ey@UwAi@oCg@wCWkAQoAQu@q@{Dg@{BU}@_@uBk@{Bc@sAsBcHa@eBq@{DGQQWu@y@UMa@MwGUmAQ_BQk@@yAG[E}@G{@Km@A}K_AaCKqFa@aFUgAMqAGmAMIIEIGgAGSIIMIkBk@eBy@y@i@aAq@mBiBMAQ@MASUKOEQCo@ESiB}Cm@kA}@_C_AsCkAoEmBgGgBeF_@o@mCoG}CsGi@gAkBgDsD{F_AqAyC}DoDaEq@kAoCaCw@c@qAeAyDoDWOa@MoAw@mGuEuE_D_@i@BWIOKIyAw@k@i@_C{AwEmDwEeDuFgE_BgAgA{@m@YsDgAqAUaAM{@Cy@A{AHiBNmATg@N}An@oB|@cDjBsDnBuHhEqGhDeFvCeAh@aGdDcA`@qAp@wAx@g@\\q@ZkAr@g@`@c@Vy@ZkBl@{Bf@_CZaCD_A?_He@eEcAiD[aAIK@GBGLEPAPH~@@b@AlCCR@lDGr@_@~AGd@UtBDdAJh@TfCHfFLjADfA?fACLABQ@y@MmACQBgAR}Cr@w@Rm@Jg@P]PuBvAe@Ns@BWCUKW_@a@aAKMKEO?SFoAl@gA\\e@Bq@AWEQIeCeB{@c@mA[oBc@WC]?gALeAFSBML]~@SVi@p@_CfCgA`AuBtAoBxA}@^{@TsGv@oAb@oCr@a@Nq@^_@n@cA`@e@H{@VaAj@}@dA}AxBm@r@g@b@i@XeLfCw@HY@a@Ek@Ma@O_Ai@KAK@GFeAjAqBnCQ\\uAjEw@pBa@x@i@p@_@l@_@`@i@v@MXa@vAg@rCm@`Bs@~@iBdB_@b@mA`BqExGq@r@o@d@g@VkFvBm@Ri@Hi@@kDKoAB]A_BF}@AwAO_ACy@KG@_@VIHCFDf@hAtH`BzLh@lFAz@a@rH@`@ZoHDyBc@oEe@{CcAgIcAeHLq@XSPEh@DvAZlAN`C@jBGrA@\\C`BF`@Ah@Kj@SxEsBfAq@n@m@b@g@zCoEnCsDlBmBn@u@Rc@Tk@VeARyAVkAPo@Ti@b@s@fAiAj@s@d@u@Xq@jAqDr@cB|C{Df@i@HCB@PP`@LNNPJv@HLFX@v@CbC[nBc@VGn@MlBe@f@Qd@U\\Wr@_AlAkBbAgA`@[r@_@nCu@b@YHa@JOLGp@W|Bi@bCs@fAQnDc@v@Sh@WrAeA|CmBpAiAjD}DR[Rk@FINIp@C|BOd@Bn@LfBb@d@P`B|@nAz@j@T`@Hp@A`@GTIzBcAHAP?HBLP^|@V\\ZLX@j@EZKRKbAu@t@c@lAc@tDu@v@SnASj@GnADVDJAFG@c@_@iHE{ADo@Aq@c@iCCe@@i@Bi@Hg@d@iCHy@Ao@Go@BeCJcCBQHK^EJGFO@c@FONAVBvCd@~D`AbBFxDZjDGdAIvB]zA]dC}@l@Wb@]^ShAw@pAo@v@i@TIrAw@~@]tAq@pEiCZOr@c@r@]zD}BfLmGxDqBzG{Dv@Wt@a@rAk@n@Ux@S|@GtAGrAAp@DpAJv@J|A\\rCbAXJ\\TtAhARJt@l@lAz@rAfAlI~F^\\~DvC|A|@VXRL?r@NP`Af@j@\\x@n@fNrJx@Z\\Tj@l@xCnC|@t@f@VhAfAdAz@PRn@dAxChDv@bA~B`DnAjBjB~Cx@xAdE~H|B`FbB`Ed@z@Zv@vAbE|@tC|BpIt@xB^bAhA`CfBrCDVDd@DRPVJHN@VCLFp@p@jAbAl@d@hAp@fAf@~Bt@JN@J@v@BLBHJLNB|H\\xBPvHb@tOjAdCLZ?l@JbERfEZhADtAPTFF?VKRCTA^@VFh@Pl@J\\Ah@Bb@FvAFhBNzFXtDVtGl@j@BdANrFd@ZDJFJJPd@jAfDTt@b@dAj@dBXv@xB~Gp@zBZx@l@vB`@fBJt@^nDd@hGZfC`@vFVtAt@|BHv@CX@j@Ad@@hAA|AATCFa@A_@Bc@CoA?_AHMHg@H",
+      "resource_state": 3,
+      "summary_polyline": "}~qvHygaXk@z@]Z}APeCz@aAReCbAsChBgAf@[CqF_C}A_@IUF{@hB}Qd@}FDmBGwBuEmW}@yD_@uBk@{BwCwJa@eBq@{DYi@u@y@w@[wGUmDc@eCEaR{A}XgBOSGgAQ]yBu@eBy@{B{AmBiBm@A_@e@IaAESiB}CkBkEkCcJmBgGgBeF_@o@mCoG}CsGuCoFsD{FyEoGoDaEq@kAoCaCw@c@qAeAyDoDy@]oAw@cNuJ_@i@BWUYyAw@k@i@_C{AmY_TaFaBsCc@uBEeEXmATeC~@oB|@mm@v\\uCrA}FfDkAx@eDhA{FbAaED_He@eEcAwFc@OPGb@JbBCnIGr@g@dCUtBDdAJh@TfCHfFLjADfA?fAEPyCOyAVcGrAeAb@uBvAe@Ns@Bm@OW_@a@aAWSc@FwCjAwA@i@OeCeB{@c@}D_Au@CaDXML]~@SViDxDgA`AeFnDyBt@sGv@aGfBq@^_@n@cA`@aB`@aAj@iErFqA|@eLfCw@H{@Ck@MaBy@_@FwDzEgBhFw@pBa@x@iB`Cw@pAa@vAg@rCm@`Bs@~@iChC_HzJq@r@o@d@sGnCwA\\uEIkGFqE_@m@\\GVtBtN|@fHf@~EAz@a@rH@`@ZoHDyBc@oEiBcNcAeHLq@j@YnEp@bNAtA_@xEsBfAq@rAuAjHcK|CcDh@oAVeAj@eDf@yAb@s@rB}Bd@u@dBcFr@cB|C{Df@i@LAtAz@~ARv@CbC[lIqBbAm@`CkDbAgAtA{@nCu@b@YHa@XWrHuBvFu@`Bk@rAeA|CmBpAiAjD}Df@gAVSnDStAPlCt@pDxBlA^rAIpCmAZAVT^|@V\\ZLX@fAQlCeBlAc@|H}Aj@GrBHFG@c@_@iHE{ABaBc@iCAoALqAn@cEI_BNiGBQHKj@MFO@c@FO~Df@~D`A|Gb@pFQrE{@rDuAvGcE~FqCnk@u[`EeBhBi@rCOdCBhCV|A\\rCbAv@`@nZ|T|A|@j@f@?r@NPlBdA`PbLvAp@dE|DdBlAnCbC`AxApElFnElGdDxFdE~HbHvOtCxI|BpIt@xBhBdEfBrCPpA\\`@f@ALF|BtBvBvAfAf@~Bt@LZDdANVtg@bDdTnAjBXr@Ot@?nBd@~UrAbTtB\\p@jE`MfEtMnA~Ej@dFd@hG|@~JVtAt@|BHv@CrGE\\uDAuB\\"
+    },
+    "trainer": false,
+    "commute": false,
+    "manual": false,
+    "private": false,
+    "visibility": "everyone",
+    "flagged": false,
+    "gear_id": null,
+    "start_latlng": [
+      51.051513,
+      4.107653
+    ],
+    "end_latlng": [
+      51.049223,
+      4.107753
+    ],
+    "average_speed": 4.705,
+    "max_speed": 9.9,
+    "has_heartrate": true,
+    "average_heartrate": 138.0,
+    "max_heartrate": 167.0,
+    "heartrate_opt_out": false,
+    "display_hide_heartrate_option": true,
+    "elev_high": 36.9,
+    "elev_low": 1.2,
+    "upload_id": 18615319121,
+    "upload_id_str": "18615319121",
+    "external_id": "2026-02-25_13-28-20_abe9b9bb-fc15-4033-953b-d2694a706925.tcx",
+    "from_accepted_tag": false,
+    "pr_count": 0,
+    "total_photo_count": 0,
+    "has_kudoed": false,
+    "description": null,
+    "calories": 1191.0,
+    "perceived_exertion": null,
+    "prefer_perceived_exertion": null,
+    "segment_efforts": [
+      {
+        "id": 3461732321202454014,
+        "resource_state": 2,
+        "name": "Parallelweg N41 (2/2)",
+        "activity": {
+          "id": 17517886519,
+          "visibility": "everyone",
+          "resource_state": 1
+        },
+        "athlete": {
+          "id": 20266921,
+          "resource_state": 1
+        },
+        "elapsed_time": 266,
+        "moving_time": 266,
+        "start_date": "2026-02-25T08:09:17Z",
+        "start_date_local": "2026-02-25T09:09:17Z",
+        "distance": 1121.3,
+        "start_index": 472,
+        "end_index": 738,
+        "device_watts": false,
+        "average_heartrate": 139.6,
+        "max_heartrate": 162.0,
+        "segment": {
+          "id": 6733760,
+          "resource_state": 2,
+          "name": "Parallelweg N41 (2/2)",
+          "activity_type": "Ride",
+          "distance": 1121.3,
+          "average_grade": -0.0,
+          "maximum_grade": 0.8,
+          "elevation_high": -10.6,
+          "elevation_low": -12.4,
+          "start_latlng": [
+            51.060039,
+            4.122372
+          ],
+          "end_latlng": [
+            51.070082,
+            4.123702
+          ],
+          "elevation_profile": null,
+          "elevation_profiles": null,
+          "climb_category": 0,
+          "city": "Dendermonde",
+          "state": "Flanders",
+          "country": "Belgium",
+          "private": false,
+          "hazardous": false,
+          "starred": false
+        },
+        "pr_rank": null,
+        "achievements": [],
+        "visibility": "everyone",
+        "hidden": false
+      },
+      {
+        "id": 3461732321204251134,
+        "resource_state": 2,
+        "name": "Naast N41 3",
+        "activity": {
+          "id": 17517886519,
+          "visibility": "everyone",
+          "resource_state": 1
+        },
+        "athlete": {
+          "id": 20266921,
+          "resource_state": 1
+        },
+        "elapsed_time": 280,
+        "moving_time": 280,
+        "start_date": "2026-02-25T08:15:17Z",
+        "start_date_local": "2026-02-25T09:15:17Z",
+        "distance": 1322.0,
+        "start_index": 832,
+        "end_index": 1112,
+        "device_watts": false,
+        "average_heartrate": 144.1,
+        "max_heartrate": 167.0,
+        "segment": {
+          "id": 39664011,
+          "resource_state": 2,
+          "name": "Naast N41 3",
+          "activity_type": "Ride",
+          "distance": 1322.0,
+          "average_grade": -0.0,
+          "maximum_grade": 1.1,
+          "elevation_high": 6.2,
+          "elevation_low": 4.6,
+          "start_latlng": [
+            51.072928,
+            4.126333
+          ],
+          "end_latlng": [
+            51.080922,
+            4.140088
+          ],
+          "elevation_profile": null,
+          "elevation_profiles": null,
+          "climb_category": 0,
+          "city": "Hamme",
+          "state": "Flanders",
+          "country": "Belgium",
+          "private": false,
+          "hazardous": false,
+          "starred": false
+        },
+        "pr_rank": null,
+        "achievements": [],
+        "visibility": "everyone",
+        "hidden": false
+      },
+      {
+        "id": 3461732321205461502,
+        "resource_state": 2,
+        "name": "sprintje langs de N41",
+        "activity": {
+          "id": 17517886519,
+          "visibility": "everyone",
+          "resource_state": 1
+        },
+        "athlete": {
+          "id": 20266921,
+          "resource_state": 1
+        },
+        "elapsed_time": 73,
+        "moving_time": 73,
+        "start_date": "2026-02-25T08:23:51Z",
+        "start_date_local": "2026-02-25T09:23:51Z",
+        "distance": 390.7,
+        "start_index": 1284,
+        "end_index": 1357,
+        "device_watts": false,
+        "average_heartrate": 130.4,
+        "max_heartrate": 141.0,
+        "segment": {
+          "id": 30295628,
+          "resource_state": 2,
+          "name": "sprintje langs de N41",
+          "activity_type": "Ride",
+          "distance": 390.7,
+          "average_grade": 0.1,
+          "maximum_grade": 1.0,
+          "elevation_high": 3.5,
+          "elevation_low": 1.8,
+          "start_latlng": [
+            51.087371,
+            4.145682
+          ],
+          "end_latlng": [
+            51.090493,
+            4.148128
+          ],
+          "elevation_profile": null,
+          "elevation_profiles": null,
+          "climb_category": 0,
+          "city": "Hamme",
+          "state": "Vlaanderen",
+          "country": "Belgium",
+          "private": false,
+          "hazardous": false,
+          "starred": false
+        },
+        "pr_rank": null,
+        "achievements": [],
+        "visibility": "everyone",
+        "hidden": false
+      },
+      {
+        "id": 3461732321202990590,
+        "resource_state": 2,
+        "name": "Viaduct Hamme - Duivenhoek",
+        "activity": {
+          "id": 17517886519,
+          "visibility": "everyone",
+          "resource_state": 1
+        },
+        "athlete": {
+          "id": 20266921,
+          "resource_state": 1
+        },
+        "elapsed_time": 126,
+        "moving_time": 126,
+        "start_date": "2026-02-25T08:30:34Z",
+        "start_date_local": "2026-02-25T09:30:34Z",
+        "distance": 568.2,
+        "start_index": 1587,
+        "end_index": 1713,
+        "device_watts": false,
+        "average_heartrate": 157.3,
+        "max_heartrate": 166.0,
+        "segment": {
+          "id": 4141442,
+          "resource_state": 2,
+          "name": "Viaduct Hamme - Duivenhoek",
+          "activity_type": "Ride",
+          "distance": 568.2,
+          "average_grade": 0.3,
+          "maximum_grade": 2.3,
+          "elevation_high": 4.6,
+          "elevation_low": 2.7,
+          "start_latlng": [
+            51.10172,
+            4.146868
+          ],
+          "end_latlng": [
+            51.106577,
+            4.143697
+          ],
+          "elevation_profile": null,
+          "elevation_profiles": null,
+          "climb_category": 0,
+          "city": "Hamme",
+          "state": "Flemish Region",
+          "country": "Belgium",
+          "private": false,
+          "hazardous": false,
+          "starred": false
+        },
+        "pr_rank": null,
+        "achievements": [],
+        "visibility": "everyone",
+        "hidden": false
+      },
+      {
+        "id": 3461732321206305278,
+        "resource_state": 2,
+        "name": "Bulls Cyclo 2024 Strava Segment",
+        "activity": {
+          "id": 17517886519,
+          "visibility": "everyone",
+          "resource_state": 1
+        },
+        "athlete": {
+          "id": 20266921,
+          "resource_state": 1
+        },
+        "elapsed_time": 213,
+        "moving_time": 213,
+        "start_date": "2026-02-25T08:38:24Z",
+        "start_date_local": "2026-02-25T09:38:24Z",
+        "distance": 895.6,
+        "start_index": 2057,
+        "end_index": 2270,
+        "device_watts": false,
+        "average_heartrate": 152.5,
+        "max_heartrate": 163.0,
+        "segment": {
+          "id": 36487132,
+          "resource_state": 2,
+          "name": "Bulls Cyclo 2024 Strava Segment",
+          "activity_type": "Ride",
+          "distance": 895.6,
+          "average_grade": 1.6,
+          "maximum_grade": 5.1,
+          "elevation_high": 21.2,
+          "elevation_low": 7.0,
+          "start_latlng": [
+            51.115095,
+            4.135788
+          ],
+          "end_latlng": [
+            51.122726,
+            4.135885
+          ],
+          "elevation_profile": null,
+          "elevation_profiles": null,
+          "climb_category": 0,
+          "city": "Temse",
+          "state": "Flanders",
+          "country": "Belgium",
+          "private": false,
+          "hazardous": false,
+          "starred": false
+        },
+        "pr_rank": 2,
+        "achievements": [
+          {
+            "type_id": 3,
+            "type": "pr",
+            "rank": 2
+          }
+        ],
+        "visibility": "everyone",
+        "hidden": false
+      },
+      {
+        "id": 3461732321205241342,
+        "resource_state": 2,
+        "name": "Bokmolenstraat op",
+        "activity": {
+          "id": 17517886519,
+          "visibility": "everyone",
+          "resource_state": 1
+        },
+        "athlete": {
+          "id": 20266921,
+          "resource_state": 1
+        },
+        "elapsed_time": 279,
+        "moving_time": 279,
+        "start_date": "2026-02-25T08:39:02Z",
+        "start_date_local": "2026-02-25T09:39:02Z",
+        "distance": 1178.2,
+        "start_index": 2095,
+        "end_index": 2374,
+        "device_watts": false,
+        "average_heartrate": 149.8,
+        "max_heartrate": 163.0,
+        "segment": {
+          "id": 4768358,
+          "resource_state": 2,
+          "name": "Bokmolenstraat op",
+          "activity_type": "Ride",
+          "distance": 1178.2,
+          "average_grade": 1.5,
+          "maximum_grade": 3.7,
+          "elevation_high": 29.8,
+          "elevation_low": 12.3,
+          "start_latlng": [
+            51.116596,
+            4.135309
+          ],
+          "end_latlng": [
+            51.12625,
+            4.133045
+          ],
+          "elevation_profile": null,
+          "elevation_profiles": null,
+          "climb_category": 0,
+          "city": "Temse",
+          "state": "Flemish Region",
+          "country": "Belgium",
+          "private": false,
+          "hazardous": false,
+          "starred": false
+        },
+        "pr_rank": 3,
+        "achievements": [
+          {
+            "type_id": 3,
+            "type": "pr",
+            "rank": 3
+          }
+        ],
+        "visibility": "everyone",
+        "hidden": false
+      },
+      {
+        "id": 3461732321204431358,
+        "resource_state": 2,
+        "name": "Bokmolenstraat",
+        "activity": {
+          "id": 17517886519,
+          "visibility": "everyone",
+          "resource_state": 1
+        },
+        "athlete": {
+          "id": 20266921,
+          "resource_state": 1
+        },
+        "elapsed_time": 117,
+        "moving_time": 117,
+        "start_date": "2026-02-25T08:39:28Z",
+        "start_date_local": "2026-02-25T09:39:28Z",
+        "distance": 495.4,
+        "start_index": 2121,
+        "end_index": 2238,
+        "device_watts": false,
+        "average_heartrate": 152.0,
+        "max_heartrate": 163.0,
+        "segment": {
+          "id": 20488937,
+          "resource_state": 2,
+          "name": "Bokmolenstraat",
+          "activity_type": "Ride",
+          "distance": 495.4,
+          "average_grade": 2.0,
+          "maximum_grade": 3.9,
+          "elevation_high": 24.1,
+          "elevation_low": 14.0,
+          "start_latlng": [
+            51.117579,
+            4.134788
+          ],
+          "end_latlng": [
+            51.121583,
+            4.135554
+          ],
+          "elevation_profile": null,
+          "elevation_profiles": null,
+          "climb_category": 0,
+          "city": null,
+          "state": null,
+          "country": null,
+          "private": false,
+          "hazardous": false,
+          "starred": false
+        },
+        "pr_rank": 2,
+        "achievements": [
+          {
+            "type_id": 3,
+            "type": "pr",
+            "rank": 2
+          }
+        ],
+        "visibility": "everyone",
+        "hidden": false
+      },
+      {
+        "id": 3461732321203132926,
+        "resource_state": 2,
+        "name": "Viaduct Heimolen Noordwaarts",
+        "activity": {
+          "id": 17517886519,
+          "visibility": "everyone",
+          "resource_state": 1
+        },
+        "athlete": {
+          "id": 20266921,
+          "resource_state": 1
+        },
+        "elapsed_time": 93,
+        "moving_time": 93,
+        "start_date": "2026-02-25T08:45:17Z",
+        "start_date_local": "2026-02-25T09:45:17Z",
+        "distance": 372.0,
+        "start_index": 2470,
+        "end_index": 2563,
+        "device_watts": false,
+        "average_heartrate": 136.9,
+        "max_heartrate": 152.0,
+        "segment": {
+          "id": 8738992,
+          "resource_state": 2,
+          "name": "Viaduct Heimolen Noordwaarts",
+          "activity_type": "Ride",
+          "distance": 372.0,
+          "average_grade": 0.0,
+          "maximum_grade": 2.3,
+          "elevation_high": 31.6,
+          "elevation_low": 29.4,
+          "start_latlng": [
+            51.130309,
+            4.131469
+          ],
+          "end_latlng": [
+            51.133294,
+            4.129287
+          ],
+          "elevation_profile": null,
+          "elevation_profiles": null,
+          "climb_category": 0,
+          "city": "Sint-Niklaas",
+          "state": "Vlaams Gewest",
+          "country": "Belgium",
+          "private": false,
+          "hazardous": false,
+          "starred": false
+        },
+        "pr_rank": null,
+        "achievements": [],
+        "visibility": "everyone",
+        "hidden": false
+      },
+      {
+        "id": 3461732321205055998,
+        "resource_state": 2,
+        "name": "bocht op snelheid",
+        "activity": {
+          "id": 17517886519,
+          "visibility": "everyone",
+          "resource_state": 1
+        },
+        "athlete": {
+          "id": 20266921,
+          "resource_state": 1
+        },
+        "elapsed_time": 88,
+        "moving_time": 88,
+        "start_date": "2026-02-25T08:47:03Z",
+        "start_date_local": "2026-02-25T09:47:03Z",
+        "distance": 539.9,
+        "start_index": 2576,
+        "end_index": 2664,
+        "device_watts": false,
+        "average_heartrate": 131.8,
+        "max_heartrate": 157.0,
+        "segment": {
+          "id": 32031764,
+          "resource_state": 2,
+          "name": "bocht op snelheid",
+          "activity_type": "Ride",
+          "distance": 539.9,
+          "average_grade": -1.8,
+          "maximum_grade": 1.2,
+          "elevation_high": 38.8,
+          "elevation_low": 28.6,
+          "start_latlng": [
+            51.133673,
+            4.129127
+          ],
+          "end_latlng": [
+            51.137675,
+            4.126333
+          ],
+          "elevation_profile": null,
+          "elevation_profiles": null,
+          "climb_category": 0,
+          "city": "Sint-Niklaas",
+          "state": "Vlaams Gewest",
+          "country": "Belgium",
+          "private": false,
+          "hazardous": false,
+          "starred": false
+        },
+        "pr_rank": null,
+        "achievements": [],
+        "visibility": "everyone",
+        "hidden": false
+      },
+      {
+        "id": 3461732321205177854,
+        "resource_state": 2,
+        "name": "weverstraat (z-n)",
+        "activity": {
+          "id": 17517886519,
+          "visibility": "everyone",
+          "resource_state": 1
+        },
+        "athlete": {
+          "id": 20266921,
+          "resource_state": 1
+        },
+        "elapsed_time": 280,
+        "moving_time": 280,
+        "start_date": "2026-02-25T08:47:43Z",
+        "start_date_local": "2026-02-25T09:47:43Z",
+        "distance": 1538.2,
+        "start_index": 2616,
+        "end_index": 2896,
+        "device_watts": false,
+        "average_heartrate": 137.5,
+        "max_heartrate": 160.0,
+        "segment": {
+          "id": 9650617,
+          "resource_state": 2,
+          "name": "weverstraat (z-n)",
+          "activity_type": "Ride",
+          "distance": 1538.2,
+          "average_grade": -0.3,
+          "maximum_grade": 0.0,
+          "elevation_high": 27.6,
+          "elevation_low": 23.2,
+          "start_latlng": [
+            51.136171,
+            4.129085
+          ],
+          "end_latlng": [
+            51.147454,
+            4.119355
+          ],
+          "elevation_profile": null,
+          "elevation_profiles": null,
+          "climb_category": 0,
+          "city": "Sint-Niklaas",
+          "state": "Vlaams Gewest",
+          "country": "Belgium",
+          "private": false,
+          "hazardous": false,
+          "starred": false
+        },
+        "pr_rank": null,
+        "achievements": [],
+        "visibility": "everyone",
+        "hidden": false
+      },
+      {
+        "id": 3461732321202659838,
+        "resource_state": 2,
+        "name": "Van Eyckpark - Bio Broeders",
+        "activity": {
+          "id": 17517886519,
+          "visibility": "everyone",
+          "resource_state": 1
+        },
+        "athlete": {
+          "id": 20266921,
+          "resource_state": 1
+        },
+        "elapsed_time": 118,
+        "moving_time": 118,
+        "start_date": "2026-02-25T08:49:38Z",
+        "start_date_local": "2026-02-25T09:49:38Z",
+        "distance": 656.8,
+        "start_index": 2731,
+        "end_index": 2849,
+        "device_watts": false,
+        "average_heartrate": 146.2,
+        "max_heartrate": 160.0,
+        "segment": {
+          "id": 34498485,
+          "resource_state": 2,
+          "name": "Van Eyckpark - Bio Broeders",
+          "activity_type": "Ride",
+          "distance": 656.8,
+          "average_grade": 0.0,
+          "maximum_grade": 0.9,
+          "elevation_high": 24.6,
+          "elevation_low": 24.0,
+          "start_latlng": [
+            51.13981,
+            4.122728
+          ],
+          "end_latlng": [
+            51.145044,
+            4.119146
+          ],
+          "elevation_profile": null,
+          "elevation_profiles": null,
+          "climb_category": 0,
+          "city": "Waasmunster",
+          "state": "Flanders",
+          "country": "Belgium",
+          "private": false,
+          "hazardous": false,
+          "starred": false
+        },
+        "pr_rank": null,
+        "achievements": [],
+        "visibility": "everyone",
+        "hidden": false
+      },
+      {
+        "id": 3461732321202288126,
+        "resource_state": 2,
+        "name": "Aanloop Brug Heimolen",
+        "activity": {
+          "id": 17517886519,
+          "visibility": "everyone",
+          "resource_state": 1
+        },
+        "athlete": {
+          "id": 20266921,
+          "resource_state": 1
+        },
+        "elapsed_time": 422,
+        "moving_time": 422,
+        "start_date": "2026-02-25T09:43:05Z",
+        "start_date_local": "2026-02-25T10:43:05Z",
+        "distance": 1800.5,
+        "start_index": 3133,
+        "end_index": 3555,
+        "device_watts": false,
+        "average_heartrate": 140.4,
+        "max_heartrate": 163.0,
+        "segment": {
+          "id": 4199760,
+          "resource_state": 2,
+          "name": "Aanloop Brug Heimolen",
+          "activity_type": "Ride",
+          "distance": 1800.5,
+          "average_grade": 0.8,
+          "maximum_grade": 4.0,
+          "elevation_high": 45.5,
+          "elevation_low": 30.9,
+          "start_latlng": [
+            51.146331,
+            4.119101
+          ],
+          "end_latlng": [
+            51.132918,
+            4.129318
+          ],
+          "elevation_profile": null,
+          "elevation_profiles": null,
+          "climb_category": 0,
+          "city": "Sint Niklaas",
+          "state": "Flemish Region",
+          "country": "Belgium",
+          "private": false,
+          "hazardous": false,
+          "starred": false
+        },
+        "pr_rank": null,
+        "achievements": [],
+        "visibility": "everyone",
+        "hidden": false
+      },
+      {
+        "id": 3461732321204500990,
+        "resource_state": 2,
+        "name": "Viaduct Heimolen",
+        "activity": {
+          "id": 17517886519,
+          "visibility": "everyone",
+          "resource_state": 1
+        },
+        "athlete": {
+          "id": 20266921,
+          "resource_state": 1
+        },
+        "elapsed_time": 84,
+        "moving_time": 84,
+        "start_date": "2026-02-25T09:48:38Z",
+        "start_date_local": "2026-02-25T10:48:38Z",
+        "distance": 267.122,
+        "start_index": 3466,
+        "end_index": 3550,
+        "device_watts": false,
+        "average_heartrate": 152.7,
+        "max_heartrate": 163.0,
+        "segment": {
+          "id": 1854311,
+          "resource_state": 2,
+          "name": "Viaduct Heimolen",
+          "activity_type": "Ride",
+          "distance": 267.122,
+          "average_grade": -0.5,
+          "maximum_grade": 0.0,
+          "elevation_high": 31.0,
+          "elevation_low": 29.3,
+          "start_latlng": [
+            51.13545506,
+            4.12896533
+          ],
+          "end_latlng": [
+            51.13309459,
+            4.12923728
+          ],
+          "elevation_profile": null,
+          "elevation_profiles": null,
+          "climb_category": 0,
+          "city": "Sint Niklaas",
+          "state": "Vlaams Gewest",
+          "country": "Belgium",
+          "private": false,
+          "hazardous": false,
+          "starred": false
+        },
+        "pr_rank": null,
+        "achievements": [],
+        "visibility": "everyone",
+        "hidden": false
+      },
+      {
+        "id": 3461732321202460158,
+        "resource_state": 2,
+        "name": "Stokthoek + Bokmolenstraat Downhill",
+        "activity": {
+          "id": 17517886519,
+          "visibility": "everyone",
+          "resource_state": 1
+        },
+        "athlete": {
+          "id": 20266921,
+          "resource_state": 1
+        },
+        "elapsed_time": 292,
+        "moving_time": 292,
+        "start_date": "2026-02-25T09:51:34Z",
+        "start_date_local": "2026-02-25T10:51:34Z",
+        "distance": 1524.0,
+        "start_index": 3642,
+        "end_index": 3934,
+        "device_watts": false,
+        "average_heartrate": 144.1,
+        "max_heartrate": 163.0,
+        "segment": {
+          "id": 34258896,
+          "resource_state": 2,
+          "name": "Stokthoek + Bokmolenstraat Downhill",
+          "activity_type": "Ride",
+          "distance": 1524.0,
+          "average_grade": -1.1,
+          "maximum_grade": 1.3,
+          "elevation_high": 29.4,
+          "elevation_low": 12.2,
+          "start_latlng": [
+            51.129419,
+            4.131975
+          ],
+          "end_latlng": [
+            51.116661,
+            4.135279
+          ],
+          "elevation_profile": null,
+          "elevation_profiles": null,
+          "climb_category": 0,
+          "city": "Sint-Niklaas",
+          "state": "Flanders",
+          "country": "Belgium",
+          "private": false,
+          "hazardous": false,
+          "starred": false
+        },
+        "pr_rank": null,
+        "achievements": [],
+        "visibility": "everyone",
+        "hidden": false
+      },
+      {
+        "id": 3461732321202900478,
+        "resource_state": 2,
+        "name": "afdaling",
+        "activity": {
+          "id": 17517886519,
+          "visibility": "everyone",
+          "resource_state": 1
+        },
+        "athlete": {
+          "id": 20266921,
+          "resource_state": 1
+        },
+        "elapsed_time": 165,
+        "moving_time": 165,
+        "start_date": "2026-02-25T09:54:15Z",
+        "start_date_local": "2026-02-25T10:54:15Z",
+        "distance": 902.0,
+        "start_index": 3803,
+        "end_index": 3968,
+        "device_watts": false,
+        "average_heartrate": 148.2,
+        "max_heartrate": 163.0,
+        "segment": {
+          "id": 7475330,
+          "resource_state": 2,
+          "name": "afdaling",
+          "activity_type": "Ride",
+          "distance": 902.0,
+          "average_grade": -1.7,
+          "maximum_grade": 1.4,
+          "elevation_high": 24.8,
+          "elevation_low": 9.4,
+          "start_latlng": [
+            51.122839,
+            4.135781
+          ],
+          "end_latlng": [
+            51.115154,
+            4.135737
+          ],
+          "elevation_profile": null,
+          "elevation_profiles": null,
+          "climb_category": 0,
+          "city": "Temse",
+          "state": "Flanders",
+          "country": "Belgium",
+          "private": false,
+          "hazardous": false,
+          "starred": false
+        },
+        "pr_rank": null,
+        "achievements": [],
+        "visibility": "everyone",
+        "hidden": false
+      },
+      {
+        "id": 3461732321203864062,
+        "resource_state": 2,
+        "name": "Durmebrug offroad",
+        "activity": {
+          "id": 17517886519,
+          "visibility": "everyone",
+          "resource_state": 1
+        },
+        "athlete": {
+          "id": 20266921,
+          "resource_state": 1
+        },
+        "elapsed_time": 36,
+        "moving_time": 36,
+        "start_date": "2026-02-25T10:04:19Z",
+        "start_date_local": "2026-02-25T11:04:19Z",
+        "distance": 168.6,
+        "start_index": 4207,
+        "end_index": 4243,
+        "device_watts": false,
+        "average_heartrate": 148.7,
+        "max_heartrate": 155.0,
+        "segment": {
+          "id": 4467977,
+          "resource_state": 2,
+          "name": "Durmebrug offroad",
+          "activity_type": "Ride",
+          "distance": 168.6,
+          "average_grade": 1.9,
+          "maximum_grade": 3.3,
+          "elevation_high": 5.2,
+          "elevation_low": 1.9,
+          "start_latlng": [
+            51.109636,
+            4.142869
+          ],
+          "end_latlng": [
+            51.108152,
+            4.143059
+          ],
+          "elevation_profile": null,
+          "elevation_profiles": null,
+          "climb_category": 0,
+          "city": "Temse",
+          "state": "Flemish Region",
+          "country": "Belgium",
+          "private": false,
+          "hazardous": false,
+          "starred": false
+        },
+        "pr_rank": null,
+        "achievements": [],
+        "visibility": "everyone",
+        "hidden": false
+      },
+      {
+        "id": 3461732321205488126,
+        "resource_state": 2,
+        "name": "N41 Durmebrug N-Z",
+        "activity": {
+          "id": 17517886519,
+          "visibility": "everyone",
+          "resource_state": 1
+        },
+        "athlete": {
+          "id": 20266921,
+          "resource_state": 1
+        },
+        "elapsed_time": 80,
+        "moving_time": 80,
+        "start_date": "2026-02-25T10:04:29Z",
+        "start_date_local": "2026-02-25T11:04:29Z",
+        "distance": 324.5,
+        "start_index": 4217,
+        "end_index": 4297,
+        "device_watts": false,
+        "average_heartrate": 155.4,
+        "max_heartrate": 161.0,
+        "segment": {
+          "id": 19123055,
+          "resource_state": 2,
+          "name": "N41 Durmebrug N-Z",
+          "activity_type": "Ride",
+          "distance": 324.5,
+          "average_grade": 2.1,
+          "maximum_grade": 4.0,
+          "elevation_high": 16.6,
+          "elevation_low": 9.8,
+          "start_latlng": [
+            51.109129,
+            4.142668
+          ],
+          "end_latlng": [
+            51.106362,
+            4.144064
+          ],
+          "elevation_profile": null,
+          "elevation_profiles": null,
+          "climb_category": 0,
+          "city": "Temse",
+          "state": "Vlaanderen",
+          "country": "Belgium",
+          "private": false,
+          "hazardous": false,
+          "starred": false
+        },
+        "pr_rank": null,
+        "achievements": [],
+        "visibility": "everyone",
+        "hidden": false
+      },
+      {
+        "id": 3461732321203550718,
+        "resource_state": 2,
+        "name": "Offroad naast N41",
+        "activity": {
+          "id": 17517886519,
+          "visibility": "everyone",
+          "resource_state": 1
+        },
+        "athlete": {
+          "id": 20266921,
+          "resource_state": 1
+        },
+        "elapsed_time": 288,
+        "moving_time": 209,
+        "start_date": "2026-02-25T10:11:52Z",
+        "start_date_local": "2026-02-25T11:11:52Z",
+        "distance": 1105.6,
+        "start_index": 4556,
+        "end_index": 4767,
+        "device_watts": false,
+        "average_heartrate": 113.6,
+        "max_heartrate": 139.0,
+        "segment": {
+          "id": 22295630,
+          "resource_state": 2,
+          "name": "Offroad naast N41",
+          "activity_type": "Ride",
+          "distance": 1105.6,
+          "average_grade": -0.2,
+          "maximum_grade": 5.8,
+          "elevation_high": 6.3,
+          "elevation_low": 2.8,
+          "start_latlng": [
+            51.096387,
+            4.150425
+          ],
+          "end_latlng": [
+            51.087497,
+            4.145893
+          ],
+          "elevation_profile": null,
+          "elevation_profiles": null,
+          "climb_category": 0,
+          "city": "Hamme",
+          "state": "Vlaanderen",
+          "country": "Belgium",
+          "private": false,
+          "hazardous": false,
+          "starred": false
+        },
+        "pr_rank": null,
+        "achievements": [],
+        "visibility": "everyone",
+        "hidden": false
+      },
+      {
+        "id": 3461732321202886142,
+        "resource_state": 2,
+        "name": "Lange Maat Cosyns - Denstraat",
+        "activity": {
+          "id": 17517886519,
+          "visibility": "everyone",
+          "resource_state": 1
+        },
+        "athlete": {
+          "id": 20266921,
+          "resource_state": 1
+        },
+        "elapsed_time": 231,
+        "moving_time": 231,
+        "start_date": "2026-02-25T10:26:43Z",
+        "start_date_local": "2026-02-25T11:26:43Z",
+        "distance": 1117.2,
+        "start_index": 5305,
+        "end_index": 5536,
+        "device_watts": false,
+        "average_heartrate": 138.3,
+        "max_heartrate": 147.0,
+        "segment": {
+          "id": 16270255,
+          "resource_state": 2,
+          "name": "Lange Maat Cosyns - Denstraat",
+          "activity_type": "Ride",
+          "distance": 1117.2,
+          "average_grade": 0.2,
+          "maximum_grade": 1.2,
+          "elevation_high": 3.0,
+          "elevation_low": 0.0,
+          "start_latlng": [
+            51.069927,
+            4.123652
+          ],
+          "end_latlng": [
+            51.059917,
+            4.122313
+          ],
+          "elevation_profile": null,
+          "elevation_profiles": null,
+          "climb_category": 0,
+          "city": "Hamme",
+          "state": "Vlaanderen",
+          "country": "Belgium",
+          "private": false,
+          "hazardous": false,
+          "starred": false
+        },
+        "pr_rank": null,
+        "achievements": [],
+        "visibility": "everyone",
+        "hidden": false
+      },
+      {
+        "id": 3461732321204814334,
+        "resource_state": 2,
+        "name": "Lange maat tot voortweg",
+        "activity": {
+          "id": 17517886519,
+          "visibility": "everyone",
+          "resource_state": 1
+        },
+        "athlete": {
+          "id": 20266921,
+          "resource_state": 1
+        },
+        "elapsed_time": 174,
+        "moving_time": 174,
+        "start_date": "2026-02-25T10:31:01Z",
+        "start_date_local": "2026-02-25T11:31:01Z",
+        "distance": 847.7,
+        "start_index": 5563,
+        "end_index": 5737,
+        "device_watts": false,
+        "average_heartrate": 141.3,
+        "max_heartrate": 151.0,
+        "segment": {
+          "id": 23224548,
+          "resource_state": 2,
+          "name": "Lange maat tot voortweg",
+          "activity_type": "Ride",
+          "distance": 847.7,
+          "average_grade": 0.0,
+          "maximum_grade": 1.5,
+          "elevation_high": -2.4,
+          "elevation_low": -3.4,
+          "start_latlng": [
+            51.05915,
+            4.122352
+          ],
+          "end_latlng": [
+            51.051567,
+            4.121211
+          ],
+          "elevation_profile": null,
+          "elevation_profiles": null,
+          "climb_category": 0,
+          "city": "Dendermonde",
+          "state": "Vlaanderen",
+          "country": "Belgium",
+          "private": false,
+          "hazardous": false,
+          "starred": false
+        },
+        "pr_rank": null,
+        "achievements": [],
+        "visibility": "everyone",
+        "hidden": false
+      },
+      {
+        "id": 3461732321202479614,
+        "resource_state": 2,
+        "name": "Voortweg",
+        "activity": {
+          "id": 17517886519,
+          "visibility": "everyone",
+          "resource_state": 1
+        },
+        "athlete": {
+          "id": 20266921,
+          "resource_state": 1
+        },
+        "elapsed_time": 168,
+        "moving_time": 168,
+        "start_date": "2026-02-25T10:34:09Z",
+        "start_date_local": "2026-02-25T11:34:09Z",
+        "distance": 829.7,
+        "start_index": 5751,
+        "end_index": 5919,
+        "device_watts": false,
+        "average_heartrate": 137.2,
+        "max_heartrate": 144.0,
+        "segment": {
+          "id": 18944306,
+          "resource_state": 2,
+          "name": "Voortweg",
+          "activity_type": "Ride",
+          "distance": 829.7,
+          "average_grade": -0.1,
+          "maximum_grade": 1.8,
+          "elevation_high": -8.0,
+          "elevation_low": -9.2,
+          "start_latlng": [
+            51.051198,
+            4.120676
+          ],
+          "end_latlng": [
+            51.047941,
+            4.110184
+          ],
+          "elevation_profile": null,
+          "elevation_profiles": null,
+          "climb_category": 0,
+          "city": "Dendermonde",
+          "state": "Vlaanderen",
+          "country": "Belgium",
+          "private": false,
+          "hazardous": false,
+          "starred": false
+        },
+        "pr_rank": null,
+        "achievements": [],
+        "visibility": "everyone",
+        "hidden": false
+      }
+    ],
+    "splits_metric": [
+      {
+        "distance": 1000.8,
+        "elapsed_time": 272,
+        "elevation_difference": -0.3,
+        "moving_time": 248,
+        "split": 1,
+        "average_speed": 4.04,
+        "average_grade_adjusted_speed": 4.04,
+        "average_heartrate": 132.5748987854251,
+        "pace_zone": 0
+      },
+      {
+        "distance": 999.6,
+        "elapsed_time": 236,
+        "elevation_difference": -1.3,
+        "moving_time": 236,
+        "split": 2,
+        "average_speed": 4.24,
+        "average_grade_adjusted_speed": 4.23,
+        "average_heartrate": 138.26694915254237,
+        "pace_zone": 0
+      },
+      {
+        "distance": 999.8,
+        "elapsed_time": 238,
+        "elevation_difference": 1.5,
+        "moving_time": 238,
+        "split": 3,
+        "average_speed": 4.2,
+        "average_grade_adjusted_speed": 4.22,
+        "average_heartrate": 140.66806722689077,
+        "pace_zone": 0
+      },
+      {
+        "distance": 1001.2,
+        "elapsed_time": 221,
+        "elevation_difference": 0.1,
+        "moving_time": 221,
+        "split": 4,
+        "average_speed": 4.53,
+        "average_grade_adjusted_speed": 4.54,
+        "average_heartrate": 150.4389140271493,
+        "pace_zone": 0
+      },
+      {
+        "distance": 1000.1,
+        "elapsed_time": 227,
+        "elevation_difference": 0.2,
+        "moving_time": 211,
+        "split": 5,
+        "average_speed": 4.74,
+        "average_grade_adjusted_speed": 4.75,
+        "average_heartrate": 138.46919431279622,
+        "pace_zone": 0
+      },
+      {
+        "distance": 1001.4,
+        "elapsed_time": 244,
+        "elevation_difference": -0.1,
+        "moving_time": 195,
+        "split": 6,
+        "average_speed": 5.14,
+        "average_grade_adjusted_speed": 5.15,
+        "average_heartrate": 136.64615384615385,
+        "pace_zone": 0
+      },
+      {
+        "distance": 999.2,
+        "elapsed_time": 280,
+        "elevation_difference": -0.8,
+        "moving_time": 177,
+        "split": 7,
+        "average_speed": 5.65,
+        "average_grade_adjusted_speed": 5.66,
+        "average_heartrate": 130.19209039548022,
+        "pace_zone": 0
+      },
+      {
+        "distance": 1004.5,
+        "elapsed_time": 224,
+        "elevation_difference": 5.7,
+        "moving_time": 224,
+        "split": 8,
+        "average_speed": 4.48,
+        "average_grade_adjusted_speed": 4.56,
+        "average_heartrate": 149.42410714285714,
+        "pace_zone": 0
+      },
+      {
+        "distance": 998.8,
+        "elapsed_time": 216,
+        "elevation_difference": 3.5,
+        "moving_time": 216,
+        "split": 9,
+        "average_speed": 4.62,
+        "average_grade_adjusted_speed": 4.7,
+        "average_heartrate": 131.77314814814815,
+        "pace_zone": 0
+      },
+      {
+        "distance": 997.8,
+        "elapsed_time": 233,
+        "elevation_difference": 12.9,
+        "moving_time": 233,
+        "split": 10,
+        "average_speed": 4.28,
+        "average_grade_adjusted_speed": 4.42,
+        "average_heartrate": 150.25751072961373,
+        "pace_zone": 0
+      },
+      {
+        "distance": 999.2,
+        "elapsed_time": 219,
+        "elevation_difference": 5.4,
+        "moving_time": 219,
+        "split": 11,
+        "average_speed": 4.56,
+        "average_grade_adjusted_speed": 4.63,
+        "average_heartrate": 143.44748858447488,
+        "pace_zone": 0
+      },
+      {
+        "distance": 1000.0,
+        "elapsed_time": 205,
+        "elevation_difference": -3.9,
+        "moving_time": 205,
+        "split": 12,
+        "average_speed": 4.88,
+        "average_grade_adjusted_speed": 4.88,
+        "average_heartrate": 135.88292682926829,
+        "pace_zone": 0
+      },
+      {
+        "distance": 998.3,
+        "elapsed_time": 183,
+        "elevation_difference": -0.7,
+        "moving_time": 183,
+        "split": 13,
+        "average_speed": 5.46,
+        "average_grade_adjusted_speed": 5.45,
+        "average_heartrate": 139.56830601092895,
+        "pace_zone": 0
+      },
+      {
+        "distance": 1000.9,
+        "elapsed_time": 2971,
+        "elevation_difference": -1.0,
+        "moving_time": 184,
+        "split": 14,
+        "average_speed": 5.44,
+        "average_grade_adjusted_speed": 5.44,
+        "average_heartrate": 134.33152173913044,
+        "pace_zone": 0
+      },
+      {
+        "distance": 1001.5,
+        "elapsed_time": 233,
+        "elevation_difference": 0.7,
+        "moving_time": 211,
+        "split": 15,
+        "average_speed": 4.75,
+        "average_grade_adjusted_speed": 4.76,
+        "average_heartrate": 123.03809523809524,
+        "pace_zone": 0
+      },
+      {
+        "distance": 1000.1,
+        "elapsed_time": 225,
+        "elevation_difference": 3.8,
+        "moving_time": 225,
+        "split": 16,
+        "average_speed": 4.44,
+        "average_grade_adjusted_speed": 4.48,
+        "average_heartrate": 138.20444444444445,
+        "pace_zone": 0
+      },
+      {
+        "distance": 997.8,
+        "elapsed_time": 229,
+        "elevation_difference": 0.0,
+        "moving_time": 229,
+        "split": 17,
+        "average_speed": 4.36,
+        "average_grade_adjusted_speed": 4.4,
+        "average_heartrate": 145.21397379912665,
+        "pace_zone": 0
+      },
+      {
+        "distance": 1000.5,
+        "elapsed_time": 189,
+        "elevation_difference": -10.8,
+        "moving_time": 189,
+        "split": 18,
+        "average_speed": 5.29,
+        "average_grade_adjusted_speed": 5.18,
+        "average_heartrate": 141.42857142857142,
+        "pace_zone": 0
+      },
+      {
+        "distance": 998.5,
+        "elapsed_time": 414,
+        "elevation_difference": -6.6,
+        "moving_time": 213,
+        "split": 19,
+        "average_speed": 4.69,
+        "average_grade_adjusted_speed": 4.64,
+        "average_heartrate": 141.30188679245282,
+        "pace_zone": 0
+      },
+      {
+        "distance": 1002.5,
+        "elapsed_time": 217,
+        "elevation_difference": -0.4,
+        "moving_time": 217,
+        "split": 20,
+        "average_speed": 4.62,
+        "average_grade_adjusted_speed": 4.65,
+        "average_heartrate": 138.64055299539172,
+        "pace_zone": 0
+      },
+      {
+        "distance": 998.4,
+        "elapsed_time": 215,
+        "elevation_difference": -6.3,
+        "moving_time": 215,
+        "split": 21,
+        "average_speed": 4.64,
+        "average_grade_adjusted_speed": 4.59,
+        "average_heartrate": 137.55348837209303,
+        "pace_zone": 0
+      },
+      {
+        "distance": 1000.2,
+        "elapsed_time": 390,
+        "elevation_difference": -1.5,
+        "moving_time": 207,
+        "split": 22,
+        "average_speed": 4.83,
+        "average_grade_adjusted_speed": 4.83,
+        "average_heartrate": 118.31553398058253,
+        "pace_zone": 0
+      },
+      {
+        "distance": 1000.3,
+        "elapsed_time": 271,
+        "elevation_difference": -0.5,
+        "moving_time": 205,
+        "split": 23,
+        "average_speed": 4.88,
+        "average_grade_adjusted_speed": 4.88,
+        "average_heartrate": 133.2107843137255,
+        "pace_zone": 0
+      },
+      {
+        "distance": 1000.6,
+        "elapsed_time": 201,
+        "elevation_difference": 0.8,
+        "moving_time": 201,
+        "split": 24,
+        "average_speed": 4.98,
+        "average_grade_adjusted_speed": 4.99,
+        "average_heartrate": 135.15422885572139,
+        "pace_zone": 0
+      },
+      {
+        "distance": 1000.3,
+        "elapsed_time": 211,
+        "elevation_difference": -1.7,
+        "moving_time": 211,
+        "split": 25,
+        "average_speed": 4.74,
+        "average_grade_adjusted_speed": 4.73,
+        "average_heartrate": 137.29857819905214,
+        "pace_zone": 0
+      },
+      {
+        "distance": 1002.9,
+        "elapsed_time": 220,
+        "elevation_difference": 0.4,
+        "moving_time": 220,
+        "split": 26,
+        "average_speed": 4.56,
+        "average_grade_adjusted_speed": 4.57,
+        "average_heartrate": 138.40454545454546,
+        "pace_zone": 0
+      },
+      {
+        "distance": 999.0,
+        "elapsed_time": 205,
+        "elevation_difference": -0.2,
+        "moving_time": 205,
+        "split": 27,
+        "average_speed": 4.87,
+        "average_grade_adjusted_speed": 4.88,
+        "average_heartrate": 141.50731707317073,
+        "pace_zone": 0
+      },
+      {
+        "distance": 996.3,
+        "elapsed_time": 207,
+        "elevation_difference": 1.7,
+        "moving_time": 207,
+        "split": 28,
+        "average_speed": 4.81,
+        "average_grade_adjusted_speed": 4.84,
+        "average_heartrate": 137.3719806763285,
+        "pace_zone": 0
+      },
+      {
+        "distance": 34.5,
+        "elapsed_time": 13,
+        "elevation_difference": 0.0,
+        "moving_time": 13,
+        "split": 29,
+        "average_speed": 2.65,
+        "average_grade_adjusted_speed": 2.65,
+        "average_heartrate": 128.88888888888889,
+        "pace_zone": 0
+      }
+    ],
+    "splits_standard": [
+      {
+        "distance": 1611.4,
+        "elapsed_time": 416,
+        "elevation_difference": -0.7,
+        "moving_time": 392,
+        "split": 1,
+        "average_speed": 4.11,
+        "average_grade_adjusted_speed": 4.11,
+        "average_heartrate": 135.48593350383632,
+        "pace_zone": 0
+      },
+      {
+        "distance": 1608.2,
+        "elapsed_time": 379,
+        "elevation_difference": 0.1,
+        "moving_time": 379,
+        "split": 2,
+        "average_speed": 4.24,
+        "average_grade_adjusted_speed": 4.25,
+        "average_heartrate": 140.1688654353562,
+        "pace_zone": 0
+      },
+      {
+        "distance": 1612.2,
+        "elapsed_time": 346,
+        "elevation_difference": 0.4,
+        "moving_time": 346,
+        "split": 3,
+        "average_speed": 4.66,
+        "average_grade_adjusted_speed": 4.67,
+        "average_heartrate": 145.48554913294797,
+        "pace_zone": 0
+      },
+      {
+        "distance": 1608.3,
+        "elapsed_time": 443,
+        "elevation_difference": 2.0,
+        "moving_time": 313,
+        "split": 4,
+        "average_speed": 5.14,
+        "average_grade_adjusted_speed": 5.16,
+        "average_heartrate": 135.75399361022363,
+        "pace_zone": 0
+      },
+      {
+        "distance": 1608.2,
+        "elapsed_time": 364,
+        "elevation_difference": 2.0,
+        "moving_time": 326,
+        "split": 5,
+        "average_speed": 4.93,
+        "average_grade_adjusted_speed": 4.97,
+        "average_heartrate": 142.03987730061348,
+        "pace_zone": 0
+      },
+      {
+        "distance": 1608.6,
+        "elapsed_time": 358,
+        "elevation_difference": 9.9,
+        "moving_time": 358,
+        "split": 6,
+        "average_speed": 4.49,
+        "average_grade_adjusted_speed": 4.57,
+        "average_heartrate": 139.3240223463687,
+        "pace_zone": 0
+      },
+      {
+        "distance": 1608.8,
+        "elapsed_time": 365,
+        "elevation_difference": 14.6,
+        "moving_time": 365,
+        "split": 7,
+        "average_speed": 4.41,
+        "average_grade_adjusted_speed": 4.52,
+        "average_heartrate": 143.04657534246576,
+        "pace_zone": 0
+      },
+      {
+        "distance": 1611.4,
+        "elapsed_time": 305,
+        "elevation_difference": -6.3,
+        "moving_time": 305,
+        "split": 8,
+        "average_speed": 5.28,
+        "average_grade_adjusted_speed": 5.27,
+        "average_heartrate": 138.2065573770492,
+        "pace_zone": 0
+      },
+      {
+        "distance": 1610.7,
+        "elapsed_time": 3115,
+        "elevation_difference": -1.0,
+        "moving_time": 306,
+        "split": 9,
+        "average_speed": 5.26,
+        "average_grade_adjusted_speed": 5.27,
+        "average_heartrate": 127.99016393442623,
+        "pace_zone": 0
+      },
+      {
+        "distance": 1605.8,
+        "elapsed_time": 362,
+        "elevation_difference": 7.4,
+        "moving_time": 362,
+        "split": 10,
+        "average_speed": 4.44,
+        "average_grade_adjusted_speed": 4.49,
+        "average_heartrate": 136.9281767955801,
+        "pace_zone": 0
+      },
+      {
+        "distance": 1609.8,
+        "elapsed_time": 343,
+        "elevation_difference": -6.3,
+        "moving_time": 343,
+        "split": 11,
+        "average_speed": 4.69,
+        "average_grade_adjusted_speed": 4.68,
+        "average_heartrate": 144.28862973760934,
+        "pace_zone": 0
+      },
+      {
+        "distance": 1610.8,
+        "elapsed_time": 527,
+        "elevation_difference": -20.0,
+        "moving_time": 326,
+        "split": 12,
+        "average_speed": 4.94,
+        "average_grade_adjusted_speed": 4.83,
+        "average_heartrate": 137.68,
+        "pace_zone": 0
+      },
+      {
+        "distance": 1609.8,
+        "elapsed_time": 349,
+        "elevation_difference": -1.2,
+        "moving_time": 349,
+        "split": 13,
+        "average_speed": 4.61,
+        "average_grade_adjusted_speed": 4.63,
+        "average_heartrate": 140.13180515759313,
+        "pace_zone": 0
+      },
+      {
+        "distance": 1609.5,
+        "elapsed_time": 585,
+        "elevation_difference": -1.3,
+        "moving_time": 336,
+        "split": 14,
+        "average_speed": 4.79,
+        "average_grade_adjusted_speed": 4.79,
+        "average_heartrate": 123.7994011976048,
+        "pace_zone": 0
+      },
+      {
+        "distance": 1606.7,
+        "elapsed_time": 324,
+        "elevation_difference": 0.5,
+        "moving_time": 324,
+        "split": 15,
+        "average_speed": 4.96,
+        "average_grade_adjusted_speed": 4.96,
+        "average_heartrate": 136.1172839506173,
+        "pace_zone": 0
+      },
+      {
+        "distance": 1614.1,
+        "elapsed_time": 340,
+        "elevation_difference": -1.6,
+        "moving_time": 340,
+        "split": 16,
+        "average_speed": 4.75,
+        "average_grade_adjusted_speed": 4.74,
+        "average_heartrate": 138.12941176470588,
+        "pace_zone": 0
+      },
+      {
+        "distance": 1608.7,
+        "elapsed_time": 340,
+        "elevation_difference": 0.7,
+        "moving_time": 340,
+        "split": 17,
+        "average_speed": 4.73,
+        "average_grade_adjusted_speed": 4.74,
+        "average_heartrate": 139.0,
+        "pace_zone": 0
+      },
+      {
+        "distance": 672.0,
+        "elapsed_time": 148,
+        "elevation_difference": 1.4,
+        "moving_time": 148,
+        "split": 18,
+        "average_speed": 4.54,
+        "average_grade_adjusted_speed": 4.57,
+        "average_heartrate": 137.88194444444446,
+        "pace_zone": 0
+      }
+    ],
+    "laps": [
+      {
+        "id": 62598158062,
+        "resource_state": 2,
+        "name": "Lap 1",
+        "activity": {
+          "id": 17517886519,
+          "visibility": "everyone",
+          "resource_state": 1
+        },
+        "athlete": {
+          "id": 20266921,
+          "resource_state": 1
+        },
+        "elapsed_time": 5998,
+        "moving_time": 5958,
+        "start_date": "2026-02-25T08:01:25Z",
+        "start_date_local": "2026-02-25T09:01:25Z",
+        "distance": 28039.6,
+        "average_speed": 4.71,
+        "max_speed": 9.9,
+        "lap_index": 1,
+        "split": 1,
+        "start_index": 0,
+        "end_index": 5996,
+        "total_elevation_gain": 73.7,
+        "device_watts": false,
+        "average_heartrate": 138.0,
+        "max_heartrate": 167.0
+      }
+    ],
+    "photos": {
+      "primary": null,
+      "count": 0
+    },
+    "stats_visibility": [
+      {
+        "type": "heart_rate",
+        "visibility": "everyone"
+      },
+      {
+        "type": "pace",
+        "visibility": "everyone"
+      },
+      {
+        "type": "power",
+        "visibility": "everyone"
+      },
+      {
+        "type": "speed",
+        "visibility": "everyone"
+      },
+      {
+        "type": "calories",
+        "visibility": "everyone"
+      }
+    ],
+    "hide_from_home": false,
+    "embed_token": "f2add6911c26806a1c45f70f002d68df9ede036e",
+    "available_zones": [],
+    "weather": {
+      "condition": "Clear",
+      "temperature": 8.4,
+      "feels_like": 6.7,
+      "humidity": 94,
+      "wind_speed": 7.6,
+      "wind_dir": "E",
+      "cloud_cover": 0
+    }
+  },
+  {
+    "resource_state": 3,
+    "athlete": {
+      "id": 20266921,
+      "resource_state": 1
+    },
     "name": "Ochtendloop",
     "distance": 3896.6,
     "moving_time": 1819,
